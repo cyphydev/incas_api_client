@@ -1,6 +1,6 @@
-# swagger_client.GraphApi
+# uiuc_incas_client.GraphApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/incas/incas/1.0.0*
+All URIs are relative to *https://incas.cs.illinois.edu/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,41 +23,61 @@ Method | HTTP request | Description
 [**message_message_graph_id_put**](GraphApi.md#message_message_graph_id_put) | **PUT** /messageMessageGraph/{id} | 
 [**message_message_graph_post**](GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
 
+
 # **actor_actor_graph_get**
-> str actor_actor_graph_get(provider_name, time_stamp, version=version)
+> str actor_actor_graph_get(provider_name, time_stamp)
 
 
 
 Gets graph id by providerName, timestamp and version
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.actor_actor_graph_get(provider_name, time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    provider_name = "providerName_example" # str | 
+    time_stamp = "timeStamp_example" # str | 
+    version = "version_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_actor_graph_get(provider_name, time_stamp)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_get: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.actor_actor_graph_get(provider_name, time_stamp, version=version)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **provider_name** | **str**|  |
+ **time_stamp** | **str**|  |
+ **version** | **str**|  | [optional]
 
 ### Return type
 
@@ -72,44 +92,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph id |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_delete**
-> actor_actor_graph_id_delete(id, provider_name, time_stamp, version)
+> actor_actor_graph_id_delete(id)
 
 
 
-Delete the specific graph by id, providerName, timestamp and version
+Delete the specific graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
 
-try:
-    api_instance.actor_actor_graph_id_delete(id, provider_name, time_stamp, version)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_id_delete: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.actor_actor_graph_id_delete(id)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
@@ -124,49 +158,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Deleted |  -  |
+**404** | id not found |  -  |
+**401** | Unauthorized |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_get**
-> list[ActorActorGraph] actor_actor_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
+> [ActorActorGraph] actor_actor_graph_id_get(id)
 
 
 
-Gets specific actor-actor graph information by id, timeStamp, providerName and version
+Gets specific actor-actor graph information by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_actor_graph import ActorActorGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str |  (optional)
-time_stamp = 'time_stamp_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.actor_actor_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_id_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_actor_graph_id_get(id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_id_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | [optional] 
- **time_stamp** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
-[**list[ActorActorGraph]**](ActorActorGraph.md)
+[**[ActorActorGraph]**](ActorActorGraph.md)
 
 ### Authorization
 
@@ -176,52 +225,67 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_neighbor_get**
-> list[list[UiucActor]] actor_actor_graph_id_neighbor_get(id, provider_name, graph_type, version, actor_id)
+> [[UiucActor]] actor_actor_graph_id_neighbor_get(id, actor_id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id, providerName and version and actor id
+Gets the neighbors for specific node from specific graph by graph id and actor id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.uiuc_actor import UiucActor
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-graph_type = 'graph_type_example' # str | 
-version = 'version_example' # str | 
-actor_id = 'actor_id_example' # str | 
 
-try:
-    api_response = api_instance.actor_actor_graph_id_neighbor_get(id, provider_name, graph_type, version, actor_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_id_neighbor_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    actor_id = "actorID_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_actor_graph_id_neighbor_get(id, actor_id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_id_neighbor_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **graph_type** | **str**|  | 
- **version** | **str**|  | 
- **actor_id** | **str**|  | 
+ **id** | **str**| Graph ID |
+ **actor_id** | **str**|  |
 
 ### Return type
 
-**list[list[UiucActor]]**
+**[[UiucActor]]**
 
 ### Authorization
 
@@ -232,47 +296,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required neigbours |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_put**
-> ActorActorGraph actor_actor_graph_id_put(body, provider_name, time_stamp, version, id)
+> ActorActorGraph actor_actor_graph_id_put(id, actor_actor_graph)
 
 
 
-Update the specific actor-actor graph by id, providerName, timestamp and version
+Update the specific actor-actor graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_actor_graph import ActorActorGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = swagger_client.ActorActorGraph() # ActorActorGraph | The new graph to update
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
-id = 'id_example' # str | Graph ID
 
-try:
-    api_response = api_instance.actor_actor_graph_id_put(body, provider_name, time_stamp, version, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_id_put: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    actor_actor_graph = ActorActorGraph(None) # ActorActorGraph | The new graph to update
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_actor_graph_id_put(id, actor_actor_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_id_put: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorActorGraph**](ActorActorGraph.md)| The new graph to update | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
- **id** | **str**| Graph ID | 
+ **id** | **str**| Graph ID |
+ **actor_actor_graph** | [**ActorActorGraph**](ActorActorGraph.md)| The new graph to update |
 
 ### Return type
 
@@ -287,43 +366,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_post**
-> list[ActorActorGraph] actor_actor_graph_post(body)
+> [ActorActorGraph] actor_actor_graph_post(actor_actor_graph)
 
 
 
 Creates new graphs
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_actor_graph import ActorActorGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = [swagger_client.ActorActorGraph()] # list[ActorActorGraph] | The new graphs to add
 
-try:
-    api_response = api_instance.actor_actor_graph_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    actor_actor_graph = [
+        ActorActorGraph(None),
+    ] # [ActorActorGraph] | The new graphs to add
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_actor_graph_post(actor_actor_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_actor_graph_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ActorActorGraph]**](ActorActorGraph.md)| The new graphs to add | 
+ **actor_actor_graph** | [**[ActorActorGraph]**](ActorActorGraph.md)| The new graphs to add |
 
 ### Return type
 
-[**list[ActorActorGraph]**](ActorActorGraph.md)
+[**[ActorActorGraph]**](ActorActorGraph.md)
 
 ### Authorization
 
@@ -334,43 +436,71 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A list of new graphs |  -  |
+**400** | Invalid input |  -  |
+**409** | Input already exists |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_get**
-> str actor_message_graph_get(provider_name, time_stamp, version=version)
+> str actor_message_graph_get(provider_name, time_stamp)
 
 
 
 Gets graph id by providerName, timestamp and version
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.actor_message_graph_get(provider_name, time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    provider_name = "providerName_example" # str | 
+    time_stamp = "timeStamp_example" # str | 
+    version = "version_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_message_graph_get(provider_name, time_stamp)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_get: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.actor_message_graph_get(provider_name, time_stamp, version=version)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **provider_name** | **str**|  |
+ **time_stamp** | **str**|  |
+ **version** | **str**|  | [optional]
 
 ### Return type
 
@@ -385,44 +515,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph id |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_delete**
-> actor_message_graph_id_delete(id, provider_name, time_stamp, version)
+> actor_message_graph_id_delete(id)
 
 
 
-Delete the specific graph by id, providerName, timestamp and version
+Delete the specific graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
 
-try:
-    api_instance.actor_message_graph_id_delete(id, provider_name, time_stamp, version)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_id_delete: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.actor_message_graph_id_delete(id)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
@@ -437,49 +581,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Deleted |  -  |
+**404** | id not found |  -  |
+**401** | Unauthorized |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_get**
-> list[ActorMessageGraph] actor_message_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
+> [ActorMessageGraph] actor_message_graph_id_get(id)
 
 
 
-Gets specific actor-message graph information by id, timeStamp, providerName and version
+Gets specific actor-message graph information by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_message_graph import ActorMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str |  (optional)
-time_stamp = 'time_stamp_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.actor_message_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_id_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_message_graph_id_get(id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_id_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | [optional] 
- **time_stamp** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
-[**list[ActorMessageGraph]**](ActorMessageGraph.md)
+[**[ActorMessageGraph]**](ActorMessageGraph.md)
 
 ### Authorization
 
@@ -489,54 +648,76 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_neighbor_get**
-> list[list[object]] actor_message_graph_id_neighbor_get(id, provider_name, graph_type, version, message_id=message_id, actor_id=actor_id)
+> [[bool, date, datetime, dict, float, int, list, str, none_type]] actor_message_graph_id_neighbor_get(id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id, providerName and version and message or actor id
+Gets the neighbors for specific node from specific graph by graph id and message or actor id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-graph_type = 'graph_type_example' # str | 
-version = 'version_example' # str | 
-message_id = 'message_id_example' # str |  (optional)
-actor_id = 'actor_id_example' # str |  (optional)
 
-try:
-    api_response = api_instance.actor_message_graph_id_neighbor_get(id, provider_name, graph_type, version, message_id=message_id, actor_id=actor_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_id_neighbor_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    message_id = "messageID_example" # str |  (optional)
+    actor_id = "actorID_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_message_graph_id_neighbor_get(id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_id_neighbor_get: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.actor_message_graph_id_neighbor_get(id, message_id=message_id, actor_id=actor_id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_id_neighbor_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **graph_type** | **str**|  | 
- **version** | **str**|  | 
- **message_id** | **str**|  | [optional] 
- **actor_id** | **str**|  | [optional] 
+ **id** | **str**| Graph ID |
+ **message_id** | **str**|  | [optional]
+ **actor_id** | **str**|  | [optional]
 
 ### Return type
 
-**list[list[object]]**
+**[[bool, date, datetime, dict, float, int, list, str, none_type]]**
 
 ### Authorization
 
@@ -547,47 +728,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required neigbours |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_put**
-> ActorMessageGraph actor_message_graph_id_put(body, provider_name, time_stamp, version, id)
+> ActorMessageGraph actor_message_graph_id_put(id, actor_message_graph)
 
 
 
-Update the specific actor-message graph by id, providerName, timestamp and version
+Update the specific actor-message graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_message_graph import ActorMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = swagger_client.ActorMessageGraph() # ActorMessageGraph | The new graph to update
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
-id = 'id_example' # str | Graph ID
 
-try:
-    api_response = api_instance.actor_message_graph_id_put(body, provider_name, time_stamp, version, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_id_put: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    actor_message_graph = ActorMessageGraph(None) # ActorMessageGraph | The new graph to update
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_message_graph_id_put(id, actor_message_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_id_put: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorMessageGraph**](ActorMessageGraph.md)| The new graph to update | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
- **id** | **str**| Graph ID | 
+ **id** | **str**| Graph ID |
+ **actor_message_graph** | [**ActorMessageGraph**](ActorMessageGraph.md)| The new graph to update |
 
 ### Return type
 
@@ -602,43 +798,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_post**
-> list[ActorMessageGraph] actor_message_graph_post(body)
+> [ActorMessageGraph] actor_message_graph_post(actor_message_graph)
 
 
 
 Creates new graphs
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.actor_message_graph import ActorMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = [swagger_client.ActorMessageGraph()] # list[ActorMessageGraph] | The new graphs to add
 
-try:
-    api_response = api_instance.actor_message_graph_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    actor_message_graph = [
+        ActorMessageGraph(None),
+    ] # [ActorMessageGraph] | The new graphs to add
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.actor_message_graph_post(actor_message_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->actor_message_graph_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ActorMessageGraph]**](ActorMessageGraph.md)| The new graphs to add | 
+ **actor_message_graph** | [**[ActorMessageGraph]**](ActorMessageGraph.md)| The new graphs to add |
 
 ### Return type
 
-[**list[ActorMessageGraph]**](ActorMessageGraph.md)
+[**[ActorMessageGraph]**](ActorMessageGraph.md)
 
 ### Authorization
 
@@ -649,43 +868,71 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A list of new graphs |  -  |
+**400** | Invalid input |  -  |
+**409** | Input already exists |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_get**
-> str message_message_graph_get(provider_name, time_stamp, version=version)
+> str message_message_graph_get(provider_name, time_stamp)
 
 
 
 Gets graph id by providerName, timestamp and version
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.message_message_graph_get(provider_name, time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    provider_name = "providerName_example" # str | 
+    time_stamp = "timeStamp_example" # str | 
+    version = "version_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.message_message_graph_get(provider_name, time_stamp)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_get: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.message_message_graph_get(provider_name, time_stamp, version=version)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **provider_name** | **str**|  |
+ **time_stamp** | **str**|  |
+ **version** | **str**|  | [optional]
 
 ### Return type
 
@@ -700,44 +947,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph id |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_delete**
-> message_message_graph_id_delete(id, provider_name, time_stamp, version)
+> message_message_graph_id_delete(id)
 
 
 
-Delete the specific graph by id, providerName, timestamp and version
+Delete the specific graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
 
-try:
-    api_instance.message_message_graph_id_delete(id, provider_name, time_stamp, version)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_id_delete: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.message_message_graph_id_delete(id)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
@@ -752,49 +1013,64 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Deleted |  -  |
+**404** | id not found |  -  |
+**401** | Unauthorized |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_get**
-> list[MessageMessageGraph] message_message_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
+> [MessageMessageGraph] message_message_graph_id_get(id)
 
 
 
-Gets specific message-message graph information by id, timeStamp, providerName and version
+Gets specific message-message graph information by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.message_message_graph import MessageMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str |  (optional)
-time_stamp = 'time_stamp_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
 
-try:
-    api_response = api_instance.message_message_graph_id_get(id, provider_name=provider_name, time_stamp=time_stamp, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_id_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.message_message_graph_id_get(id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_id_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | [optional] 
- **time_stamp** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **id** | **str**| Graph ID |
 
 ### Return type
 
-[**list[MessageMessageGraph]**](MessageMessageGraph.md)
+[**[MessageMessageGraph]**](MessageMessageGraph.md)
 
 ### Authorization
 
@@ -804,52 +1080,67 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_neighbor_get**
-> list[list[UiucMessage]] message_message_graph_id_neighbor_get(id, provider_name, graph_type, version, message_id)
+> [[UiucMessage]] message_message_graph_id_neighbor_get(id, message_id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id, providerName and version and message's id
+Gets the neighbors for specific node from specific graph by graph id and message's id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.uiuc_message import UiucMessage
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-id = 'id_example' # str | Graph ID
-provider_name = 'provider_name_example' # str | 
-graph_type = 'graph_type_example' # str | 
-version = 'version_example' # str | 
-message_id = 'message_id_example' # str | 
 
-try:
-    api_response = api_instance.message_message_graph_id_neighbor_get(id, provider_name, graph_type, version, message_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_id_neighbor_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    message_id = "messageID_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.message_message_graph_id_neighbor_get(id, message_id)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_id_neighbor_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Graph ID | 
- **provider_name** | **str**|  | 
- **graph_type** | **str**|  | 
- **version** | **str**|  | 
- **message_id** | **str**|  | 
+ **id** | **str**| Graph ID |
+ **message_id** | **str**|  |
 
 ### Return type
 
-**list[list[UiucMessage]]**
+**[[UiucMessage]]**
 
 ### Authorization
 
@@ -860,47 +1151,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Required neigbours |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_put**
-> MessageMessageGraph message_message_graph_id_put(body, provider_name, time_stamp, version, id)
+> MessageMessageGraph message_message_graph_id_put(id, message_message_graph)
 
 
 
-Update the specific message-message graph by id, providerName, timestamp and version
+Update the specific message-message graph by id
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.message_message_graph import MessageMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = swagger_client.MessageMessageGraph() # MessageMessageGraph | The new graph to update
-provider_name = 'provider_name_example' # str | 
-time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str | 
-id = 'id_example' # str | Graph ID
 
-try:
-    api_response = api_instance.message_message_graph_id_put(body, provider_name, time_stamp, version, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_id_put: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    id = "id_example" # str | Graph ID
+    message_message_graph = MessageMessageGraph(None) # MessageMessageGraph | The new graph to update
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.message_message_graph_id_put(id, message_message_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_id_put: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageMessageGraph**](MessageMessageGraph.md)| The new graph to update | 
- **provider_name** | **str**|  | 
- **time_stamp** | **str**|  | 
- **version** | **str**|  | 
- **id** | **str**| Graph ID | 
+ **id** | **str**| Graph ID |
+ **message_message_graph** | [**MessageMessageGraph**](MessageMessageGraph.md)| The new graph to update |
 
 ### Return type
 
@@ -915,43 +1221,66 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated graph |  -  |
+**404** | Not found |  -  |
+**400** | Invalid query |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_post**
-> list[MessageMessageGraph] message_message_graph_post(body)
+> [MessageMessageGraph] message_message_graph_post(message_message_graph)
 
 
 
 Creates new graphs
 
 ### Example
+
+
 ```python
-from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import uiuc_incas_client
+from uiuc_incas_client.api import graph_api
+from uiuc_incas_client.model.message_message_graph import MessageMessageGraph
 from pprint import pprint
+# Defining the host is optional and defaults to https://incas.cs.illinois.edu/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = uiuc_incas_client.Configuration(
+    host = "https://incas.cs.illinois.edu/api/v1"
+)
 
-# create an instance of the API class
-api_instance = swagger_client.GraphApi()
-body = [swagger_client.MessageMessageGraph()] # list[MessageMessageGraph] | The new graphs to add
 
-try:
-    api_response = api_instance.message_message_graph_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with uiuc_incas_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = graph_api.GraphApi(api_client)
+    message_message_graph = [
+        MessageMessageGraph(None),
+    ] # [MessageMessageGraph] | The new graphs to add
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.message_message_graph_post(message_message_graph)
+        pprint(api_response)
+    except uiuc_incas_client.ApiException as e:
+        print("Exception when calling GraphApi->message_message_graph_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageMessageGraph]**](MessageMessageGraph.md)| The new graphs to add | 
+ **message_message_graph** | [**[MessageMessageGraph]**](MessageMessageGraph.md)| The new graphs to add |
 
 ### Return type
 
-[**list[MessageMessageGraph]**](MessageMessageGraph.md)
+[**[MessageMessageGraph]**](MessageMessageGraph.md)
 
 ### Authorization
 
@@ -961,6 +1290,15 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A list of new graphs |  -  |
+**400** | Invalid input |  -  |
+**409** | Input already exists |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

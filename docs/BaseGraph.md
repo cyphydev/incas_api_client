@@ -1,5 +1,7 @@
 # BaseGraph
 
+Defines the base graph version.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +12,8 @@ Name | Type | Description | Notes
 **version** | **str** | The version ID within the same (providerName, graphName, distanceName) | [optional] 
 **time_stamp** | **str** | Used for distinguishing the dynamic graph on time dimension. | [optional] 
 **platform** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
