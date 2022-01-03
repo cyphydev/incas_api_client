@@ -1,7 +1,5 @@
 # BaseEdge
 
-Defines the base edge in the graph.
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -12,8 +10,7 @@ Name | Type | Description | Notes
 **distance_name** | **str** | The type of distance used to contruct the graph edges. | [optional] 
 **version** | **str** | The version ID within the same (providerName, enrichmentName, distanceName) | [optional] 
 **distance** | **float** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**edge_type** | **str** | For discriminator | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

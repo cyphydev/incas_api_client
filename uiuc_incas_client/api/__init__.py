@@ -1,3 +1,8 @@
-# do not import all apis into this module because that uses a lot of memory and stack frames
-# if you need the ability to import all apis from one package, import them with
-# from uiuc_incas_client.apis import ActorApi
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from uiuc_incas_client.api.actor_api import ActorApi
+from uiuc_incas_client.api.graph_api import GraphApi
+from uiuc_incas_client.api.message_api import MessageApi

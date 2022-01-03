@@ -1,13 +1,10 @@
 # OneOfMediaTypeAttributes
 
-
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reddit_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**reddit_data** | [**RedditData**](RedditData.md) |  | [optional] 
 **twitter_data** | [**TwitterData**](TwitterData.md) |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

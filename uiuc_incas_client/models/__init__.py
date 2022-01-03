@@ -1,68 +1,69 @@
+# coding: utf-8
+
 # flake8: noqa
+"""
+    INCAS TA2-UIUC Datatypes
 
-# import all models into this package
-# if you have many models here with many references from one model to another this may
-# raise a RecursionError
-# to avoid this, import only the models that you directly need like:
-# from from uiuc_incas_client.model.pet import Pet
-# or import this package, but before doing it, use:
-# import sys
-# sys.setrecursionlimit(n)
+    This API document is defined based on INCAS Common Datatypes version 0.0.3.  # noqa: E501
 
-from uiuc_incas_client.model.actor import Actor
-from uiuc_incas_client.model.actor_actor_graph import ActorActorGraph
-from uiuc_incas_client.model.actor_actor_graph_all_of import ActorActorGraphAllOf
-from uiuc_incas_client.model.actor_enrichment import ActorEnrichment
-from uiuc_incas_client.model.actor_enrichment_meta import ActorEnrichmentMeta
-from uiuc_incas_client.model.actor_message_graph import ActorMessageGraph
-from uiuc_incas_client.model.actor_message_graph_all_of import ActorMessageGraphAllOf
-from uiuc_incas_client.model.actor_to_actor_edge import ActorToActorEdge
-from uiuc_incas_client.model.actor_to_actor_edge_all_of import ActorToActorEdgeAllOf
-from uiuc_incas_client.model.actor_to_message_edge import ActorToMessageEdge
-from uiuc_incas_client.model.actor_to_message_edge_all_of import ActorToMessageEdgeAllOf
-from uiuc_incas_client.model.annotation import Annotation
-from uiuc_incas_client.model.array_actor_enrichment import ArrayActorEnrichment
-from uiuc_incas_client.model.array_actor_enrichment_meta import ArrayActorEnrichmentMeta
-from uiuc_incas_client.model.array_message_enrichment import ArrayMessageEnrichment
-from uiuc_incas_client.model.array_message_enrichment_all_of import ArrayMessageEnrichmentAllOf
-from uiuc_incas_client.model.array_message_enrichment_meta import ArrayMessageEnrichmentMeta
-from uiuc_incas_client.model.base_actor_enrichment import BaseActorEnrichment
-from uiuc_incas_client.model.base_edge import BaseEdge
-from uiuc_incas_client.model.base_enrichment_meta import BaseEnrichmentMeta
-from uiuc_incas_client.model.base_graph import BaseGraph
-from uiuc_incas_client.model.base_message_enrichment import BaseMessageEnrichment
-from uiuc_incas_client.model.category_actor_enrichment import CategoryActorEnrichment
-from uiuc_incas_client.model.category_actor_enrichment_meta import CategoryActorEnrichmentMeta
-from uiuc_incas_client.model.category_message_enrichment import CategoryMessageEnrichment
-from uiuc_incas_client.model.category_message_enrichment_all_of import CategoryMessageEnrichmentAllOf
-from uiuc_incas_client.model.category_message_enrichment_meta import CategoryMessageEnrichmentMeta
-from uiuc_incas_client.model.extra_attribute import ExtraAttribute
-from uiuc_incas_client.model.extra_attributes import ExtraAttributes
-from uiuc_incas_client.model.geo_location import GeoLocation
-from uiuc_incas_client.model.links import Links
-from uiuc_incas_client.model.media_resource import MediaResource
-from uiuc_incas_client.model.message import Message
-from uiuc_incas_client.model.message_enrichment import MessageEnrichment
-from uiuc_incas_client.model.message_enrichment_meta import MessageEnrichmentMeta
-from uiuc_incas_client.model.message_message_graph import MessageMessageGraph
-from uiuc_incas_client.model.message_message_graph_all_of import MessageMessageGraphAllOf
-from uiuc_incas_client.model.message_to_message_edge import MessageToMessageEdge
-from uiuc_incas_client.model.message_to_message_edge_all_of import MessageToMessageEdgeAllOf
-from uiuc_incas_client.model.numeric_actor_enrichment import NumericActorEnrichment
-from uiuc_incas_client.model.numeric_actor_enrichment_all_of import NumericActorEnrichmentAllOf
-from uiuc_incas_client.model.numeric_actor_enrichment_meta import NumericActorEnrichmentMeta
-from uiuc_incas_client.model.numeric_message_enrichment import NumericMessageEnrichment
-from uiuc_incas_client.model.numeric_message_enrichment_all_of import NumericMessageEnrichmentAllOf
-from uiuc_incas_client.model.numerical_message_enrichment_meta import NumericalMessageEnrichmentMeta
-from uiuc_incas_client.model.offset import Offset
-from uiuc_incas_client.model.one_of_media_type_attributes import OneOfMediaTypeAttributes
-from uiuc_incas_client.model.text_actor_enrichment import TextActorEnrichment
-from uiuc_incas_client.model.text_actor_enrichment_meta import TextActorEnrichmentMeta
-from uiuc_incas_client.model.text_message_enrichment import TextMessageEnrichment
-from uiuc_incas_client.model.text_message_enrichment_meta import TextMessageEnrichmentMeta
-from uiuc_incas_client.model.twitter_data import TwitterData
-from uiuc_incas_client.model.uiuc_actor import UiucActor
-from uiuc_incas_client.model.uiuc_actor_all_of import UiucActorAllOf
-from uiuc_incas_client.model.uiuc_message import UiucMessage
-from uiuc_incas_client.model.uiuc_message_all_of import UiucMessageAllOf
-from uiuc_incas_client.model.uiuc_segment import UiucSegment
+    OpenAPI spec version: 1.0.0
+    
+    Generated by: https://github.com/swagger-api/swagger-codegen.git
+"""
+
+from __future__ import absolute_import
+
+# import models into model package
+from uiuc_incas_client.models.actor import Actor
+from uiuc_incas_client.models.actor_actor_graph import ActorActorGraph
+from uiuc_incas_client.models.actor_enrichment import ActorEnrichment
+from uiuc_incas_client.models.actor_enrichment_meta import ActorEnrichmentMeta
+from uiuc_incas_client.models.actor_message_graph import ActorMessageGraph
+from uiuc_incas_client.models.actor_to_actor_edge import ActorToActorEdge
+from uiuc_incas_client.models.actor_to_message_edge import ActorToMessageEdge
+from uiuc_incas_client.models.annotation import Annotation
+from uiuc_incas_client.models.array_actor_enrichment import ArrayActorEnrichment
+from uiuc_incas_client.models.array_actor_enrichment_meta import ArrayActorEnrichmentMeta
+from uiuc_incas_client.models.array_message_enrichment import ArrayMessageEnrichment
+from uiuc_incas_client.models.array_message_enrichment_meta import ArrayMessageEnrichmentMeta
+from uiuc_incas_client.models.base_actor_enrichment import BaseActorEnrichment
+from uiuc_incas_client.models.base_actor_enrichment_meta import BaseActorEnrichmentMeta
+from uiuc_incas_client.models.base_edge import BaseEdge
+from uiuc_incas_client.models.base_graph import BaseGraph
+from uiuc_incas_client.models.base_message_enrichment import BaseMessageEnrichment
+from uiuc_incas_client.models.base_message_enrichment_meta import BaseMessageEnrichmentMeta
+from uiuc_incas_client.models.category_actor_enrichment import CategoryActorEnrichment
+from uiuc_incas_client.models.category_actor_enrichment_meta import CategoryActorEnrichmentMeta
+from uiuc_incas_client.models.category_message_enrichment import CategoryMessageEnrichment
+from uiuc_incas_client.models.category_message_enrichment_meta import CategoryMessageEnrichmentMeta
+from uiuc_incas_client.models.extra_attribute import ExtraAttribute
+from uiuc_incas_client.models.extra_attributes import ExtraAttributes
+from uiuc_incas_client.models.geo_location import GeoLocation
+from uiuc_incas_client.models.links import Links
+from uiuc_incas_client.models.media_resource import MediaResource
+from uiuc_incas_client.models.message import Message
+from uiuc_incas_client.models.message_enrichment import MessageEnrichment
+from uiuc_incas_client.models.message_enrichment_meta import MessageEnrichmentMeta
+from uiuc_incas_client.models.message_message_graph import MessageMessageGraph
+from uiuc_incas_client.models.message_to_actor_edge import MessageToActorEdge
+from uiuc_incas_client.models.message_to_message_edge import MessageToMessageEdge
+from uiuc_incas_client.models.numerical_actor_enrichment import NumericalActorEnrichment
+from uiuc_incas_client.models.numerical_actor_enrichment_meta import NumericalActorEnrichmentMeta
+from uiuc_incas_client.models.numerical_message_enrichment import NumericalMessageEnrichment
+from uiuc_incas_client.models.numerical_message_enrichment_meta import NumericalMessageEnrichmentMeta
+from uiuc_incas_client.models.offset import Offset
+from uiuc_incas_client.models.one_of_actor_enrichment import OneOfActorEnrichment
+from uiuc_incas_client.models.one_of_actor_enrichment_meta import OneOfActorEnrichmentMeta
+from uiuc_incas_client.models.one_of_media_type_attributes import OneOfMediaTypeAttributes
+from uiuc_incas_client.models.one_of_message_enrichment import OneOfMessageEnrichment
+from uiuc_incas_client.models.one_of_message_enrichment_meta import OneOfMessageEnrichmentMeta
+from uiuc_incas_client.models.reddit_data import RedditData
+from uiuc_incas_client.models.response import Response
+from uiuc_incas_client.models.text_actor_enrichment import TextActorEnrichment
+from uiuc_incas_client.models.text_actor_enrichment_meta import TextActorEnrichmentMeta
+from uiuc_incas_client.models.text_message_enrichment import TextMessageEnrichment
+from uiuc_incas_client.models.text_message_enrichment_meta import TextMessageEnrichmentMeta
+from uiuc_incas_client.models.twitter_data import TwitterData
+from uiuc_incas_client.models.uiuc_actor import UiucActor
+from uiuc_incas_client.models.uiuc_message import UiucMessage
+from uiuc_incas_client.models.uiuc_segment import UiucSegment
