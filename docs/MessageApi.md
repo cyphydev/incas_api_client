@@ -4,7 +4,6 @@ All URIs are relative to *https://incas.cs.illinois.edu:8443/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actor_enrichments_delete**](MessageApi.md#actor_enrichments_delete) | **DELETE** /actor/enrichments | 
 [**message_enrichments_delete**](MessageApi.md#message_enrichments_delete) | **DELETE** /message/enrichments | 
 [**message_enrichments_get**](MessageApi.md#message_enrichments_get) | **GET** /message/enrichments | 
 [**message_enrichments_post**](MessageApi.md#message_enrichments_post) | **POST** /message/enrichments | 
@@ -14,56 +13,6 @@ Method | HTTP request | Description
 [**message_id_enrichments_post**](MessageApi.md#message_id_enrichments_post) | **POST** /message/{id}/enrichments | 
 [**message_id_enrichments_put**](MessageApi.md#message_id_enrichments_put) | **PUT** /message/{id}/enrichments | 
 [**message_id_get**](MessageApi.md#message_id_get) | **GET** /message/{id} | 
-
-# **actor_enrichments_delete**
-> actor_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
-
-
-
-Delete specific message enrichment meta by providerName, enrichmentName and version
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
-enrichment_name = 'enrichment_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
-
-try:
-    api_instance.actor_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
-except ApiException as e:
-    print("Exception when calling MessageApi->actor_enrichments_delete: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **enrichment_name** | **str**|  | [optional] 
- **provider_name** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_delete**
 > message_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)

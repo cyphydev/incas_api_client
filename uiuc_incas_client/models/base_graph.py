@@ -79,8 +79,7 @@ class BaseGraph(object):
             self.time_stamp = time_stamp
         if platform is not None:
             self.platform = platform
-        if graph_type is not None:
-            self.graph_type = graph_type
+        self.graph_type = graph_type
 
     @property
     def graph_id(self):
@@ -267,6 +266,8 @@ class BaseGraph(object):
         :param graph_type: The graph_type of this BaseGraph.  # noqa: E501
         :type: str
         """
+        if graph_type is None:
+            raise ValueError("Invalid value for `graph_type`, must not be `None`")  # noqa: E501
         allowed_values = ["MessageMessageGraph", "ActorActorGraph", "ActorMessageGraph"]  # noqa: E501
         if graph_type not in allowed_values:
             raise ValueError(

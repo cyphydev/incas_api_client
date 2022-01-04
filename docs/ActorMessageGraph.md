@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**edge_types** | **list[str]** | The set of all available edge types. | [optional] 
-**edges** | **list[object]** |  | [optional] 
+**enrichment_name** | **str** | The type of enrichment used to construct the act2act graph. | [optional] 
+**edges** | [**list[ActorMessageEdge]**](ActorMessageEdge.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

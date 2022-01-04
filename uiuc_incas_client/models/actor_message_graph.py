@@ -29,52 +29,52 @@ class ActorMessageGraph(BaseGraph):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'edge_types': 'list[str]',
-        'edges': 'list[object]'
+        'enrichment_name': 'str',
+        'edges': 'list[ActorMessageEdge]'
     }
     if hasattr(BaseGraph, "swagger_types"):
         swagger_types.update(BaseGraph.swagger_types)
 
     attribute_map = {
-        'edge_types': 'edgeTypes',
+        'enrichment_name': 'enrichmentName',
         'edges': 'edges'
     }
     if hasattr(BaseGraph, "attribute_map"):
         attribute_map.update(BaseGraph.attribute_map)
 
-    def __init__(self, edge_types=None, edges=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, enrichment_name=None, edges=None, *args, **kwargs):  # noqa: E501
         """ActorMessageGraph - a model defined in Swagger"""  # noqa: E501
-        self._edge_types = None
+        self._enrichment_name = None
         self._edges = None
         self.discriminator = None
-        if edge_types is not None:
-            self.edge_types = edge_types
+        if enrichment_name is not None:
+            self.enrichment_name = enrichment_name
         if edges is not None:
             self.edges = edges
         BaseGraph.__init__(self, *args, **kwargs)
 
     @property
-    def edge_types(self):
-        """Gets the edge_types of this ActorMessageGraph.  # noqa: E501
+    def enrichment_name(self):
+        """Gets the enrichment_name of this ActorMessageGraph.  # noqa: E501
 
-        The set of all available edge types.  # noqa: E501
+        The type of enrichment used to construct the act2act graph.  # noqa: E501
 
-        :return: The edge_types of this ActorMessageGraph.  # noqa: E501
-        :rtype: list[str]
+        :return: The enrichment_name of this ActorMessageGraph.  # noqa: E501
+        :rtype: str
         """
-        return self._edge_types
+        return self._enrichment_name
 
-    @edge_types.setter
-    def edge_types(self, edge_types):
-        """Sets the edge_types of this ActorMessageGraph.
+    @enrichment_name.setter
+    def enrichment_name(self, enrichment_name):
+        """Sets the enrichment_name of this ActorMessageGraph.
 
-        The set of all available edge types.  # noqa: E501
+        The type of enrichment used to construct the act2act graph.  # noqa: E501
 
-        :param edge_types: The edge_types of this ActorMessageGraph.  # noqa: E501
-        :type: list[str]
+        :param enrichment_name: The enrichment_name of this ActorMessageGraph.  # noqa: E501
+        :type: str
         """
 
-        self._edge_types = edge_types
+        self._enrichment_name = enrichment_name
 
     @property
     def edges(self):
@@ -82,7 +82,7 @@ class ActorMessageGraph(BaseGraph):
 
 
         :return: The edges of this ActorMessageGraph.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[ActorMessageEdge]
         """
         return self._edges
 
@@ -92,7 +92,7 @@ class ActorMessageGraph(BaseGraph):
 
 
         :param edges: The edges of this ActorMessageGraph.  # noqa: E501
-        :type: list[object]
+        :type: list[ActorMessageEdge]
         """
 
         self._edges = edges

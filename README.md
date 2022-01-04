@@ -58,6 +58,17 @@ provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
 
 try:
+    api_instance.actor_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+enrichment_name = 'enrichment_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+
+try:
     api_response = api_instance.actor_enrichments_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
     pprint(api_response)
 except ApiException as e:
@@ -153,6 +164,7 @@ All URIs are relative to *https://incas.cs.illinois.edu:8443/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ActorApi* | [**actor_enrichments_delete**](docs/ActorApi.md#actor_enrichments_delete) | **DELETE** /actor/enrichments | 
 *ActorApi* | [**actor_enrichments_get**](docs/ActorApi.md#actor_enrichments_get) | **GET** /actor/enrichments | 
 *ActorApi* | [**actor_enrichments_post**](docs/ActorApi.md#actor_enrichments_post) | **POST** /actor/enrichments | 
 *ActorApi* | [**actor_enrichments_put**](docs/ActorApi.md#actor_enrichments_put) | **PUT** /actor/enrichments | 
@@ -179,7 +191,6 @@ Class | Method | HTTP request | Description
 *GraphApi* | [**message_message_graph_id_neighbor_get**](docs/GraphApi.md#message_message_graph_id_neighbor_get) | **GET** /messageMessageGraph/{id}/neighbor | 
 *GraphApi* | [**message_message_graph_id_put**](docs/GraphApi.md#message_message_graph_id_put) | **PUT** /messageMessageGraph/{id} | 
 *GraphApi* | [**message_message_graph_post**](docs/GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
-*MessageApi* | [**actor_enrichments_delete**](docs/MessageApi.md#actor_enrichments_delete) | **DELETE** /actor/enrichments | 
 *MessageApi* | [**message_enrichments_delete**](docs/MessageApi.md#message_enrichments_delete) | **DELETE** /message/enrichments | 
 *MessageApi* | [**message_enrichments_get**](docs/MessageApi.md#message_enrichments_get) | **GET** /message/enrichments | 
 *MessageApi* | [**message_enrichments_post**](docs/MessageApi.md#message_enrichments_post) | **POST** /message/enrichments | 
@@ -196,6 +207,7 @@ Class | Method | HTTP request | Description
  - [ActorActorGraph](docs/ActorActorGraph.md)
  - [ActorEnrichment](docs/ActorEnrichment.md)
  - [ActorEnrichmentMeta](docs/ActorEnrichmentMeta.md)
+ - [ActorMessageEdge](docs/ActorMessageEdge.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorToActorEdge](docs/ActorToActorEdge.md)
  - [ActorToMessageEdge](docs/ActorToMessageEdge.md)
@@ -232,6 +244,7 @@ Class | Method | HTTP request | Description
  - [Offset](docs/Offset.md)
  - [OneOfActorEnrichment](docs/OneOfActorEnrichment.md)
  - [OneOfActorEnrichmentMeta](docs/OneOfActorEnrichmentMeta.md)
+ - [OneOfActorMessageEdge](docs/OneOfActorMessageEdge.md)
  - [OneOfMediaTypeAttributes](docs/OneOfMediaTypeAttributes.md)
  - [OneOfMessageEnrichment](docs/OneOfMessageEnrichment.md)
  - [OneOfMessageEnrichmentMeta](docs/OneOfMessageEnrichmentMeta.md)

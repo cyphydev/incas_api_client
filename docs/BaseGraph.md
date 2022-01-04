@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **version** | **str** | The version ID within the same (providerName, graphName, distanceName) | [optional] 
 **time_stamp** | **str** | Used for distinguishing the dynamic graph on time dimension. | [optional] 
 **platform** | **str** |  | [optional] 
-**graph_type** | **str** | For discriminator | [optional] 
+**graph_type** | **str** | For discriminator | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
