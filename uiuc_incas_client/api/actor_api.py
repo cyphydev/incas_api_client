@@ -32,234 +32,40 @@ class ActorApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def actor_enrichments_delete(self, **kwargs):  # noqa: E501
-        """actor_enrichments_delete  # noqa: E501
+    def actor_batch_get(self, body, **kwargs):  # noqa: E501
+        """actor_batch_get  # noqa: E501
 
-        Delete specific message enrichment meta by providerName, enrichmentName and version  # noqa: E501
+        Returns a batch of actors given a list of IDs and specifications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_delete(async_req=True)
+        >>> thread = api.actor_batch_get(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: None
+        :param ActorBatchGetBody body: List of IDs and specifications (required)
+        :return: list[UiucActor]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.actor_enrichments_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.actor_batch_get_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.actor_enrichments_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.actor_batch_get_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def actor_enrichments_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """actor_enrichments_delete  # noqa: E501
+    def actor_batch_get_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_batch_get  # noqa: E501
 
-        Delete specific message enrichment meta by providerName, enrichmentName and version  # noqa: E501
+        Returns a batch of actors given a list of IDs and specifications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_delete_with_http_info(async_req=True)
+        >>> thread = api.actor_batch_get_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['enrichment_name', 'provider_name', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_enrichments_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'enrichment_name' in params:
-            query_params.append(('enrichmentName', params['enrichment_name']))  # noqa: E501
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actor/enrichments', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def actor_enrichments_get(self, **kwargs):  # noqa: E501
-        """actor_enrichments_get  # noqa: E501
-
-        Returns current actor enrichment meta by providerName, enrichmentName and version  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: ActorEnrichmentMeta
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_enrichments_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_enrichments_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def actor_enrichments_get_with_http_info(self, **kwargs):  # noqa: E501
-        """actor_enrichments_get  # noqa: E501
-
-        Returns current actor enrichment meta by providerName, enrichmentName and version  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: ActorEnrichmentMeta
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['enrichment_name', 'provider_name', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_enrichments_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'enrichment_name' in params:
-            query_params.append(('enrichmentName', params['enrichment_name']))  # noqa: E501
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actor/enrichments', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ActorEnrichmentMeta',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def actor_enrichments_post(self, body, **kwargs):  # noqa: E501
-        """actor_enrichments_post  # noqa: E501
-
-        Creates actor enrichment meta (post after all actors have been added)  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[ActorEnrichmentMeta] body: The new enrichment meta to add (required)
-        :return: ActorEnrichmentMeta
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_enrichments_post_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_enrichments_post_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def actor_enrichments_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """actor_enrichments_post  # noqa: E501
-
-        Creates actor enrichment meta (post after all actors have been added)  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_post_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[ActorEnrichmentMeta] body: The new enrichment meta to add (required)
-        :return: ActorEnrichmentMeta
+        :param ActorBatchGetBody body: List of IDs and specifications (required)
+        :return: list[UiucActor]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -275,14 +81,14 @@ class ActorApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method actor_enrichments_post" % key
+                    " to method actor_batch_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `actor_batch_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -310,14 +116,14 @@ class ActorApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/actor/enrichments', 'POST',
+            '/actor/batchGet', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentMeta',  # noqa: E501
+            response_type='list[UiucActor]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -325,51 +131,43 @@ class ActorApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def actor_enrichments_put(self, body, **kwargs):  # noqa: E501
-        """actor_enrichments_put  # noqa: E501
+    def actor_count_get(self, **kwargs):  # noqa: E501
+        """actor_count_get  # noqa: E501
 
-        Updates actor enrichment meta (after all actors have been added) by providerName, enrichmentName and version  # noqa: E501
+        Return the number of actor IDs available.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_put(body, async_req=True)
+        >>> thread = api.actor_count_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichmentMeta] body: The new enrichment meta to update (required)
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: ActorEnrichmentMeta
+        :return: int
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.actor_enrichments_put_with_http_info(body, **kwargs)  # noqa: E501
+            return self.actor_count_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.actor_enrichments_put_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.actor_count_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def actor_enrichments_put_with_http_info(self, body, **kwargs):  # noqa: E501
-        """actor_enrichments_put  # noqa: E501
+    def actor_count_get_with_http_info(self, **kwargs):  # noqa: E501
+        """actor_count_get  # noqa: E501
 
-        Updates actor enrichment meta (after all actors have been added) by providerName, enrichmentName and version  # noqa: E501
+        Return the number of actor IDs available.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_enrichments_put_with_http_info(body, async_req=True)
+        >>> thread = api.actor_count_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichmentMeta] body: The new enrichment meta to update (required)
-        :param str enrichment_name:
-        :param str provider_name:
-        :param str version:
-        :return: ActorEnrichmentMeta
+        :return: int
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'enrichment_name', 'provider_name', 'version']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -380,14 +178,499 @@ class ActorApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method actor_enrichments_put" % key
+                    " to method actor_count_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/count', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='int',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_batch_delete(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_delete  # noqa: E501
+
+        Deletes a batch of enrichments given a list of IDs and specifications.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_delete(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param EnrichmentsBatchDeleteBody1 body: List of IDs and specifications (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_batch_delete_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_batch_delete_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_batch_delete_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_delete  # noqa: E501
+
+        Deletes a batch of enrichments given a list of IDs and specifications.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_delete_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param EnrichmentsBatchDeleteBody1 body: List of IDs and specifications (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_batch_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_batch_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/batchDelete', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_batch_get(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_get  # noqa: E501
+
+        Returns a batch of enrichments given a list of IDs and specifications.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_get(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param EnrichmentsBatchGetBody1 body: List of IDs and specifications (required)
+        :return: dict(str, list[ActorEnrichment])
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_batch_get_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_batch_get_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_batch_get_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_get  # noqa: E501
+
+        Returns a batch of enrichments given a list of IDs and specifications.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_get_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param EnrichmentsBatchGetBody1 body: List of IDs and specifications (required)
+        :return: dict(str, list[ActorEnrichment])
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_batch_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_batch_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/batchGet', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='dict(str, list[ActorEnrichment])',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_batch_post(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_post  # noqa: E501
+
+        Submits a enrichment for each actor ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_batch_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_batch_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_batch_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_post  # noqa: E501
+
+        Submits a enrichment for each actor ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_batch_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_batch_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/batch', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_batch_put(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_put  # noqa: E501
+
+        Updates a enrichment for each actor ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_put(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_batch_put_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_batch_put_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_batch_put_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_batch_put  # noqa: E501
+
+        Updates a enrichment for each actor ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_batch_put_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_batch_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_batch_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/batch', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_meta_delete(self, enrichment_name, provider_name, version, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_delete  # noqa: E501
+
+        Delete a specific message enrichment meta by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_delete(enrichment_name, provider_name, version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str enrichment_name: (required)
+        :param str provider_name: (required)
+        :param str version: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_meta_delete_with_http_info(enrichment_name, provider_name, version, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_meta_delete_with_http_info(enrichment_name, provider_name, version, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_meta_delete_with_http_info(self, enrichment_name, provider_name, version, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_delete  # noqa: E501
+
+        Delete a specific message enrichment meta by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_delete_with_http_info(enrichment_name, provider_name, version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str enrichment_name: (required)
+        :param str provider_name: (required)
+        :param str version: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['enrichment_name', 'provider_name', 'version']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_meta_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'enrichment_name' is set
+        if ('enrichment_name' not in params or
+                params['enrichment_name'] is None):
+            raise ValueError("Missing the required parameter `enrichment_name` when calling `actor_enrichments_meta_delete`")  # noqa: E501
+        # verify the required parameter 'provider_name' is set
+        if ('provider_name' not in params or
+                params['provider_name'] is None):
+            raise ValueError("Missing the required parameter `provider_name` when calling `actor_enrichments_meta_delete`")  # noqa: E501
+        # verify the required parameter 'version' is set
+        if ('version' not in params or
+                params['version'] is None):
+            raise ValueError("Missing the required parameter `version` when calling `actor_enrichments_meta_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -407,12 +690,196 @@ class ActorApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/meta', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_meta_get(self, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_get  # noqa: E501
+
+        Returns current actor enrichment metas by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str enrichment_name:
+        :param str provider_name:
+        :param str version:
+        :return: list[ActorEnrichmentMeta]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_meta_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_meta_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_meta_get_with_http_info(self, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_get  # noqa: E501
+
+        Returns current actor enrichment metas by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str enrichment_name:
+        :param str provider_name:
+        :param str version:
+        :return: list[ActorEnrichmentMeta]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['enrichment_name', 'provider_name', 'version']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_meta_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'enrichment_name' in params:
+            query_params.append(('enrichmentName', params['enrichment_name']))  # noqa: E501
+        if 'provider_name' in params:
+            query_params.append(('providerName', params['provider_name']))  # noqa: E501
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/meta', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ActorEnrichmentMeta]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_meta_post(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_post  # noqa: E501
+
+        Submits an actor enrichment meta (post after all actors have been added).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_post(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ActorEnrichmentMeta body: The new enrichment meta to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_meta_post_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_meta_post_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_meta_post_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_post  # noqa: E501
+
+        Submits an actor enrichment meta (post after all actors have been added).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_post_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ActorEnrichmentMeta body: The new enrichment meta to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_meta_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_meta_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
@@ -421,14 +888,109 @@ class ActorApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/actor/enrichments', 'PUT',
+            '/actor/enrichments/meta', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentMeta',  # noqa: E501
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_enrichments_meta_put(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_put  # noqa: E501
+
+        Updates an actor enrichment meta (after all actors have been added) by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_put(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ActorEnrichmentMeta body: The new enrichment meta to update (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_enrichments_meta_put_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_enrichments_meta_put_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def actor_enrichments_meta_put_with_http_info(self, body, **kwargs):  # noqa: E501
+        """actor_enrichments_meta_put  # noqa: E501
+
+        Updates an actor enrichment meta (after all actors have been added) by providerName, enrichmentName and version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_enrichments_meta_put_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ActorEnrichmentMeta body: The new enrichment meta to update (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_enrichments_meta_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `actor_enrichments_meta_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/enrichments/meta', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -554,7 +1116,7 @@ class ActorApi(object):
     def actor_id_enrichments_get(self, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_get  # noqa: E501
 
-        Returns all matched enrichment for the specific actor by type, providerName and version  # noqa: E501
+        Returns all matched enrichment for the specific actor by type, providerName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_get(id, async_req=True)
@@ -565,6 +1127,7 @@ class ActorApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
+        :param bool dev:
         :return: list[ActorEnrichment]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -579,7 +1142,7 @@ class ActorApi(object):
     def actor_id_enrichments_get_with_http_info(self, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_get  # noqa: E501
 
-        Returns all matched enrichment for the specific actor by type, providerName and version  # noqa: E501
+        Returns all matched enrichment for the specific actor by type, providerName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_get_with_http_info(id, async_req=True)
@@ -590,12 +1153,13 @@ class ActorApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
+        :param bool dev:
         :return: list[ActorEnrichment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'enrichment_name', 'provider_name', 'version']  # noqa: E501
+        all_params = ['id', 'enrichment_name', 'provider_name', 'version', 'dev']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -628,6 +1192,8 @@ class ActorApi(object):
             query_params.append(('providerName', params['provider_name']))  # noqa: E501
         if 'version' in params:
             query_params.append(('version', params['version']))  # noqa: E501
+        if 'dev' in params:
+            query_params.append(('dev', params['dev']))  # noqa: E501
 
         header_params = {}
 
@@ -661,16 +1227,16 @@ class ActorApi(object):
     def actor_id_enrichments_post(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_post  # noqa: E501
 
-        Creates new enrichments for specific message  # noqa: E501
+        Submits a new enrichment for specific message.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_post(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichment] body: The new enrichment to add (required)
+        :param ActorEnrichment body: The new enrichment to add (required)
         :param str id: Actor ID (required)
-        :return: list[ActorEnrichment]
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -684,16 +1250,16 @@ class ActorApi(object):
     def actor_id_enrichments_post_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_post  # noqa: E501
 
-        Creates new enrichments for specific message  # noqa: E501
+        Submits a new enrichment for specific message.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_post_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichment] body: The new enrichment to add (required)
+        :param ActorEnrichment body: The new enrichment to add (required)
         :param str id: Actor ID (required)
-        :return: list[ActorEnrichment]
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -738,10 +1304,6 @@ class ActorApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
@@ -757,7 +1319,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ActorEnrichment]',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -765,53 +1327,47 @@ class ActorApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def actor_id_enrichments_put(self, body, enrichment_name, provider_name, version, id, **kwargs):  # noqa: E501
+    def actor_id_enrichments_put(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_put  # noqa: E501
 
-        Update the enrichments for specific actor by type, providerName and version  # noqa: E501
+        Update the enrichments for specific actor by type, providerName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_id_enrichments_put(body, enrichment_name, provider_name, version, id, async_req=True)
+        >>> thread = api.actor_id_enrichments_put(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichment] body: The new enrichments to update (required)
-        :param str enrichment_name: (required)
-        :param str provider_name: (required)
-        :param str version: (required)
-        :param str id: Message ID (required)
-        :return: list[ActorEnrichment]
+        :param ActorEnrichment body: The new enrichments to update (required)
+        :param str id: Actor ID (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.actor_id_enrichments_put_with_http_info(body, enrichment_name, provider_name, version, id, **kwargs)  # noqa: E501
+            return self.actor_id_enrichments_put_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.actor_id_enrichments_put_with_http_info(body, enrichment_name, provider_name, version, id, **kwargs)  # noqa: E501
+            (data) = self.actor_id_enrichments_put_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def actor_id_enrichments_put_with_http_info(self, body, enrichment_name, provider_name, version, id, **kwargs):  # noqa: E501
+    def actor_id_enrichments_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_put  # noqa: E501
 
-        Update the enrichments for specific actor by type, providerName and version  # noqa: E501
+        Update the enrichments for specific actor by type, providerName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_id_enrichments_put_with_http_info(body, enrichment_name, provider_name, version, id, async_req=True)
+        >>> thread = api.actor_id_enrichments_put_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ActorEnrichment] body: The new enrichments to update (required)
-        :param str enrichment_name: (required)
-        :param str provider_name: (required)
-        :param str version: (required)
-        :param str id: Message ID (required)
-        :return: list[ActorEnrichment]
+        :param ActorEnrichment body: The new enrichments to update (required)
+        :param str id: Actor ID (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'enrichment_name', 'provider_name', 'version', 'id']  # noqa: E501
+        all_params = ['body', 'id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -830,18 +1386,6 @@ class ActorApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `actor_id_enrichments_put`")  # noqa: E501
-        # verify the required parameter 'enrichment_name' is set
-        if ('enrichment_name' not in params or
-                params['enrichment_name'] is None):
-            raise ValueError("Missing the required parameter `enrichment_name` when calling `actor_id_enrichments_put`")  # noqa: E501
-        # verify the required parameter 'provider_name' is set
-        if ('provider_name' not in params or
-                params['provider_name'] is None):
-            raise ValueError("Missing the required parameter `provider_name` when calling `actor_id_enrichments_put`")  # noqa: E501
-        # verify the required parameter 'version' is set
-        if ('version' not in params or
-                params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `actor_id_enrichments_put`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
@@ -854,12 +1398,6 @@ class ActorApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
-        if 'enrichment_name' in params:
-            query_params.append(('enrichmentName', params['enrichment_name']))  # noqa: E501
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
 
         header_params = {}
 
@@ -869,10 +1407,6 @@ class ActorApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
@@ -888,7 +1422,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ActorEnrichment]',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -899,7 +1433,7 @@ class ActorApi(object):
     def actor_id_get(self, id, **kwargs):  # noqa: E501
         """actor_id_get  # noqa: E501
 
-        Returns specific actor by id  # noqa: E501
+        Returns specific actor by id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_get(id, async_req=True)
@@ -907,7 +1441,12 @@ class ActorApi(object):
 
         :param async_req bool
         :param str id: Actor ID (required)
-        :return: Actor
+        :param bool with_enrichment: Whether to retrieve enrichments
+        :param str enrichment_name:
+        :param str provider_name:
+        :param str version:
+        :param bool dev:
+        :return: UiucActor
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -921,7 +1460,7 @@ class ActorApi(object):
     def actor_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
         """actor_id_get  # noqa: E501
 
-        Returns specific actor by id  # noqa: E501
+        Returns specific actor by id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_get_with_http_info(id, async_req=True)
@@ -929,12 +1468,17 @@ class ActorApi(object):
 
         :param async_req bool
         :param str id: Actor ID (required)
-        :return: Actor
+        :param bool with_enrichment: Whether to retrieve enrichments
+        :param str enrichment_name:
+        :param str provider_name:
+        :param str version:
+        :param bool dev:
+        :return: UiucActor
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'with_enrichment', 'enrichment_name', 'provider_name', 'version', 'dev']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -961,6 +1505,16 @@ class ActorApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'with_enrichment' in params:
+            query_params.append(('withEnrichment', params['with_enrichment']))  # noqa: E501
+        if 'enrichment_name' in params:
+            query_params.append(('enrichmentName', params['enrichment_name']))  # noqa: E501
+        if 'provider_name' in params:
+            query_params.append(('providerName', params['provider_name']))  # noqa: E501
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
+        if 'dev' in params:
+            query_params.append(('dev', params['dev']))  # noqa: E501
 
         header_params = {}
 
@@ -983,7 +1537,110 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Actor',  # noqa: E501
+            response_type='UiucActor',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def actor_list_get(self, begin, end, **kwargs):  # noqa: E501
+        """actor_list_get  # noqa: E501
+
+        Return list of actor IDs available in [begin, end).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_list_get(begin, end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int begin: Begin (required)
+        :param int end: End (required)
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_list_get_with_http_info(begin, end, **kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_list_get_with_http_info(begin, end, **kwargs)  # noqa: E501
+            return data
+
+    def actor_list_get_with_http_info(self, begin, end, **kwargs):  # noqa: E501
+        """actor_list_get  # noqa: E501
+
+        Return list of actor IDs available in [begin, end).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_list_get_with_http_info(begin, end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int begin: Begin (required)
+        :param int end: End (required)
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['begin', 'end']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_list_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'begin' is set
+        if ('begin' not in params or
+                params['begin'] is None):
+            raise ValueError("Missing the required parameter `begin` when calling `actor_list_get`")  # noqa: E501
+        # verify the required parameter 'end' is set
+        if ('end' not in params or
+                params['end'] is None):
+            raise ValueError("Missing the required parameter `end` when calling `actor_list_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'begin' in params:
+            query_params.append(('begin', params['begin']))  # noqa: E501
+        if 'end' in params:
+            query_params.append(('end', params['end']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actor/list', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

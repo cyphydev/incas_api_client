@@ -51,7 +51,10 @@ class BaseGraph(object):
 
     discriminator_value_class_map = {
           'MessageMessageGraph': 'MessageMessageGraph',
+'MessageMessageGraphDB': 'MessageMessageGraphDB',
+'ActorActorGraphDB': 'ActorActorGraphDB',
 'ActorMessageGraph': 'ActorMessageGraph',
+'ActorMessageGraphDB': 'ActorMessageGraphDB',
 'ActorActorGraph': 'ActorActorGraph'    }
 
     def __init__(self, graph_id=None, provider_name=None, graph_name=None, distance_name=None, version=None, time_stamp=None, platform=None, graph_type=None):  # noqa: E501

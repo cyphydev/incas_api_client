@@ -1,10 +1,12 @@
-# UiucMessage
+# EnrichmentsBatchDeleteBody1
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uiuc_author_id** | **str** |  | [optional] 
-**enrichments** | [**list[MessageEnrichment]**](MessageEnrichment.md) |  | [optional] 
+**ids** | **list[str]** |  | 
+**enrichment_name** | **str** |  | 
+**provider_name** | **str** |  | 
+**version** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

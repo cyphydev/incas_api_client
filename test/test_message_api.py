@@ -28,32 +28,62 @@ class TestMessageApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_actor_enrichments_delete(self):
-        """Test case for actor_enrichments_delete
+    def test_message_batch_get(self):
+        """Test case for message_batch_get
 
         """
         pass
 
-    def test_message_enrichments_delete(self):
-        """Test case for message_enrichments_delete
+    def test_message_count_get(self):
+        """Test case for message_count_get
 
         """
         pass
 
-    def test_message_enrichments_get(self):
-        """Test case for message_enrichments_get
+    def test_message_enrichments_batch_delete(self):
+        """Test case for message_enrichments_batch_delete
 
         """
         pass
 
-    def test_message_enrichments_post(self):
-        """Test case for message_enrichments_post
+    def test_message_enrichments_batch_get(self):
+        """Test case for message_enrichments_batch_get
 
         """
         pass
 
-    def test_message_enrichments_put(self):
-        """Test case for message_enrichments_put
+    def test_message_enrichments_batch_post(self):
+        """Test case for message_enrichments_batch_post
+
+        """
+        pass
+
+    def test_message_enrichments_batch_put(self):
+        """Test case for message_enrichments_batch_put
+
+        """
+        pass
+
+    def test_message_enrichments_meta_delete(self):
+        """Test case for message_enrichments_meta_delete
+
+        """
+        pass
+
+    def test_message_enrichments_meta_get(self):
+        """Test case for message_enrichments_meta_get
+
+        """
+        pass
+
+    def test_message_enrichments_meta_post(self):
+        """Test case for message_enrichments_meta_post
+
+        """
+        pass
+
+    def test_message_enrichments_meta_put(self):
+        """Test case for message_enrichments_meta_put
 
         """
         pass
@@ -84,6 +114,12 @@ class TestMessageApi(unittest.TestCase):
 
     def test_message_id_get(self):
         """Test case for message_id_get
+
+        """
+        pass
+
+    def test_message_list_get(self):
+        """Test case for message_list_get
 
         """
         pass

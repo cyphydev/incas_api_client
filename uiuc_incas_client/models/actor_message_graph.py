@@ -57,7 +57,7 @@ class ActorMessageGraph(BaseGraph):
     def enrichment_name(self):
         """Gets the enrichment_name of this ActorMessageGraph.  # noqa: E501
 
-        The type of enrichment used to construct the act2act graph.  # noqa: E501
+        The type of enrichment used to construct the act-msg graph.  # noqa: E501
 
         :return: The enrichment_name of this ActorMessageGraph.  # noqa: E501
         :rtype: str
@@ -68,7 +68,7 @@ class ActorMessageGraph(BaseGraph):
     def enrichment_name(self, enrichment_name):
         """Sets the enrichment_name of this ActorMessageGraph.
 
-        The type of enrichment used to construct the act2act graph.  # noqa: E501
+        The type of enrichment used to construct the act-msg graph.  # noqa: E501
 
         :param enrichment_name: The enrichment_name of this ActorMessageGraph.  # noqa: E501
         :type: str

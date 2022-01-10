@@ -4,22 +4,29 @@ All URIs are relative to *https://incas.cs.illinois.edu:8443/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**message_enrichments_delete**](MessageApi.md#message_enrichments_delete) | **DELETE** /message/enrichments | 
-[**message_enrichments_get**](MessageApi.md#message_enrichments_get) | **GET** /message/enrichments | 
-[**message_enrichments_post**](MessageApi.md#message_enrichments_post) | **POST** /message/enrichments | 
-[**message_enrichments_put**](MessageApi.md#message_enrichments_put) | **PUT** /message/enrichments | 
+[**message_batch_get**](MessageApi.md#message_batch_get) | **POST** /message/batchGet | 
+[**message_count_get**](MessageApi.md#message_count_get) | **GET** /message/count | 
+[**message_enrichments_batch_delete**](MessageApi.md#message_enrichments_batch_delete) | **POST** /message/enrichments/batchDelete | 
+[**message_enrichments_batch_get**](MessageApi.md#message_enrichments_batch_get) | **POST** /message/enrichments/batchGet | 
+[**message_enrichments_batch_post**](MessageApi.md#message_enrichments_batch_post) | **POST** /message/enrichments/batch | 
+[**message_enrichments_batch_put**](MessageApi.md#message_enrichments_batch_put) | **PUT** /message/enrichments/batch | 
+[**message_enrichments_meta_delete**](MessageApi.md#message_enrichments_meta_delete) | **DELETE** /message/enrichments/meta | 
+[**message_enrichments_meta_get**](MessageApi.md#message_enrichments_meta_get) | **GET** /message/enrichments/meta | 
+[**message_enrichments_meta_post**](MessageApi.md#message_enrichments_meta_post) | **POST** /message/enrichments/meta | 
+[**message_enrichments_meta_put**](MessageApi.md#message_enrichments_meta_put) | **PUT** /message/enrichments/meta | 
 [**message_id_enrichments_delete**](MessageApi.md#message_id_enrichments_delete) | **DELETE** /message/{id}/enrichments | 
 [**message_id_enrichments_get**](MessageApi.md#message_id_enrichments_get) | **GET** /message/{id}/enrichments | 
 [**message_id_enrichments_post**](MessageApi.md#message_id_enrichments_post) | **POST** /message/{id}/enrichments | 
 [**message_id_enrichments_put**](MessageApi.md#message_id_enrichments_put) | **PUT** /message/{id}/enrichments | 
 [**message_id_get**](MessageApi.md#message_id_get) | **GET** /message/{id} | 
+[**message_list_get**](MessageApi.md#message_list_get) | **GET** /message/list | 
 
-# **message_enrichments_delete**
-> message_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+# **message_batch_get**
+> list[UiucMessage] message_batch_get(body)
 
 
 
-Delete specific message enrichment meta by providerName, enrichmentName and version
+Returns a batch of messages given a list of IDs and specifications.
 
 ### Example
 ```python
@@ -31,23 +38,298 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-enrichment_name = 'enrichment_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
+body = uiuc_incas_client.MessageBatchGetBody() # MessageBatchGetBody | List of IDs and specifications
 
 try:
-    api_instance.message_enrichments_delete(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+    api_response = api_instance.message_batch_get(body)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling MessageApi->message_enrichments_delete: %s\n" % e)
+    print("Exception when calling MessageApi->message_batch_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **enrichment_name** | **str**|  | [optional] 
- **provider_name** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **body** | [**MessageBatchGetBody**](MessageBatchGetBody.md)| List of IDs and specifications | 
+
+### Return type
+
+[**list[UiucMessage]**](UiucMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_count_get**
+> int message_count_get()
+
+
+
+Return the number of message IDs available.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+
+try:
+    api_response = api_instance.message_count_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_count_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_delete**
+> message_enrichments_batch_delete(body)
+
+
+
+Deletes a batch of enrichments given a list of IDs and specifications.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_instance.message_enrichments_batch_delete(body)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EnrichmentsBatchDeleteBody**](EnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_get**
+> dict(str, list[MessageEnrichment]) message_enrichments_batch_get(body)
+
+
+
+Returns a batch of enrichments given a list of IDs and specifications.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+body = uiuc_incas_client.EnrichmentsBatchGetBody() # EnrichmentsBatchGetBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.message_enrichments_batch_get(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EnrichmentsBatchGetBody**](EnrichmentsBatchGetBody.md)| List of IDs and specifications | 
+
+### Return type
+
+**dict(str, list[MessageEnrichment])**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_post**
+> message_enrichments_batch_post(body)
+
+
+
+Submits a enrichment for each message ID.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
+
+try:
+    api_instance.message_enrichments_batch_post(body)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, MessageEnrichment)**](dict.md)| Map of IDs and enrichments | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_put**
+> message_enrichments_batch_put(body)
+
+
+
+Updates a enrichment for each message ID.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
+
+try:
+    api_instance.message_enrichments_batch_put(body)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, MessageEnrichment)**](dict.md)| Map of IDs and enrichments | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_meta_delete**
+> message_enrichments_meta_delete(enrichment_name, provider_name, version)
+
+
+
+Delete specific message enrichment meta by providerName, enrichmentName and version.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+enrichment_name = 'enrichment_name_example' # str | 
+provider_name = 'provider_name_example' # str | 
+version = 'version_example' # str | 
+
+try:
+    api_instance.message_enrichments_meta_delete(enrichment_name, provider_name, version)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_meta_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enrichment_name** | **str**|  | 
+ **provider_name** | **str**|  | 
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -64,12 +346,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **message_enrichments_get**
-> MessageEnrichmentMeta message_enrichments_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+# **message_enrichments_meta_get**
+> list[MessageEnrichmentMeta] message_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
 
 
 
-Returns current message enrichment meta by providerName, enrichmentName and version
+Returns current message enrichment metas by providerName, enrichmentName and version.
 
 ### Example
 ```python
@@ -86,10 +368,10 @@ provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
 
 try:
-    api_response = api_instance.message_enrichments_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+    api_response = api_instance.message_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling MessageApi->message_enrichments_get: %s\n" % e)
+    print("Exception when calling MessageApi->message_enrichments_meta_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -102,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)
+[**list[MessageEnrichmentMeta]**](MessageEnrichmentMeta.md)
 
 ### Authorization
 
@@ -115,12 +397,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **message_enrichments_post**
-> MessageEnrichmentMeta message_enrichments_post(body)
+# **message_enrichments_meta_post**
+> message_enrichments_meta_post(body)
 
 
 
-Creates message enrichment meta (post after all messages have been added)
+Submits a message enrichment meta (post after all messages have been added).
 
 ### Example
 ```python
@@ -132,24 +414,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-body = [uiuc_incas_client.MessageEnrichmentMeta()] # list[MessageEnrichmentMeta] | The new enrichment meta to add
+body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to add
 
 try:
-    api_response = api_instance.message_enrichments_post(body)
-    pprint(api_response)
+    api_instance.message_enrichments_meta_post(body)
 except ApiException as e:
-    print("Exception when calling MessageApi->message_enrichments_post: %s\n" % e)
+    print("Exception when calling MessageApi->message_enrichments_meta_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageEnrichmentMeta]**](MessageEnrichmentMeta.md)| The new enrichment meta to add | 
+ **body** | [**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)| The new enrichment meta to add | 
 
 ### Return type
 
-[**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)
+void (empty response body)
 
 ### Authorization
 
@@ -158,16 +439,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **message_enrichments_put**
-> MessageEnrichmentMeta message_enrichments_put(body, enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+# **message_enrichments_meta_put**
+> message_enrichments_meta_put(body)
 
 
 
-Updates message enrichment meta (after all messages have been added) by providerName, enrichmentName and version
+Updates message enrichment meta (after all messages have been added) by providerName, enrichmentName and version.
 
 ### Example
 ```python
@@ -179,30 +460,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-body = [uiuc_incas_client.MessageEnrichmentMeta()] # list[MessageEnrichmentMeta] | The new enrichment meta to update
-enrichment_name = 'enrichment_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
+body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to update
 
 try:
-    api_response = api_instance.message_enrichments_put(body, enrichment_name=enrichment_name, provider_name=provider_name, version=version)
-    pprint(api_response)
+    api_instance.message_enrichments_meta_put(body)
 except ApiException as e:
-    print("Exception when calling MessageApi->message_enrichments_put: %s\n" % e)
+    print("Exception when calling MessageApi->message_enrichments_meta_put: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageEnrichmentMeta]**](MessageEnrichmentMeta.md)| The new enrichment meta to update | 
- **enrichment_name** | **str**|  | [optional] 
- **provider_name** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **body** | [**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)| The new enrichment meta to update | 
 
 ### Return type
 
-[**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)
+void (empty response body)
 
 ### Authorization
 
@@ -211,7 +485,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -220,7 +494,7 @@ No authorization required
 
 
 
-Delete the enrichments for specific message by type, providerName and version
+Delete a enrichment for specific message by type, providerName and version.
 
 ### Example
 ```python
@@ -268,11 +542,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_get**
-> list[MessageEnrichment] message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+> list[MessageEnrichment] message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
 
 
 
-Returns all visible matched enrichment for the specific message by type, providerName and version
+Returns all visible matched enrichment for the specific message by type, providerName and version.
 
 ### Example
 ```python
@@ -288,9 +562,10 @@ id = 'id_example' # str | Message ID
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
+dev = true # bool |  (optional)
 
 try:
-    api_response = api_instance.message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+    api_response = api_instance.message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_get: %s\n" % e)
@@ -304,6 +579,7 @@ Name | Type | Description  | Notes
  **enrichment_name** | **str**|  | [optional] 
  **provider_name** | **str**|  | [optional] 
  **version** | **str**|  | [optional] 
+ **dev** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -321,11 +597,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_post**
-> list[MessageEnrichment] message_id_enrichments_post(body, id)
+> message_id_enrichments_post(body, id)
 
 
 
-Creates new enrichments for specific message
+Submits a new enrichment for specific message.
 
 ### Example
 ```python
@@ -337,12 +613,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-body = [uiuc_incas_client.MessageEnrichment()] # list[MessageEnrichment] | The new enrichment to add
+body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichment to add
 id = 'id_example' # str | Message ID
 
 try:
-    api_response = api_instance.message_id_enrichments_post(body, id)
-    pprint(api_response)
+    api_instance.message_id_enrichments_post(body, id)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_post: %s\n" % e)
 ```
@@ -351,12 +626,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageEnrichment]**](MessageEnrichment.md)| The new enrichment to add | 
+ **body** | [**MessageEnrichment**](MessageEnrichment.md)| The new enrichment to add | 
  **id** | **str**| Message ID | 
 
 ### Return type
 
-[**list[MessageEnrichment]**](MessageEnrichment.md)
+void (empty response body)
 
 ### Authorization
 
@@ -365,16 +640,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_put**
-> list[MessageEnrichment] message_id_enrichments_put(body, enrichment_name, provider_name, version, id)
+> message_id_enrichments_put(body, id)
 
 
 
-Update the enrichments for specific message by type, providerName and version
+Update a enrichment for specific message by type, providerName and version.
 
 ### Example
 ```python
@@ -386,15 +661,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-body = [uiuc_incas_client.MessageEnrichment()] # list[MessageEnrichment] | The new enrichments to update
-enrichment_name = 'enrichment_name_example' # str | 
-provider_name = 'provider_name_example' # str | 
-version = 'version_example' # str | 
+body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichments to update
 id = 'id_example' # str | Message ID
 
 try:
-    api_response = api_instance.message_id_enrichments_put(body, enrichment_name, provider_name, version, id)
-    pprint(api_response)
+    api_instance.message_id_enrichments_put(body, id)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_put: %s\n" % e)
 ```
@@ -403,15 +674,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageEnrichment]**](MessageEnrichment.md)| The new enrichments to update | 
- **enrichment_name** | **str**|  | 
- **provider_name** | **str**|  | 
- **version** | **str**|  | 
+ **body** | [**MessageEnrichment**](MessageEnrichment.md)| The new enrichments to update | 
  **id** | **str**| Message ID | 
 
 ### Return type
 
-[**list[MessageEnrichment]**](MessageEnrichment.md)
+void (empty response body)
 
 ### Authorization
 
@@ -420,16 +688,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_get**
-> UiucMessage message_id_get(id)
+> UiucMessage message_id_get(id, with_enrichment=with_enrichment, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
 
 
 
-Returns specific message by id
+Returns specific message by id.
 
 ### Example
 ```python
@@ -442,9 +710,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
 id = 'id_example' # str | Message ID
+with_enrichment = true # bool | Whether to retrieve enrichments (optional)
+enrichment_name = 'enrichment_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+dev = true # bool |  (optional)
 
 try:
-    api_response = api_instance.message_id_get(id)
+    api_response = api_instance.message_id_get(id, with_enrichment=with_enrichment, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_get: %s\n" % e)
@@ -455,10 +728,64 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Message ID | 
+ **with_enrichment** | **bool**| Whether to retrieve enrichments | [optional] 
+ **enrichment_name** | **str**|  | [optional] 
+ **provider_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+ **dev** | **bool**|  | [optional] 
 
 ### Return type
 
 [**UiucMessage**](UiucMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_list_get**
+> list[str] message_list_get(begin, end)
+
+
+
+Return list of message IDs available in [begin, end).
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi()
+begin = 56 # int | Begin
+end = 56 # int | End
+
+try:
+    api_response = api_instance.message_list_get(begin, end)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_list_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **begin** | **int**| Begin | 
+ **end** | **int**| End | 
+
+### Return type
+
+**list[str]**
 
 ### Authorization
 

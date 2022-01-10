@@ -24,11 +24,11 @@ Method | HTTP request | Description
 [**message_message_graph_post**](GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
 
 # **actor_actor_graph_get**
-> str actor_actor_graph_get(provider_name, time_stamp, version=version)
+> str actor_actor_graph_get(provider_name, time_stamp, version)
 
 
 
-Gets graph id by providerName, timestamp and version
+Gets graph id by providerName, timestamp and version.
 
 ### Example
 ```python
@@ -42,10 +42,10 @@ from pprint import pprint
 api_instance = uiuc_incas_client.GraphApi()
 provider_name = 'provider_name_example' # str | 
 time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
+version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_actor_graph_get(provider_name, time_stamp, version=version)
+    api_response = api_instance.actor_actor_graph_get(provider_name, time_stamp, version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_actor_graph_get: %s\n" % e)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **provider_name** | **str**|  | 
  **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -70,7 +70,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -79,7 +79,7 @@ No authorization required
 
 
 
-Delete the specific graph by id
+Delete the specific graph by id.
 
 ### Example
 ```python
@@ -121,11 +121,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_get**
-> list[ActorActorGraph] actor_actor_graph_id_get(id)
+> ActorActorGraph actor_actor_graph_id_get(id)
 
 
 
-Gets specific actor-actor graph information by id
+Gets specific actor-actor graph information by id.
 
 ### Example
 ```python
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ActorActorGraph]**](ActorActorGraph.md)
+[**ActorActorGraph**](ActorActorGraph.md)
 
 ### Authorization
 
@@ -168,11 +168,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_neighbor_get**
-> list[list[UiucActor]] actor_actor_graph_id_neighbor_get(id, actor_id)
+> list[str] actor_actor_graph_id_neighbor_get(id, actor_id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id and actor id
+Gets the neighbors for specific node from specific graph by graph id and actor id.
 
 ### Example
 ```python
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[list[UiucActor]]**
+**list[str]**
 
 ### Authorization
 
@@ -217,11 +217,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_put**
-> ActorActorGraph actor_actor_graph_id_put(body, id)
+> actor_actor_graph_id_put(body, id)
 
 
 
-Update the specific actor-actor graph by id
+Update the specific actor-actor graph by id.
 
 ### Example
 ```python
@@ -237,8 +237,7 @@ body = uiuc_incas_client.ActorActorGraph() # ActorActorGraph | The new graph to 
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.actor_actor_graph_id_put(body, id)
-    pprint(api_response)
+    api_instance.actor_actor_graph_id_put(body, id)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_actor_graph_id_put: %s\n" % e)
 ```
@@ -252,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActorActorGraph**](ActorActorGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -261,16 +260,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_post**
-> list[ActorActorGraph] actor_actor_graph_post(body)
+> actor_actor_graph_post(body)
 
 
 
-Creates new graphs
+Submits a new graph.
 
 ### Example
 ```python
@@ -282,11 +281,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.GraphApi()
-body = [uiuc_incas_client.ActorActorGraph()] # list[ActorActorGraph] | The new graphs to add
+body = uiuc_incas_client.ActorActorGraph() # ActorActorGraph | The new graphs to add
 
 try:
-    api_response = api_instance.actor_actor_graph_post(body)
-    pprint(api_response)
+    api_instance.actor_actor_graph_post(body)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_actor_graph_post: %s\n" % e)
 ```
@@ -295,11 +293,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ActorActorGraph]**](ActorActorGraph.md)| The new graphs to add | 
+ **body** | [**ActorActorGraph**](ActorActorGraph.md)| The new graphs to add | 
 
 ### Return type
 
-[**list[ActorActorGraph]**](ActorActorGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -308,16 +306,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_get**
-> str actor_message_graph_get(provider_name, time_stamp, version=version)
+> str actor_message_graph_get(provider_name, time_stamp, version)
 
 
 
-Gets graph id by providerName, timestamp and version
+Gets graph id by providerName, timestamp and version.
 
 ### Example
 ```python
@@ -331,10 +329,10 @@ from pprint import pprint
 api_instance = uiuc_incas_client.GraphApi()
 provider_name = 'provider_name_example' # str | 
 time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
+version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_message_graph_get(provider_name, time_stamp, version=version)
+    api_response = api_instance.actor_message_graph_get(provider_name, time_stamp, version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_message_graph_get: %s\n" % e)
@@ -346,7 +344,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **provider_name** | **str**|  | 
  **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -359,7 +357,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -368,7 +366,7 @@ No authorization required
 
 
 
-Delete the specific graph by id
+Delete the specific graph by id.
 
 ### Example
 ```python
@@ -410,11 +408,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_get**
-> list[ActorMessageGraph] actor_message_graph_id_get(id)
+> ActorMessageGraph actor_message_graph_id_get(id)
 
 
 
-Gets specific actor-message graph information by id
+Gets specific actor-message graph information by id.
 
 ### Example
 ```python
@@ -443,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ActorMessageGraph]**](ActorMessageGraph.md)
+[**ActorMessageGraph**](ActorMessageGraph.md)
 
 ### Authorization
 
@@ -457,11 +455,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_neighbor_get**
-> list[list[object]] actor_message_graph_id_neighbor_get(id, message_id=message_id, actor_id=actor_id)
+> list[str] actor_message_graph_id_neighbor_get(id, message_id=message_id, actor_id=actor_id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id and message or actor id
+Gets the neighbors for specific node from specific graph by graph id and message or actor id.
 
 ### Example
 ```python
@@ -494,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[list[object]]**
+**list[str]**
 
 ### Authorization
 
@@ -508,11 +506,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_put**
-> ActorMessageGraph actor_message_graph_id_put(body, id)
+> actor_message_graph_id_put(body, id)
 
 
 
-Update the specific actor-message graph by id
+Update the specific actor-message graph by id.
 
 ### Example
 ```python
@@ -528,8 +526,7 @@ body = uiuc_incas_client.ActorMessageGraph() # ActorMessageGraph | The new graph
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.actor_message_graph_id_put(body, id)
-    pprint(api_response)
+    api_instance.actor_message_graph_id_put(body, id)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_message_graph_id_put: %s\n" % e)
 ```
@@ -543,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActorMessageGraph**](ActorMessageGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -552,16 +549,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_post**
-> list[ActorMessageGraph] actor_message_graph_post(body)
+> actor_message_graph_post(body)
 
 
 
-Creates new graphs
+Submits a new graph.
 
 ### Example
 ```python
@@ -573,11 +570,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.GraphApi()
-body = [uiuc_incas_client.ActorMessageGraph()] # list[ActorMessageGraph] | The new graphs to add
+body = uiuc_incas_client.ActorMessageGraph() # ActorMessageGraph | The new graphs to add
 
 try:
-    api_response = api_instance.actor_message_graph_post(body)
-    pprint(api_response)
+    api_instance.actor_message_graph_post(body)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_message_graph_post: %s\n" % e)
 ```
@@ -586,11 +582,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ActorMessageGraph]**](ActorMessageGraph.md)| The new graphs to add | 
+ **body** | [**ActorMessageGraph**](ActorMessageGraph.md)| The new graphs to add | 
 
 ### Return type
 
-[**list[ActorMessageGraph]**](ActorMessageGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -599,16 +595,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_get**
-> str message_message_graph_get(provider_name, time_stamp, version=version)
+> str message_message_graph_get(provider_name, time_stamp, version)
 
 
 
-Gets graph id by providerName, timestamp and version
+Gets graph id by providerName, timestamp and version.
 
 ### Example
 ```python
@@ -622,10 +618,10 @@ from pprint import pprint
 api_instance = uiuc_incas_client.GraphApi()
 provider_name = 'provider_name_example' # str | 
 time_stamp = 'time_stamp_example' # str | 
-version = 'version_example' # str |  (optional)
+version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.message_message_graph_get(provider_name, time_stamp, version=version)
+    api_response = api_instance.message_message_graph_get(provider_name, time_stamp, version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->message_message_graph_get: %s\n" % e)
@@ -637,7 +633,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **provider_name** | **str**|  | 
  **time_stamp** | **str**|  | 
- **version** | **str**|  | [optional] 
+ **version** | **str**|  | 
 
 ### Return type
 
@@ -650,7 +646,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -659,7 +655,7 @@ No authorization required
 
 
 
-Delete the specific graph by id
+Delete the specific graph by id.
 
 ### Example
 ```python
@@ -701,11 +697,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_get**
-> list[MessageMessageGraph] message_message_graph_id_get(id)
+> MessageMessageGraph message_message_graph_id_get(id)
 
 
 
-Gets specific message-message graph information by id
+Gets specific message-message graph information by id.
 
 ### Example
 ```python
@@ -734,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[MessageMessageGraph]**](MessageMessageGraph.md)
+[**MessageMessageGraph**](MessageMessageGraph.md)
 
 ### Authorization
 
@@ -748,11 +744,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_neighbor_get**
-> list[list[UiucMessage]] message_message_graph_id_neighbor_get(id, message_id)
+> list[str] message_message_graph_id_neighbor_get(id, message_id)
 
 
 
-Gets the neighbors for specific node from specific graph by graph id and message's id
+Gets the neighbors for specific node from specific graph by graph id and message's id.
 
 ### Example
 ```python
@@ -783,7 +779,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[list[UiucMessage]]**
+**list[str]**
 
 ### Authorization
 
@@ -797,11 +793,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_put**
-> MessageMessageGraph message_message_graph_id_put(body, id)
+> message_message_graph_id_put(body, id)
 
 
 
-Update the specific message-message graph by id
+Update the specific message-message graph by id.
 
 ### Example
 ```python
@@ -817,8 +813,7 @@ body = uiuc_incas_client.MessageMessageGraph() # MessageMessageGraph | The new g
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.message_message_graph_id_put(body, id)
-    pprint(api_response)
+    api_instance.message_message_graph_id_put(body, id)
 except ApiException as e:
     print("Exception when calling GraphApi->message_message_graph_id_put: %s\n" % e)
 ```
@@ -832,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageMessageGraph**](MessageMessageGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -841,16 +836,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_post**
-> list[MessageMessageGraph] message_message_graph_post(body)
+> message_message_graph_post(body)
 
 
 
-Creates new graphs
+Submits a new graph.
 
 ### Example
 ```python
@@ -862,11 +857,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.GraphApi()
-body = [uiuc_incas_client.MessageMessageGraph()] # list[MessageMessageGraph] | The new graphs to add
+body = uiuc_incas_client.MessageMessageGraph() # MessageMessageGraph | The new graph to add
 
 try:
-    api_response = api_instance.message_message_graph_post(body)
-    pprint(api_response)
+    api_instance.message_message_graph_post(body)
 except ApiException as e:
     print("Exception when calling GraphApi->message_message_graph_post: %s\n" % e)
 ```
@@ -875,11 +869,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[MessageMessageGraph]**](MessageMessageGraph.md)| The new graphs to add | 
+ **body** | [**MessageMessageGraph**](MessageMessageGraph.md)| The new graph to add | 
 
 ### Return type
 
-[**list[MessageMessageGraph]**](MessageMessageGraph.md)
+void (empty response body)
 
 ### Authorization
 
@@ -888,7 +882,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

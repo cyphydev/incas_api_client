@@ -28,20 +28,62 @@ class TestActorApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_actor_enrichments_get(self):
-        """Test case for actor_enrichments_get
+    def test_actor_batch_get(self):
+        """Test case for actor_batch_get
 
         """
         pass
 
-    def test_actor_enrichments_post(self):
-        """Test case for actor_enrichments_post
+    def test_actor_count_get(self):
+        """Test case for actor_count_get
 
         """
         pass
 
-    def test_actor_enrichments_put(self):
-        """Test case for actor_enrichments_put
+    def test_actor_enrichments_batch_delete(self):
+        """Test case for actor_enrichments_batch_delete
+
+        """
+        pass
+
+    def test_actor_enrichments_batch_get(self):
+        """Test case for actor_enrichments_batch_get
+
+        """
+        pass
+
+    def test_actor_enrichments_batch_post(self):
+        """Test case for actor_enrichments_batch_post
+
+        """
+        pass
+
+    def test_actor_enrichments_batch_put(self):
+        """Test case for actor_enrichments_batch_put
+
+        """
+        pass
+
+    def test_actor_enrichments_meta_delete(self):
+        """Test case for actor_enrichments_meta_delete
+
+        """
+        pass
+
+    def test_actor_enrichments_meta_get(self):
+        """Test case for actor_enrichments_meta_get
+
+        """
+        pass
+
+    def test_actor_enrichments_meta_post(self):
+        """Test case for actor_enrichments_meta_post
+
+        """
+        pass
+
+    def test_actor_enrichments_meta_put(self):
+        """Test case for actor_enrichments_meta_put
 
         """
         pass
@@ -72,6 +114,12 @@ class TestActorApi(unittest.TestCase):
 
     def test_actor_id_get(self):
         """Test case for actor_id_get
+
+        """
+        pass
+
+    def test_actor_list_get(self):
+        """Test case for actor_list_get
 
         """
         pass
