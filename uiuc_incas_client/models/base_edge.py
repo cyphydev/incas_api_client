@@ -50,10 +50,11 @@ class BaseEdge(object):
     }
 
     discriminator_value_class_map = {
-          'ActorToMessageEdge': 'ActorToMessageEdge',
-'ActorToActorEdge': 'ActorToActorEdge',
-'MessageToMessageEdge': 'MessageToMessageEdge',
-'MessageToActorEdge': 'MessageToActorEdge'    }
+            'message_message'.lower(): 'MessageToMessageEdge',
+            'actor_actor'.lower(): 'ActorToActorEdge',
+            'actor_message'.lower(): 'ActorToMessageEdge',
+            'message_actor'.lower(): 'MessageToActorEdge',
+    }
 
     def __init__(self, edge_id=None, time_stamp=None, provider_name=None, enrichment_name=None, distance_name=None, version=None, distance=None, edge_type=None):  # noqa: E501
         """BaseEdge - a model defined in Swagger"""  # noqa: E501
@@ -259,7 +260,7 @@ class BaseEdge(object):
         """
         if edge_type is None:
             raise ValueError("Invalid value for `edge_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["MessageToMessageEdge", "ActorToActorEdge", "ActorToMessageEdge", "MessageToActorEdge"]  # noqa: E501
+        allowed_values = ["message_message", "actor_actor", "actor_message", "message_actor"]  # noqa: E501
         if edge_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `edge_type` ({0}), must be one of {1}"  # noqa: E501

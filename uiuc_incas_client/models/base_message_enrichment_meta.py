@@ -42,10 +42,10 @@ class BaseMessageEnrichmentMeta(object):
     }
 
     discriminator_value_class_map = {
-            'category'.lower(): '#/components/schemas/CategoryMessageEnrichmentMeta',
-            'numerical'.lower(): '#/components/schemas/NumericalMessageEnrichmentMeta',
-            'array'.lower(): '#/components/schemas/ArrayMessageEnrichmentMeta',
-            'text'.lower(): '#/components/schemas/TextMessageEnrichmentMeta',
+            'category'.lower(): 'CategoryMessageEnrichmentMeta',
+            'numerical'.lower(): 'NumericalMessageEnrichmentMeta',
+            'array'.lower(): 'ArrayMessageEnrichmentMeta',
+            'text'.lower(): 'TextMessageEnrichmentMeta',
     }
 
     def __init__(self, provider_name=None, enrichment_name=None, version=None, enrichment_type=None):  # noqa: E501

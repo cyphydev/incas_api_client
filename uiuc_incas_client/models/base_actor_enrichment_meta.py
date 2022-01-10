@@ -42,10 +42,10 @@ class BaseActorEnrichmentMeta(object):
     }
 
     discriminator_value_class_map = {
-            'category'.lower(): '#/components/schemas/CategoryActorEnrichmentMeta',
-            'numerical'.lower(): '#/components/schemas/NumericalActorEnrichmentMeta',
-            'array'.lower(): '#/components/schemas/ArrayActorEnrichmentMeta',
-            'text'.lower(): '#/components/schemas/TextActorEnrichmentMeta',
+            'category'.lower(): 'CategoryActorEnrichmentMeta',
+            'numerical'.lower(): 'NumericalActorEnrichmentMeta',
+            'array'.lower(): 'ArrayActorEnrichmentMeta',
+            'text'.lower(): 'TextActorEnrichmentMeta',
     }
 
     def __init__(self, provider_name=None, enrichment_name=None, version=None, enrichment_type=None):  # noqa: E501

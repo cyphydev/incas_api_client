@@ -50,12 +50,10 @@ class BaseGraph(object):
     }
 
     discriminator_value_class_map = {
-          'MessageMessageGraph': 'MessageMessageGraph',
-'MessageMessageGraphDB': 'MessageMessageGraphDB',
-'ActorActorGraphDB': 'ActorActorGraphDB',
-'ActorMessageGraph': 'ActorMessageGraph',
-'ActorMessageGraphDB': 'ActorMessageGraphDB',
-'ActorActorGraph': 'ActorActorGraph'    }
+            'message_message'.lower(): 'MessageMessageGraph',
+            'actor_actor'.lower(): 'ActorActorGraph',
+            'actor_message'.lower(): 'ActorMessageGraph',
+    }
 
     def __init__(self, graph_id=None, provider_name=None, graph_name=None, distance_name=None, version=None, time_stamp=None, platform=None, graph_type=None):  # noqa: E501
         """BaseGraph - a model defined in Swagger"""  # noqa: E501
@@ -271,7 +269,7 @@ class BaseGraph(object):
         """
         if graph_type is None:
             raise ValueError("Invalid value for `graph_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["MessageMessageGraph", "ActorActorGraph", "ActorMessageGraph"]  # noqa: E501
+        allowed_values = ["message_message", "actor_actor", "actor_message"]  # noqa: E501
         if graph_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `graph_type` ({0}), must be one of {1}"  # noqa: E501
