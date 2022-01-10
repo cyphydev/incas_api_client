@@ -69,7 +69,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_count_get**
-> int message_count_get(media_type=media_type)
+> int message_count_get(media_type)
 
 
 
@@ -85,10 +85,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi()
-media_type = 'media_type_example' # str | Type of entity to retrieve (optional)
+media_type = 'media_type_example' # str | Type of entity to retrieve
 
 try:
-    api_response = api_instance.message_count_get(media_type=media_type)
+    api_response = api_instance.message_count_get(media_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_count_get: %s\n" % e)
@@ -98,7 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **media_type** | **str**| Type of entity to retrieve | [optional] 
+ **media_type** | **str**| Type of entity to retrieve | 
 
 ### Return type
 
@@ -754,7 +754,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_list_get**
-> list[str] message_list_get(begin, end, media_type=media_type)
+> list[str] message_list_get(begin, end, media_type)
 
 
 
@@ -772,10 +772,10 @@ from pprint import pprint
 api_instance = uiuc_incas_client.MessageApi()
 begin = 56 # int | Begin
 end = 56 # int | End
-media_type = 'media_type_example' # str | Type of entity to retrieve (optional)
+media_type = 'media_type_example' # str | Type of entity to retrieve
 
 try:
-    api_response = api_instance.message_list_get(begin, end, media_type=media_type)
+    api_response = api_instance.message_list_get(begin, end, media_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_list_get: %s\n" % e)
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **begin** | **int**| Begin | 
  **end** | **int**| End | 
- **media_type** | **str**| Type of entity to retrieve | [optional] 
+ **media_type** | **str**| Type of entity to retrieve | 
 
 ### Return type
 

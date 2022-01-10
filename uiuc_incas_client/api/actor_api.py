@@ -131,39 +131,39 @@ class ActorApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def actor_count_get(self, **kwargs):  # noqa: E501
+    def actor_count_get(self, entity_type, **kwargs):  # noqa: E501
         """actor_count_get  # noqa: E501
 
         Return the number of actor IDs available.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_count_get(async_req=True)
+        >>> thread = api.actor_count_get(entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity_type: Type of entity to retrieve
+        :param str entity_type: Type of entity to retrieve (required)
         :return: int
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.actor_count_get_with_http_info(**kwargs)  # noqa: E501
+            return self.actor_count_get_with_http_info(entity_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.actor_count_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.actor_count_get_with_http_info(entity_type, **kwargs)  # noqa: E501
             return data
 
-    def actor_count_get_with_http_info(self, **kwargs):  # noqa: E501
+    def actor_count_get_with_http_info(self, entity_type, **kwargs):  # noqa: E501
         """actor_count_get  # noqa: E501
 
         Return the number of actor IDs available.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_count_get_with_http_info(async_req=True)
+        >>> thread = api.actor_count_get_with_http_info(entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity_type: Type of entity to retrieve
+        :param str entity_type: Type of entity to retrieve (required)
         :return: int
                  If the method is called asynchronously,
                  returns the request thread.
@@ -184,6 +184,10 @@ class ActorApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'entity_type' is set
+        if ('entity_type' not in params or
+                params['entity_type'] is None):
+            raise ValueError("Missing the required parameter `entity_type` when calling `actor_count_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1549,43 +1553,43 @@ class ActorApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def actor_list_get(self, begin, end, **kwargs):  # noqa: E501
+    def actor_list_get(self, begin, end, entity_type, **kwargs):  # noqa: E501
         """actor_list_get  # noqa: E501
 
         Return list of actor IDs available in [begin, end).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_list_get(begin, end, async_req=True)
+        >>> thread = api.actor_list_get(begin, end, entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int begin: Begin (required)
         :param int end: End (required)
-        :param str entity_type: Type of entity to retrieve
+        :param str entity_type: Type of entity to retrieve (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.actor_list_get_with_http_info(begin, end, **kwargs)  # noqa: E501
+            return self.actor_list_get_with_http_info(begin, end, entity_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.actor_list_get_with_http_info(begin, end, **kwargs)  # noqa: E501
+            (data) = self.actor_list_get_with_http_info(begin, end, entity_type, **kwargs)  # noqa: E501
             return data
 
-    def actor_list_get_with_http_info(self, begin, end, **kwargs):  # noqa: E501
+    def actor_list_get_with_http_info(self, begin, end, entity_type, **kwargs):  # noqa: E501
         """actor_list_get  # noqa: E501
 
         Return list of actor IDs available in [begin, end).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_list_get_with_http_info(begin, end, async_req=True)
+        >>> thread = api.actor_list_get_with_http_info(begin, end, entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param int begin: Begin (required)
         :param int end: End (required)
-        :param str entity_type: Type of entity to retrieve
+        :param str entity_type: Type of entity to retrieve (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1614,6 +1618,10 @@ class ActorApi(object):
         if ('end' not in params or
                 params['end'] is None):
             raise ValueError("Missing the required parameter `end` when calling `actor_list_get`")  # noqa: E501
+        # verify the required parameter 'entity_type' is set
+        if ('entity_type' not in params or
+                params['entity_type'] is None):
+            raise ValueError("Missing the required parameter `entity_type` when calling `actor_list_get`")  # noqa: E501
 
         collection_formats = {}
 
