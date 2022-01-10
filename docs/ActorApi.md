@@ -69,7 +69,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_count_get**
-> int actor_count_get()
+> int actor_count_get(entity_type=entity_type)
 
 
 
@@ -85,16 +85,20 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_count_get()
+    api_response = api_instance.actor_count_get(entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_count_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity_type** | **str**| Type of entity to retrieve | [optional] 
 
 ### Return type
 
@@ -750,7 +754,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_list_get**
-> list[str] actor_list_get(begin, end)
+> list[str] actor_list_get(begin, end, entity_type=entity_type)
 
 
 
@@ -768,9 +772,10 @@ from pprint import pprint
 api_instance = uiuc_incas_client.ActorApi()
 begin = 56 # int | Begin
 end = 56 # int | End
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_list_get(begin, end)
+    api_response = api_instance.actor_list_get(begin, end, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_list_get: %s\n" % e)
@@ -782,6 +787,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **begin** | **int**| Begin | 
  **end** | **int**| End | 
+ **entity_type** | **str**| Type of entity to retrieve | [optional] 
 
 ### Return type
 

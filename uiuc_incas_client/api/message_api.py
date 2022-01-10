@@ -141,6 +141,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str media_type: Type of entity to retrieve
         :return: int
                  If the method is called asynchronously,
                  returns the request thread.
@@ -162,12 +163,13 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str media_type: Type of entity to retrieve
         :return: int
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['media_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -188,6 +190,8 @@ class MessageApi(object):
         path_params = {}
 
         query_params = []
+        if 'media_type' in params:
+            query_params.append(('mediaType', params['media_type']))  # noqa: E501
 
         header_params = {}
 
@@ -1557,6 +1561,7 @@ class MessageApi(object):
         :param async_req bool
         :param int begin: Begin (required)
         :param int end: End (required)
+        :param str media_type: Type of entity to retrieve
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1580,12 +1585,13 @@ class MessageApi(object):
         :param async_req bool
         :param int begin: Begin (required)
         :param int end: End (required)
+        :param str media_type: Type of entity to retrieve
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['begin', 'end']  # noqa: E501
+        all_params = ['begin', 'end', 'media_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1618,6 +1624,8 @@ class MessageApi(object):
             query_params.append(('begin', params['begin']))  # noqa: E501
         if 'end' in params:
             query_params.append(('end', params['end']))  # noqa: E501
+        if 'media_type' in params:
+            query_params.append(('mediaType', params['media_type']))  # noqa: E501
 
         header_params = {}
 

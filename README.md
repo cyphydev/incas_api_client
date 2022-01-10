@@ -63,9 +63,10 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_count_get()
+    api_response = api_instance.actor_count_get(entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_count_get: %s\n" % e)
@@ -213,9 +214,10 @@ except ApiException as e:
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 begin = 56 # int | Begin
 end = 56 # int | End
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_list_get(begin, end)
+    api_response = api_instance.actor_list_get(begin, end, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_list_get: %s\n" % e)
