@@ -236,7 +236,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchDeleteBody1 body: List of IDs and specifications (required)
+        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -258,7 +258,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchDeleteBody1 body: List of IDs and specifications (required)
+        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,7 +331,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchGetBody1 body: List of IDs and specifications (required)
+        :param ActorEnrichmentsBatchGetBody body: List of IDs and specifications (required)
         :return: dict(str, list[ActorEnrichment])
                  If the method is called asynchronously,
                  returns the request thread.
@@ -353,7 +353,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchGetBody1 body: List of IDs and specifications (required)
+        :param ActorEnrichmentsBatchGetBody body: List of IDs and specifications (required)
         :return: dict(str, list[ActorEnrichment])
                  If the method is called asynchronously,
                  returns the request thread.

@@ -1,4 +1,4 @@
-# EnrichmentsBatchGetBody
+# ActorEnrichmentsBatchGetBody
 
 ## Properties
 Name | Type | Description | Notes

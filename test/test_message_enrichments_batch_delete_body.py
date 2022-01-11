@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.enrichments_batch_get_body1 import EnrichmentsBatchGetBody1  # noqa: E501
+from uiuc_incas_client.models.message_enrichments_batch_delete_body import MessageEnrichmentsBatchDeleteBody  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestEnrichmentsBatchGetBody1(unittest.TestCase):
-    """EnrichmentsBatchGetBody1 unit test stubs"""
+class TestMessageEnrichmentsBatchDeleteBody(unittest.TestCase):
+    """MessageEnrichmentsBatchDeleteBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestEnrichmentsBatchGetBody1(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEnrichmentsBatchGetBody1(self):
-        """Test EnrichmentsBatchGetBody1"""
+    def testMessageEnrichmentsBatchDeleteBody(self):
+        """Test MessageEnrichmentsBatchDeleteBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.enrichments_batch_get_body1.EnrichmentsBatchGetBody1()  # noqa: E501
+        # model = uiuc_incas_client.models.message_enrichments_batch_delete_body.MessageEnrichmentsBatchDeleteBody()  # noqa: E501
         pass
 
 

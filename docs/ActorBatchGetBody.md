@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ids** | **list[str]** |  | 
+**ids** | **list[str]** |  | [optional] 
 **with_enrichment** | **bool** |  | [optional] 
 **enrichment_name** | **str** |  | [optional] 
 **provider_name** | **str** |  | [optional] 

@@ -1,4 +1,4 @@
-# EnrichmentsBatchGetBody
+# MessageEnrichmentsBatchGetBody
 
 ## Properties
 Name | Type | Description | Notes

@@ -236,7 +236,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -258,7 +258,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,7 +331,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :param MessageEnrichmentsBatchGetBody body: List of IDs and specifications (required)
         :return: dict(str, list[MessageEnrichment])
                  If the method is called asynchronously,
                  returns the request thread.
@@ -353,7 +353,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :param MessageEnrichmentsBatchGetBody body: List of IDs and specifications (required)
         :return: dict(str, list[MessageEnrichment])
                  If the method is called asynchronously,
                  returns the request thread.

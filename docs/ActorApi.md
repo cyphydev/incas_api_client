@@ -132,7 +132,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = uiuc_incas_client.EnrichmentsBatchDeleteBody1() # EnrichmentsBatchDeleteBody1 | List of IDs and specifications
+body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_instance.actor_enrichments_batch_delete(body)
@@ -144,7 +144,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EnrichmentsBatchDeleteBody1**](EnrichmentsBatchDeleteBody1.md)| List of IDs and specifications | 
+ **body** | [**ActorEnrichmentsBatchDeleteBody**](ActorEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
 
 ### Return type
 
@@ -178,7 +178,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = uiuc_incas_client.EnrichmentsBatchGetBody1() # EnrichmentsBatchGetBody1 | List of IDs and specifications
+body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_get(body)
@@ -191,7 +191,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EnrichmentsBatchGetBody1**](EnrichmentsBatchGetBody1.md)| List of IDs and specifications | 
+ **body** | [**ActorEnrichmentsBatchGetBody**](ActorEnrichmentsBatchGetBody.md)| List of IDs and specifications | 
 
 ### Return type
 

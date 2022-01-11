@@ -73,7 +73,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.EnrichmentsBatchDeleteBody1() # EnrichmentsBatchDeleteBody1 | List of IDs and specifications
+body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_instance.actor_enrichments_batch_delete(body)
@@ -82,7 +82,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.EnrichmentsBatchGetBody1() # EnrichmentsBatchGetBody1 | List of IDs and specifications
+body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_get(body)
@@ -288,6 +288,8 @@ Class | Method | HTTP request | Description
  - [ActorBatchGetBody](docs/ActorBatchGetBody.md)
  - [ActorEnrichment](docs/ActorEnrichment.md)
  - [ActorEnrichmentMeta](docs/ActorEnrichmentMeta.md)
+ - [ActorEnrichmentsBatchDeleteBody](docs/ActorEnrichmentsBatchDeleteBody.md)
+ - [ActorEnrichmentsBatchGetBody](docs/ActorEnrichmentsBatchGetBody.md)
  - [ActorMessageEdge](docs/ActorMessageEdge.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorMessageGraphDB](docs/ActorMessageGraphDB.md)
@@ -308,10 +310,6 @@ Class | Method | HTTP request | Description
  - [CategoryActorEnrichmentMeta](docs/CategoryActorEnrichmentMeta.md)
  - [CategoryMessageEnrichment](docs/CategoryMessageEnrichment.md)
  - [CategoryMessageEnrichmentMeta](docs/CategoryMessageEnrichmentMeta.md)
- - [EnrichmentsBatchDeleteBody](docs/EnrichmentsBatchDeleteBody.md)
- - [EnrichmentsBatchDeleteBody1](docs/EnrichmentsBatchDeleteBody1.md)
- - [EnrichmentsBatchGetBody](docs/EnrichmentsBatchGetBody.md)
- - [EnrichmentsBatchGetBody1](docs/EnrichmentsBatchGetBody1.md)
  - [ExtraAttribute](docs/ExtraAttribute.md)
  - [ExtraAttributes](docs/ExtraAttributes.md)
  - [GeoLocation](docs/GeoLocation.md)
@@ -321,6 +319,8 @@ Class | Method | HTTP request | Description
  - [MessageBatchGetBody](docs/MessageBatchGetBody.md)
  - [MessageEnrichment](docs/MessageEnrichment.md)
  - [MessageEnrichmentMeta](docs/MessageEnrichmentMeta.md)
+ - [MessageEnrichmentsBatchDeleteBody](docs/MessageEnrichmentsBatchDeleteBody.md)
+ - [MessageEnrichmentsBatchGetBody](docs/MessageEnrichmentsBatchGetBody.md)
  - [MessageMessageGraph](docs/MessageMessageGraph.md)
  - [MessageMessageGraphDB](docs/MessageMessageGraphDB.md)
  - [MessageToActorEdge](docs/MessageToActorEdge.md)
