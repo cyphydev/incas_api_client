@@ -29,8 +29,8 @@ class ActorToMessageEdge(BaseEdge):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'message_id': 'str',
-        'actor_id': 'str',
+        'src_actor_id': 'str',
+        'dst_message_id': 'str',
         'action_type': 'str',
         'weight': 'float'
     }
@@ -38,25 +38,25 @@ class ActorToMessageEdge(BaseEdge):
         swagger_types.update(BaseEdge.swagger_types)
 
     attribute_map = {
-        'message_id': 'messageId',
-        'actor_id': 'actorId',
+        'src_actor_id': 'srcActorId',
+        'dst_message_id': 'dstMessageId',
         'action_type': 'actionType',
         'weight': 'weight'
     }
     if hasattr(BaseEdge, "attribute_map"):
         attribute_map.update(BaseEdge.attribute_map)
 
-    def __init__(self, message_id=None, actor_id=None, action_type=None, weight=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, src_actor_id=None, dst_message_id=None, action_type=None, weight=None, *args, **kwargs):  # noqa: E501
         """ActorToMessageEdge - a model defined in Swagger"""  # noqa: E501
-        self._message_id = None
-        self._actor_id = None
+        self._src_actor_id = None
+        self._dst_message_id = None
         self._action_type = None
         self._weight = None
         self.discriminator = None
-        if message_id is not None:
-            self.message_id = message_id
-        if actor_id is not None:
-            self.actor_id = actor_id
+        if src_actor_id is not None:
+            self.src_actor_id = src_actor_id
+        if dst_message_id is not None:
+            self.dst_message_id = dst_message_id
         if action_type is not None:
             self.action_type = action_type
         if weight is not None:
@@ -64,46 +64,46 @@ class ActorToMessageEdge(BaseEdge):
         BaseEdge.__init__(self, *args, **kwargs)
 
     @property
-    def message_id(self):
-        """Gets the message_id of this ActorToMessageEdge.  # noqa: E501
+    def src_actor_id(self):
+        """Gets the src_actor_id of this ActorToMessageEdge.  # noqa: E501
 
 
-        :return: The message_id of this ActorToMessageEdge.  # noqa: E501
+        :return: The src_actor_id of this ActorToMessageEdge.  # noqa: E501
         :rtype: str
         """
-        return self._message_id
+        return self._src_actor_id
 
-    @message_id.setter
-    def message_id(self, message_id):
-        """Sets the message_id of this ActorToMessageEdge.
+    @src_actor_id.setter
+    def src_actor_id(self, src_actor_id):
+        """Sets the src_actor_id of this ActorToMessageEdge.
 
 
-        :param message_id: The message_id of this ActorToMessageEdge.  # noqa: E501
+        :param src_actor_id: The src_actor_id of this ActorToMessageEdge.  # noqa: E501
         :type: str
         """
 
-        self._message_id = message_id
+        self._src_actor_id = src_actor_id
 
     @property
-    def actor_id(self):
-        """Gets the actor_id of this ActorToMessageEdge.  # noqa: E501
+    def dst_message_id(self):
+        """Gets the dst_message_id of this ActorToMessageEdge.  # noqa: E501
 
 
-        :return: The actor_id of this ActorToMessageEdge.  # noqa: E501
+        :return: The dst_message_id of this ActorToMessageEdge.  # noqa: E501
         :rtype: str
         """
-        return self._actor_id
+        return self._dst_message_id
 
-    @actor_id.setter
-    def actor_id(self, actor_id):
-        """Sets the actor_id of this ActorToMessageEdge.
+    @dst_message_id.setter
+    def dst_message_id(self, dst_message_id):
+        """Sets the dst_message_id of this ActorToMessageEdge.
 
 
-        :param actor_id: The actor_id of this ActorToMessageEdge.  # noqa: E501
+        :param dst_message_id: The dst_message_id of this ActorToMessageEdge.  # noqa: E501
         :type: str
         """
 
-        self._actor_id = actor_id
+        self._dst_message_id = dst_message_id
 
     @property
     def action_type(self):

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_id** | **str** |  | [optional] 
-**actor_id** | **str** |  | [optional] 
+**src_actor_id** | **str** |  | [optional] 
+**dst_message_id** | **str** |  | [optional] 
 **action_type** | **str** |  | [optional] 
 **weight** | **float** |  | [optional] 
 
