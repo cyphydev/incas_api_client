@@ -341,7 +341,7 @@ class GraphApi(object):
         :param async_req bool
         :param str id: Graph ID (required)
         :param str actor_id: (required)
-        :return: list[str]
+        :return: list[ActorToActorEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -364,7 +364,7 @@ class GraphApi(object):
         :param async_req bool
         :param str id: Graph ID (required)
         :param str actor_id: (required)
-        :return: list[str]
+        :return: list[ActorToActorEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -424,7 +424,7 @@ class GraphApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type='list[ActorToActorEdge]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -940,7 +940,7 @@ class GraphApi(object):
         :param str id: Graph ID (required)
         :param str message_id:
         :param str actor_id:
-        :return: list[str]
+        :return: list[ActorMessageEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -964,7 +964,7 @@ class GraphApi(object):
         :param str id: Graph ID (required)
         :param str message_id:
         :param str actor_id:
-        :return: list[str]
+        :return: list[ActorMessageEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1022,7 +1022,7 @@ class GraphApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type='list[ActorMessageEdge]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1537,7 +1537,7 @@ class GraphApi(object):
         :param async_req bool
         :param str id: Graph ID (required)
         :param str message_id: (required)
-        :return: list[str]
+        :return: list[MessageToMessageEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1560,7 +1560,7 @@ class GraphApi(object):
         :param async_req bool
         :param str id: Graph ID (required)
         :param str message_id: (required)
-        :return: list[str]
+        :return: list[MessageToMessageEdge]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1620,7 +1620,7 @@ class GraphApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type='list[MessageToMessageEdge]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

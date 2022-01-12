@@ -168,7 +168,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_neighbor_get**
-> list[str] actor_actor_graph_id_neighbor_get(id, actor_id)
+> list[ActorToActorEdge] actor_actor_graph_id_neighbor_get(id, actor_id)
 
 
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[ActorToActorEdge]**](ActorToActorEdge.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_neighbor_get**
-> list[str] actor_message_graph_id_neighbor_get(id, message_id=message_id, actor_id=actor_id)
+> list[ActorMessageEdge] actor_message_graph_id_neighbor_get(id, message_id=message_id, actor_id=actor_id)
 
 
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[ActorMessageEdge]**](ActorMessageEdge.md)
 
 ### Authorization
 
@@ -744,7 +744,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_neighbor_get**
-> list[str] message_message_graph_id_neighbor_get(id, message_id)
+> list[MessageToMessageEdge] message_message_graph_id_neighbor_get(id, message_id)
 
 
 
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[MessageToMessageEdge]**](MessageToMessageEdge.md)
 
 ### Authorization
 
