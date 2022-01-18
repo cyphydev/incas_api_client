@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uiuc_author_id** | **str** |  | [optional] 
+**uiuc_media_type** | **str** |  | [optional] 
 **enrichments** | [**list[ActorEnrichment]**](ActorEnrichment.md) |  | [optional] 
 **segments** | [**ActorSegmentCollections**](ActorSegmentCollections.md) |  | [optional] 
 
