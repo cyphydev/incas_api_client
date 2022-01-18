@@ -46,6 +46,12 @@ class TestMessageApi(unittest.TestCase):
         """
         pass
 
+    def test_message_enrichments_batch_delete_validate(self):
+        """Test case for message_enrichments_batch_delete_validate
+
+        """
+        pass
+
     def test_message_enrichments_batch_get(self):
         """Test case for message_enrichments_batch_get
 
@@ -58,8 +64,20 @@ class TestMessageApi(unittest.TestCase):
         """
         pass
 
+    def test_message_enrichments_batch_post_validate(self):
+        """Test case for message_enrichments_batch_post_validate
+
+        """
+        pass
+
     def test_message_enrichments_batch_put(self):
         """Test case for message_enrichments_batch_put
+
+        """
+        pass
+
+    def test_message_enrichments_batch_put_validate(self):
+        """Test case for message_enrichments_batch_put_validate
 
         """
         pass

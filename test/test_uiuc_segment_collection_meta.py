@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.actor_to_actor_edge import ActorToActorEdge  # noqa: E501
+from uiuc_incas_client.models.uiuc_segment_collection_meta import UiucSegmentCollectionMeta  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestActorToActorEdge(unittest.TestCase):
-    """ActorToActorEdge unit test stubs"""
+class TestUiucSegmentCollectionMeta(unittest.TestCase):
+    """UiucSegmentCollectionMeta unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestActorToActorEdge(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testActorToActorEdge(self):
-        """Test ActorToActorEdge"""
+    def testUiucSegmentCollectionMeta(self):
+        """Test UiucSegmentCollectionMeta"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.actor_to_actor_edge.ActorToActorEdge()  # noqa: E501
+        # model = uiuc_incas_client.models.uiuc_segment_collection_meta.UiucSegmentCollectionMeta()  # noqa: E501
         pass
 
 

@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.base_edge import BaseEdge  # noqa: E501
+from uiuc_incas_client.models.uiuc_segment_collection import UiucSegmentCollection  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestBaseEdge(unittest.TestCase):
-    """BaseEdge unit test stubs"""
+class TestUiucSegmentCollection(unittest.TestCase):
+    """UiucSegmentCollection unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestBaseEdge(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBaseEdge(self):
-        """Test BaseEdge"""
+    def testUiucSegmentCollection(self):
+        """Test UiucSegmentCollection"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.base_edge.BaseEdge()  # noqa: E501
+        # model = uiuc_incas_client.models.uiuc_segment_collection.UiucSegmentCollection()  # noqa: E501
         pass
 
 

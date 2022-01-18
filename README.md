@@ -63,10 +63,11 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-entity_type = 'entity_type_example' # str | Type of entity to retrieve
+media_type = 'media_type_example' # str | Type of entity to retrieve
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_count_get(entity_type)
+    api_response = api_instance.actor_count_get(media_type, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_count_get: %s\n" % e)
@@ -76,9 +77,20 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_instance.actor_enrichments_batch_delete(body)
+    api_response = api_instance.actor_enrichments_batch_delete(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_delete_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_delete_validate: %s\n" % e)
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -95,18 +107,40 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.actor_enrichments_batch_post(body)
+    api_response = api_instance.actor_enrichments_batch_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_post_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_post_validate: %s\n" % e)
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.actor_enrichments_batch_put(body)
+    api_response = api_instance.actor_enrichments_batch_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_put: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_put_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_put_validate: %s\n" % e)
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -115,7 +149,8 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+    api_response = api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_delete: %s\n" % e)
 
@@ -136,7 +171,8 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
 
 try:
-    api_instance.actor_enrichments_meta_post(body)
+    api_response = api_instance.actor_enrichments_meta_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_post: %s\n" % e)
 
@@ -145,7 +181,8 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
 
 try:
-    api_instance.actor_enrichments_meta_put(body)
+    api_response = api_instance.actor_enrichments_meta_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_put: %s\n" % e)
 
@@ -157,7 +194,8 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+    api_response = api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_delete: %s\n" % e)
 
@@ -181,7 +219,8 @@ body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichmen
 id = 'id_example' # str | Actor ID
 
 try:
-    api_instance.actor_id_enrichments_post(body, id)
+    api_response = api_instance.actor_id_enrichments_post(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_post: %s\n" % e)
 
@@ -191,7 +230,8 @@ body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichmen
 id = 'id_example' # str | Actor ID
 
 try:
-    api_instance.actor_id_enrichments_put(body, id)
+    api_response = api_instance.actor_id_enrichments_put(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_put: %s\n" % e)
 
@@ -199,28 +239,196 @@ except ApiException as e:
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 with_enrichment = true # bool | Whether to retrieve enrichments (optional)
+with_segment = true # bool | Whether to retrieve segments (optional)
 enrichment_name = 'enrichment_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
+enrichment_provider_name = 'enrichment_provider_name_example' # str |  (optional)
+enrichment_version = 'enrichment_version_example' # str |  (optional)
+collection_name = 'collection_name_example' # str |  (optional)
+collection_provider_name = 'collection_provider_name_example' # str |  (optional)
+collection_version = 'collection_version_example' # str |  (optional)
 dev = true # bool |  (optional)
 
 try:
-    api_response = api_instance.actor_id_get(id, with_enrichment=with_enrichment, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
+    api_response = api_instance.actor_id_get(id, with_enrichment=with_enrichment, with_segment=with_segment, enrichment_name=enrichment_name, enrichment_provider_name=enrichment_provider_name, enrichment_version=enrichment_version, collection_name=collection_name, collection_provider_name=collection_provider_name, collection_version=collection_version, dev=dev)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_get: %s\n" % e)
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-begin = 56 # int | Begin
-end = 56 # int | End
-entity_type = 'entity_type_example' # str | Type of entity to retrieve
+id = 'id_example' # str | Actor ID
+collection_name = 'collection_name_example' # str | 
+provider_name = 'provider_name_example' # str | 
+version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_list_get(begin, end, entity_type)
+    api_response = api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+id = 'id_example' # str | Actor ID
+collection_name = 'collection_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+dev = true # bool |  (optional)
+
+try:
+    api_response = api_instance.actor_id_segments_get(id, collection_name=collection_name, provider_name=provider_name, version=version, dev=dev)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, dict(str, float)) | The new segment collections to add
+id = 'id_example' # str | Actor ID
+
+try:
+    api_response = api_instance.actor_id_segments_post(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, dict(str, float)) | The segment collections to update
+id = 'id_example' # str | Actor ID
+
+try:
+    api_response = api_instance.actor_id_segments_put(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_put: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+begin = 56 # int | Begin
+end = 56 # int | End
+media_type = 'media_type_example' # str | Type of entity to retrieve
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
+
+try:
+    api_response = api_instance.actor_list_get(begin, end, media_type, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_list_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segment_batch_delete(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segment_batch_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_delete_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_delete_validate: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.ActorSegmentsBatchGetBody() # ActorSegmentsBatchGetBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_get(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+
+try:
+    api_response = api_instance.actor_segments_batch_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_post_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_post_validate: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+
+try:
+    api_response = api_instance.actor_segments_batch_put(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_put: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_put_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_put_validate: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+collection_name = 'collection_name_example' # str | 
+provider_name = 'provider_name_example' # str | 
+version = 'version_example' # str | 
+
+try:
+    api_response = api_instance.actor_segments_meta_delete(collection_name, provider_name, version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+collection_name = 'collection_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+
+try:
+    api_response = api_instance.actor_segments_meta_get(collection_name=collection_name, provider_name=provider_name, version=version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to add
+
+try:
+    api_response = api_instance.actor_segments_meta_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to update
+
+try:
+    api_response = api_instance.actor_segments_meta_put(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_put: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -232,9 +440,12 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_batch_get**](docs/ActorApi.md#actor_batch_get) | **POST** /actor/batchGet | 
 *ActorApi* | [**actor_count_get**](docs/ActorApi.md#actor_count_get) | **GET** /actor/count | 
 *ActorApi* | [**actor_enrichments_batch_delete**](docs/ActorApi.md#actor_enrichments_batch_delete) | **POST** /actor/enrichments/batchDelete | 
+*ActorApi* | [**actor_enrichments_batch_delete_validate**](docs/ActorApi.md#actor_enrichments_batch_delete_validate) | **POST** /actor/enrichments/batchDelete/validate | 
 *ActorApi* | [**actor_enrichments_batch_get**](docs/ActorApi.md#actor_enrichments_batch_get) | **POST** /actor/enrichments/batchGet | 
 *ActorApi* | [**actor_enrichments_batch_post**](docs/ActorApi.md#actor_enrichments_batch_post) | **POST** /actor/enrichments/batch | 
+*ActorApi* | [**actor_enrichments_batch_post_validate**](docs/ActorApi.md#actor_enrichments_batch_post_validate) | **POST** /actor/enrichments/batch/validate | 
 *ActorApi* | [**actor_enrichments_batch_put**](docs/ActorApi.md#actor_enrichments_batch_put) | **PUT** /actor/enrichments/batch | 
+*ActorApi* | [**actor_enrichments_batch_put_validate**](docs/ActorApi.md#actor_enrichments_batch_put_validate) | **PUT** /actor/enrichments/batch/validate | 
 *ActorApi* | [**actor_enrichments_meta_delete**](docs/ActorApi.md#actor_enrichments_meta_delete) | **DELETE** /actor/enrichments/meta | 
 *ActorApi* | [**actor_enrichments_meta_get**](docs/ActorApi.md#actor_enrichments_meta_get) | **GET** /actor/enrichments/meta | 
 *ActorApi* | [**actor_enrichments_meta_post**](docs/ActorApi.md#actor_enrichments_meta_post) | **POST** /actor/enrichments/meta | 
@@ -244,7 +455,22 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_id_enrichments_post**](docs/ActorApi.md#actor_id_enrichments_post) | **POST** /actor/{id}/enrichments | 
 *ActorApi* | [**actor_id_enrichments_put**](docs/ActorApi.md#actor_id_enrichments_put) | **PUT** /actor/{id}/enrichments | 
 *ActorApi* | [**actor_id_get**](docs/ActorApi.md#actor_id_get) | **GET** /actor/{id} | 
+*ActorApi* | [**actor_id_segments_delete**](docs/ActorApi.md#actor_id_segments_delete) | **DELETE** /actor/{id}/segments | 
+*ActorApi* | [**actor_id_segments_get**](docs/ActorApi.md#actor_id_segments_get) | **GET** /actor/{id}/segments | 
+*ActorApi* | [**actor_id_segments_post**](docs/ActorApi.md#actor_id_segments_post) | **POST** /actor/{id}/segments | 
+*ActorApi* | [**actor_id_segments_put**](docs/ActorApi.md#actor_id_segments_put) | **PUT** /actor/{id}/segments | 
 *ActorApi* | [**actor_list_get**](docs/ActorApi.md#actor_list_get) | **GET** /actor/list | 
+*ActorApi* | [**actor_segment_batch_delete**](docs/ActorApi.md#actor_segment_batch_delete) | **POST** /actor/segments/batchDelete | 
+*ActorApi* | [**actor_segments_batch_delete_validate**](docs/ActorApi.md#actor_segments_batch_delete_validate) | **POST** /actor/segments/batchDelete/validate | 
+*ActorApi* | [**actor_segments_batch_get**](docs/ActorApi.md#actor_segments_batch_get) | **POST** /actor/segments/batchGet | 
+*ActorApi* | [**actor_segments_batch_post**](docs/ActorApi.md#actor_segments_batch_post) | **POST** /actor/segments/batch | 
+*ActorApi* | [**actor_segments_batch_post_validate**](docs/ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
+*ActorApi* | [**actor_segments_batch_put**](docs/ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
+*ActorApi* | [**actor_segments_batch_put_validate**](docs/ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
+*ActorApi* | [**actor_segments_meta_delete**](docs/ActorApi.md#actor_segments_meta_delete) | **DELETE** /actor/segments/meta | 
+*ActorApi* | [**actor_segments_meta_get**](docs/ActorApi.md#actor_segments_meta_get) | **GET** /actor/segments/meta | 
+*ActorApi* | [**actor_segments_meta_post**](docs/ActorApi.md#actor_segments_meta_post) | **POST** /actor/segments/meta | 
+*ActorApi* | [**actor_segments_meta_put**](docs/ActorApi.md#actor_segments_meta_put) | **PUT** /actor/segments/meta | 
 *GraphApi* | [**actor_actor_graph_get**](docs/GraphApi.md#actor_actor_graph_get) | **GET** /actorActorGraph | 
 *GraphApi* | [**actor_actor_graph_id_delete**](docs/GraphApi.md#actor_actor_graph_id_delete) | **DELETE** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_get**](docs/GraphApi.md#actor_actor_graph_id_get) | **GET** /actorActorGraph/{id} | 
@@ -266,9 +492,12 @@ Class | Method | HTTP request | Description
 *MessageApi* | [**message_batch_get**](docs/MessageApi.md#message_batch_get) | **POST** /message/batchGet | 
 *MessageApi* | [**message_count_get**](docs/MessageApi.md#message_count_get) | **GET** /message/count | 
 *MessageApi* | [**message_enrichments_batch_delete**](docs/MessageApi.md#message_enrichments_batch_delete) | **POST** /message/enrichments/batchDelete | 
+*MessageApi* | [**message_enrichments_batch_delete_validate**](docs/MessageApi.md#message_enrichments_batch_delete_validate) | **POST** /message/enrichments/batchDelete/validate | 
 *MessageApi* | [**message_enrichments_batch_get**](docs/MessageApi.md#message_enrichments_batch_get) | **POST** /message/enrichments/batchGet | 
 *MessageApi* | [**message_enrichments_batch_post**](docs/MessageApi.md#message_enrichments_batch_post) | **POST** /message/enrichments/batch | 
+*MessageApi* | [**message_enrichments_batch_post_validate**](docs/MessageApi.md#message_enrichments_batch_post_validate) | **POST** /message/enrichments/batch/validate | 
 *MessageApi* | [**message_enrichments_batch_put**](docs/MessageApi.md#message_enrichments_batch_put) | **PUT** /message/enrichments/batch | 
+*MessageApi* | [**message_enrichments_batch_put_validate**](docs/MessageApi.md#message_enrichments_batch_put_validate) | **PUT** /message/enrichments/batch/validate | 
 *MessageApi* | [**message_enrichments_meta_delete**](docs/MessageApi.md#message_enrichments_meta_delete) | **DELETE** /message/enrichments/meta | 
 *MessageApi* | [**message_enrichments_meta_get**](docs/MessageApi.md#message_enrichments_meta_get) | **GET** /message/enrichments/meta | 
 *MessageApi* | [**message_enrichments_meta_post**](docs/MessageApi.md#message_enrichments_meta_post) | **POST** /message/enrichments/meta | 
@@ -290,10 +519,13 @@ Class | Method | HTTP request | Description
  - [ActorEnrichmentMeta](docs/ActorEnrichmentMeta.md)
  - [ActorEnrichmentsBatchDeleteBody](docs/ActorEnrichmentsBatchDeleteBody.md)
  - [ActorEnrichmentsBatchGetBody](docs/ActorEnrichmentsBatchGetBody.md)
- - [ActorMessageEdge](docs/ActorMessageEdge.md)
+ - [ActorEnrichmentsBatchValidationResponse](docs/ActorEnrichmentsBatchValidationResponse.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorMessageGraphDB](docs/ActorMessageGraphDB.md)
- - [ActorToActorEdge](docs/ActorToActorEdge.md)
+ - [ActorSegmentCollections](docs/ActorSegmentCollections.md)
+ - [ActorSegmentsBatchDeleteBody](docs/ActorSegmentsBatchDeleteBody.md)
+ - [ActorSegmentsBatchGetBody](docs/ActorSegmentsBatchGetBody.md)
+ - [ActorSegmentsBatchValidationResponse](docs/ActorSegmentsBatchValidationResponse.md)
  - [Annotation](docs/Annotation.md)
  - [ArrayActorEnrichment](docs/ArrayActorEnrichment.md)
  - [ArrayActorEnrichmentMeta](docs/ArrayActorEnrichmentMeta.md)
@@ -301,7 +533,6 @@ Class | Method | HTTP request | Description
  - [ArrayMessageEnrichmentMeta](docs/ArrayMessageEnrichmentMeta.md)
  - [BaseActorEnrichment](docs/BaseActorEnrichment.md)
  - [BaseActorEnrichmentMeta](docs/BaseActorEnrichmentMeta.md)
- - [BaseEdge](docs/BaseEdge.md)
  - [BaseGraph](docs/BaseGraph.md)
  - [BaseMessageEnrichment](docs/BaseMessageEnrichment.md)
  - [BaseMessageEnrichmentMeta](docs/BaseMessageEnrichmentMeta.md)
@@ -312,6 +543,7 @@ Class | Method | HTTP request | Description
  - [ExtraAttribute](docs/ExtraAttribute.md)
  - [ExtraAttributes](docs/ExtraAttributes.md)
  - [GeoLocation](docs/GeoLocation.md)
+ - [GraphEdge](docs/GraphEdge.md)
  - [Links](docs/Links.md)
  - [MediaResource](docs/MediaResource.md)
  - [Message](docs/Message.md)
@@ -320,9 +552,9 @@ Class | Method | HTTP request | Description
  - [MessageEnrichmentMeta](docs/MessageEnrichmentMeta.md)
  - [MessageEnrichmentsBatchDeleteBody](docs/MessageEnrichmentsBatchDeleteBody.md)
  - [MessageEnrichmentsBatchGetBody](docs/MessageEnrichmentsBatchGetBody.md)
+ - [MessageEnrichmentsBatchValidationResponse](docs/MessageEnrichmentsBatchValidationResponse.md)
  - [MessageMessageGraph](docs/MessageMessageGraph.md)
  - [MessageMessageGraphDB](docs/MessageMessageGraphDB.md)
- - [MessageToMessageEdge](docs/MessageToMessageEdge.md)
  - [NumericalActorEnrichment](docs/NumericalActorEnrichment.md)
  - [NumericalActorEnrichmentMeta](docs/NumericalActorEnrichmentMeta.md)
  - [NumericalMessageEnrichment](docs/NumericalMessageEnrichment.md)
@@ -334,7 +566,6 @@ Class | Method | HTTP request | Description
  - [OneOfMessageEnrichment](docs/OneOfMessageEnrichment.md)
  - [OneOfMessageEnrichmentMeta](docs/OneOfMessageEnrichmentMeta.md)
  - [RedditData](docs/RedditData.md)
- - [Response](docs/Response.md)
  - [TextActorEnrichment](docs/TextActorEnrichment.md)
  - [TextActorEnrichmentMeta](docs/TextActorEnrichmentMeta.md)
  - [TextMessageEnrichment](docs/TextMessageEnrichment.md)
@@ -344,7 +575,8 @@ Class | Method | HTTP request | Description
  - [UiucActorDB](docs/UiucActorDB.md)
  - [UiucMessage](docs/UiucMessage.md)
  - [UiucMessageDB](docs/UiucMessageDB.md)
- - [UiucSegment](docs/UiucSegment.md)
+ - [UiucSegmentCollection](docs/UiucSegmentCollection.md)
+ - [UiucSegmentCollectionMeta](docs/UiucSegmentCollectionMeta.md)
 
 ## Documentation For Authorization
 

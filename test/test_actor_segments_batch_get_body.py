@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.actor_message_edge import ActorMessageEdge  # noqa: E501
+from uiuc_incas_client.models.actor_segments_batch_get_body import ActorSegmentsBatchGetBody  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestActorMessageEdge(unittest.TestCase):
-    """ActorMessageEdge unit test stubs"""
+class TestActorSegmentsBatchGetBody(unittest.TestCase):
+    """ActorSegmentsBatchGetBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestActorMessageEdge(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testActorMessageEdge(self):
-        """Test ActorMessageEdge"""
+    def testActorSegmentsBatchGetBody(self):
+        """Test ActorSegmentsBatchGetBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.actor_message_edge.ActorMessageEdge()  # noqa: E501
+        # model = uiuc_incas_client.models.actor_segments_batch_get_body.ActorSegmentsBatchGetBody()  # noqa: E501
         pass
 
 

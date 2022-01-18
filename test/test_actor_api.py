@@ -46,6 +46,12 @@ class TestActorApi(unittest.TestCase):
         """
         pass
 
+    def test_actor_enrichments_batch_delete_validate(self):
+        """Test case for actor_enrichments_batch_delete_validate
+
+        """
+        pass
+
     def test_actor_enrichments_batch_get(self):
         """Test case for actor_enrichments_batch_get
 
@@ -58,8 +64,20 @@ class TestActorApi(unittest.TestCase):
         """
         pass
 
+    def test_actor_enrichments_batch_post_validate(self):
+        """Test case for actor_enrichments_batch_post_validate
+
+        """
+        pass
+
     def test_actor_enrichments_batch_put(self):
         """Test case for actor_enrichments_batch_put
+
+        """
+        pass
+
+    def test_actor_enrichments_batch_put_validate(self):
+        """Test case for actor_enrichments_batch_put_validate
 
         """
         pass
@@ -118,8 +136,98 @@ class TestActorApi(unittest.TestCase):
         """
         pass
 
+    def test_actor_id_segments_delete(self):
+        """Test case for actor_id_segments_delete
+
+        """
+        pass
+
+    def test_actor_id_segments_get(self):
+        """Test case for actor_id_segments_get
+
+        """
+        pass
+
+    def test_actor_id_segments_post(self):
+        """Test case for actor_id_segments_post
+
+        """
+        pass
+
+    def test_actor_id_segments_put(self):
+        """Test case for actor_id_segments_put
+
+        """
+        pass
+
     def test_actor_list_get(self):
         """Test case for actor_list_get
+
+        """
+        pass
+
+    def test_actor_segment_batch_delete(self):
+        """Test case for actor_segment_batch_delete
+
+        """
+        pass
+
+    def test_actor_segments_batch_delete_validate(self):
+        """Test case for actor_segments_batch_delete_validate
+
+        """
+        pass
+
+    def test_actor_segments_batch_get(self):
+        """Test case for actor_segments_batch_get
+
+        """
+        pass
+
+    def test_actor_segments_batch_post(self):
+        """Test case for actor_segments_batch_post
+
+        """
+        pass
+
+    def test_actor_segments_batch_post_validate(self):
+        """Test case for actor_segments_batch_post_validate
+
+        """
+        pass
+
+    def test_actor_segments_batch_put(self):
+        """Test case for actor_segments_batch_put
+
+        """
+        pass
+
+    def test_actor_segments_batch_put_validate(self):
+        """Test case for actor_segments_batch_put_validate
+
+        """
+        pass
+
+    def test_actor_segments_meta_delete(self):
+        """Test case for actor_segments_meta_delete
+
+        """
+        pass
+
+    def test_actor_segments_meta_get(self):
+        """Test case for actor_segments_meta_get
+
+        """
+        pass
+
+    def test_actor_segments_meta_post(self):
+        """Test case for actor_segments_meta_post
+
+        """
+        pass
+
+    def test_actor_segments_meta_put(self):
+        """Test case for actor_segments_meta_put
 
         """
         pass

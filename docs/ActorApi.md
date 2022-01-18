@@ -7,9 +7,12 @@ Method | HTTP request | Description
 [**actor_batch_get**](ActorApi.md#actor_batch_get) | **POST** /actor/batchGet | 
 [**actor_count_get**](ActorApi.md#actor_count_get) | **GET** /actor/count | 
 [**actor_enrichments_batch_delete**](ActorApi.md#actor_enrichments_batch_delete) | **POST** /actor/enrichments/batchDelete | 
+[**actor_enrichments_batch_delete_validate**](ActorApi.md#actor_enrichments_batch_delete_validate) | **POST** /actor/enrichments/batchDelete/validate | 
 [**actor_enrichments_batch_get**](ActorApi.md#actor_enrichments_batch_get) | **POST** /actor/enrichments/batchGet | 
 [**actor_enrichments_batch_post**](ActorApi.md#actor_enrichments_batch_post) | **POST** /actor/enrichments/batch | 
+[**actor_enrichments_batch_post_validate**](ActorApi.md#actor_enrichments_batch_post_validate) | **POST** /actor/enrichments/batch/validate | 
 [**actor_enrichments_batch_put**](ActorApi.md#actor_enrichments_batch_put) | **PUT** /actor/enrichments/batch | 
+[**actor_enrichments_batch_put_validate**](ActorApi.md#actor_enrichments_batch_put_validate) | **PUT** /actor/enrichments/batch/validate | 
 [**actor_enrichments_meta_delete**](ActorApi.md#actor_enrichments_meta_delete) | **DELETE** /actor/enrichments/meta | 
 [**actor_enrichments_meta_get**](ActorApi.md#actor_enrichments_meta_get) | **GET** /actor/enrichments/meta | 
 [**actor_enrichments_meta_post**](ActorApi.md#actor_enrichments_meta_post) | **POST** /actor/enrichments/meta | 
@@ -19,7 +22,22 @@ Method | HTTP request | Description
 [**actor_id_enrichments_post**](ActorApi.md#actor_id_enrichments_post) | **POST** /actor/{id}/enrichments | 
 [**actor_id_enrichments_put**](ActorApi.md#actor_id_enrichments_put) | **PUT** /actor/{id}/enrichments | 
 [**actor_id_get**](ActorApi.md#actor_id_get) | **GET** /actor/{id} | 
+[**actor_id_segments_delete**](ActorApi.md#actor_id_segments_delete) | **DELETE** /actor/{id}/segments | 
+[**actor_id_segments_get**](ActorApi.md#actor_id_segments_get) | **GET** /actor/{id}/segments | 
+[**actor_id_segments_post**](ActorApi.md#actor_id_segments_post) | **POST** /actor/{id}/segments | 
+[**actor_id_segments_put**](ActorApi.md#actor_id_segments_put) | **PUT** /actor/{id}/segments | 
 [**actor_list_get**](ActorApi.md#actor_list_get) | **GET** /actor/list | 
+[**actor_segment_batch_delete**](ActorApi.md#actor_segment_batch_delete) | **POST** /actor/segments/batchDelete | 
+[**actor_segments_batch_delete_validate**](ActorApi.md#actor_segments_batch_delete_validate) | **POST** /actor/segments/batchDelete/validate | 
+[**actor_segments_batch_get**](ActorApi.md#actor_segments_batch_get) | **POST** /actor/segments/batchGet | 
+[**actor_segments_batch_post**](ActorApi.md#actor_segments_batch_post) | **POST** /actor/segments/batch | 
+[**actor_segments_batch_post_validate**](ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
+[**actor_segments_batch_put**](ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
+[**actor_segments_batch_put_validate**](ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
+[**actor_segments_meta_delete**](ActorApi.md#actor_segments_meta_delete) | **DELETE** /actor/segments/meta | 
+[**actor_segments_meta_get**](ActorApi.md#actor_segments_meta_get) | **GET** /actor/segments/meta | 
+[**actor_segments_meta_post**](ActorApi.md#actor_segments_meta_post) | **POST** /actor/segments/meta | 
+[**actor_segments_meta_put**](ActorApi.md#actor_segments_meta_put) | **PUT** /actor/segments/meta | 
 
 # **actor_batch_get**
 > list[UiucActor] actor_batch_get(body)
@@ -64,12 +82,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_count_get**
-> int actor_count_get(entity_type)
+> int actor_count_get(media_type, entity_type=entity_type)
 
 
 
@@ -85,10 +103,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-entity_type = 'entity_type_example' # str | Type of entity to retrieve
+media_type = 'media_type_example' # str | Type of entity to retrieve
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_count_get(entity_type)
+    api_response = api_instance.actor_count_get(media_type, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_count_get: %s\n" % e)
@@ -98,7 +117,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entity_type** | **str**| Type of entity to retrieve | 
+ **media_type** | **str**| Type of entity to retrieve | 
+ **entity_type** | **str**| Type of entity to retrieve | [optional] 
 
 ### Return type
 
@@ -116,7 +136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_delete**
-> actor_enrichments_batch_delete(body)
+> str actor_enrichments_batch_delete(body)
 
 
 
@@ -135,7 +155,8 @@ api_instance = uiuc_incas_client.ActorApi()
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_instance.actor_enrichments_batch_delete(body)
+    api_response = api_instance.actor_enrichments_batch_delete(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete: %s\n" % e)
 ```
@@ -148,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -157,7 +178,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_enrichments_batch_delete_validate**
+> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_delete_validate(body)
+
+
+
+Validation endpoint for batch enrichment deletion, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_delete_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_delete_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ActorEnrichmentsBatchDeleteBody**](ActorEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -204,12 +272,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_post**
-> actor_enrichments_batch_post(body)
+> str actor_enrichments_batch_post(body)
 
 
 
@@ -228,7 +296,8 @@ api_instance = uiuc_incas_client.ActorApi()
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.actor_enrichments_batch_post(body)
+    api_response = api_instance.actor_enrichments_batch_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_post: %s\n" % e)
 ```
@@ -241,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -250,12 +319,59 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_enrichments_batch_post_validate**
+> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_post_validate(body)
+
+
+
+Validation endpoint for batch enrichment creation, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_post_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_post_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorEnrichment)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_put**
-> actor_enrichments_batch_put(body)
+> str actor_enrichments_batch_put(body)
 
 
 
@@ -274,7 +390,8 @@ api_instance = uiuc_incas_client.ActorApi()
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.actor_enrichments_batch_put(body)
+    api_response = api_instance.actor_enrichments_batch_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_put: %s\n" % e)
 ```
@@ -287,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -296,12 +413,59 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_enrichments_batch_put_validate**
+> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_put_validate(body)
+
+
+
+Validation endpoint for batch enrichment update, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_enrichments_batch_put_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_enrichments_batch_put_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorEnrichment)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_meta_delete**
-> actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+> str actor_enrichments_meta_delete(enrichment_name, provider_name, version)
 
 
 
@@ -322,7 +486,8 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+    api_response = api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_delete: %s\n" % e)
 ```
@@ -337,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -346,7 +511,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -402,7 +567,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_meta_post**
-> actor_enrichments_meta_post(body)
+> str actor_enrichments_meta_post(body)
 
 
 
@@ -421,7 +586,8 @@ api_instance = uiuc_incas_client.ActorApi()
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
 
 try:
-    api_instance.actor_enrichments_meta_post(body)
+    api_response = api_instance.actor_enrichments_meta_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_post: %s\n" % e)
 ```
@@ -434,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -443,12 +609,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_meta_put**
-> actor_enrichments_meta_put(body)
+> str actor_enrichments_meta_put(body)
 
 
 
@@ -467,7 +633,8 @@ api_instance = uiuc_incas_client.ActorApi()
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
 
 try:
-    api_instance.actor_enrichments_meta_put(body)
+    api_response = api_instance.actor_enrichments_meta_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_put: %s\n" % e)
 ```
@@ -480,7 +647,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -489,12 +656,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_enrichments_delete**
-> actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+> str actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
 
 
 
@@ -516,7 +683,8 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+    api_response = api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_delete: %s\n" % e)
 ```
@@ -532,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -541,7 +709,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -596,12 +764,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_enrichments_post**
-> actor_id_enrichments_post(body, id)
+> str actor_id_enrichments_post(body, id)
 
 
 
@@ -621,7 +789,8 @@ body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichmen
 id = 'id_example' # str | Actor ID
 
 try:
-    api_instance.actor_id_enrichments_post(body, id)
+    api_response = api_instance.actor_id_enrichments_post(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_post: %s\n" % e)
 ```
@@ -635,7 +804,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -644,12 +813,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_enrichments_put**
-> actor_id_enrichments_put(body, id)
+> str actor_id_enrichments_put(body, id)
 
 
 
@@ -669,7 +838,8 @@ body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichmen
 id = 'id_example' # str | Actor ID
 
 try:
-    api_instance.actor_id_enrichments_put(body, id)
+    api_response = api_instance.actor_id_enrichments_put(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_put: %s\n" % e)
 ```
@@ -683,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -692,12 +862,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_get**
-> UiucActor actor_id_get(id, with_enrichment=with_enrichment, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
+> UiucActor actor_id_get(id, with_enrichment=with_enrichment, with_segment=with_segment, enrichment_name=enrichment_name, enrichment_provider_name=enrichment_provider_name, enrichment_version=enrichment_version, collection_name=collection_name, collection_provider_name=collection_provider_name, collection_version=collection_version, dev=dev)
 
 
 
@@ -715,13 +885,17 @@ from pprint import pprint
 api_instance = uiuc_incas_client.ActorApi()
 id = 'id_example' # str | Actor ID
 with_enrichment = true # bool | Whether to retrieve enrichments (optional)
+with_segment = true # bool | Whether to retrieve segments (optional)
 enrichment_name = 'enrichment_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
+enrichment_provider_name = 'enrichment_provider_name_example' # str |  (optional)
+enrichment_version = 'enrichment_version_example' # str |  (optional)
+collection_name = 'collection_name_example' # str |  (optional)
+collection_provider_name = 'collection_provider_name_example' # str |  (optional)
+collection_version = 'collection_version_example' # str |  (optional)
 dev = true # bool |  (optional)
 
 try:
-    api_response = api_instance.actor_id_get(id, with_enrichment=with_enrichment, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
+    api_response = api_instance.actor_id_get(id, with_enrichment=with_enrichment, with_segment=with_segment, enrichment_name=enrichment_name, enrichment_provider_name=enrichment_provider_name, enrichment_version=enrichment_version, collection_name=collection_name, collection_provider_name=collection_provider_name, collection_version=collection_version, dev=dev)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_get: %s\n" % e)
@@ -733,9 +907,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Actor ID | 
  **with_enrichment** | **bool**| Whether to retrieve enrichments | [optional] 
+ **with_segment** | **bool**| Whether to retrieve segments | [optional] 
  **enrichment_name** | **str**|  | [optional] 
- **provider_name** | **str**|  | [optional] 
- **version** | **str**|  | [optional] 
+ **enrichment_provider_name** | **str**|  | [optional] 
+ **enrichment_version** | **str**|  | [optional] 
+ **collection_name** | **str**|  | [optional] 
+ **collection_provider_name** | **str**|  | [optional] 
+ **collection_version** | **str**|  | [optional] 
  **dev** | **bool**|  | [optional] 
 
 ### Return type
@@ -749,12 +927,218 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_id_segments_delete**
+> str actor_id_segments_delete(id, collection_name, provider_name, version)
+
+
+
+Deletes all matched segments for specific actor by segmentCollectionName
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+id = 'id_example' # str | Actor ID
+collection_name = 'collection_name_example' # str | 
+provider_name = 'provider_name_example' # str | 
+version = 'version_example' # str | 
+
+try:
+    api_response = api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Actor ID | 
+ **collection_name** | **str**|  | 
+ **provider_name** | **str**|  | 
+ **version** | **str**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_id_segments_get**
+> ActorSegmentCollections actor_id_segments_get(id, collection_name=collection_name, provider_name=provider_name, version=version, dev=dev)
+
+
+
+Returns all matched segment collections the actor belonged to by collectionName.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+id = 'id_example' # str | Actor ID
+collection_name = 'collection_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+dev = true # bool |  (optional)
+
+try:
+    api_response = api_instance.actor_id_segments_get(id, collection_name=collection_name, provider_name=provider_name, version=version, dev=dev)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Actor ID | 
+ **collection_name** | **str**|  | [optional] 
+ **provider_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+ **dev** | **bool**|  | [optional] 
+
+### Return type
+
+[**ActorSegmentCollections**](ActorSegmentCollections.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_id_segments_post**
+> str actor_id_segments_post(body, id)
+
+
+
+Add a new segment collection for the specific actor
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, dict(str, float)) | The new segment collections to add
+id = 'id_example' # str | Actor ID
+
+try:
+    api_response = api_instance.actor_id_segments_post(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, dict(str, float))**](dict.md)| The new segment collections to add | 
+ **id** | **str**| Actor ID | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_id_segments_put**
+> str actor_id_segments_put(body, id)
+
+
+
+Update a segment collection for the specific actor by segment name
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, dict(str, float)) | The segment collections to update
+id = 'id_example' # str | Actor ID
+
+try:
+    api_response = api_instance.actor_id_segments_put(body, id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_id_segments_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, dict(str, float))**](dict.md)| The segment collections to update | 
+ **id** | **str**| Actor ID | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_list_get**
-> list[str] actor_list_get(begin, end, entity_type)
+> list[str] actor_list_get(begin, end, media_type, entity_type=entity_type)
 
 
 
@@ -772,10 +1156,11 @@ from pprint import pprint
 api_instance = uiuc_incas_client.ActorApi()
 begin = 56 # int | Begin
 end = 56 # int | End
-entity_type = 'entity_type_example' # str | Type of entity to retrieve
+media_type = 'media_type_example' # str | Type of entity to retrieve
+entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
 try:
-    api_response = api_instance.actor_list_get(begin, end, entity_type)
+    api_response = api_instance.actor_list_get(begin, end, media_type, entity_type=entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_list_get: %s\n" % e)
@@ -787,7 +1172,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **begin** | **int**| Begin | 
  **end** | **int**| End | 
- **entity_type** | **str**| Type of entity to retrieve | 
+ **media_type** | **str**| Type of entity to retrieve | 
+ **entity_type** | **str**| Type of entity to retrieve | [optional] 
 
 ### Return type
 
@@ -801,6 +1187,531 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segment_batch_delete**
+> str actor_segment_batch_delete(body)
+
+
+
+Deletes a batch of segment collections given a list of IDs and specifications.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segment_batch_delete(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segment_batch_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ActorSegmentsBatchDeleteBody**](ActorSegmentsBatchDeleteBody.md)| List of IDs and specifications | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_delete_validate**
+> ActorSegmentsBatchValidationResponse actor_segments_batch_delete_validate(body)
+
+
+
+Validation endpoint for batch segment deletion, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_delete_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_delete_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ActorSegmentsBatchDeleteBody**](ActorSegmentsBatchDeleteBody.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorSegmentsBatchValidationResponse**](ActorSegmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_get**
+> dict(str, ActorSegmentCollections) actor_segments_batch_get(body)
+
+
+
+Returns a batch of segment collections given a list of IDs and specifications.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.ActorSegmentsBatchGetBody() # ActorSegmentsBatchGetBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_get(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ActorSegmentsBatchGetBody**](ActorSegmentsBatchGetBody.md)| List of IDs and specifications | 
+
+### Return type
+
+[**dict(str, ActorSegmentCollections)**](ActorSegmentCollections.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_post**
+> str actor_segments_batch_post(body)
+
+
+
+Submits a segment collection for each actor ID.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+
+try:
+    api_response = api_instance.actor_segments_batch_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| Map of IDs and segment collections | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_post_validate**
+> ActorSegmentsBatchValidationResponse actor_segments_batch_post_validate(body)
+
+
+
+Validation endpoint for batch segment creation, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_post_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_post_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorSegmentsBatchValidationResponse**](ActorSegmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_put**
+> str actor_segments_batch_put(body)
+
+
+
+Updates a segment collection for each actor ID.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+
+try:
+    api_response = api_instance.actor_segments_batch_put(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| Map of IDs and segment collections | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_batch_put_validate**
+> ActorSegmentsBatchValidationResponse actor_segments_batch_put_validate(body)
+
+
+
+Validation endpoint for batch segment update, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+
+try:
+    api_response = api_instance.actor_segments_batch_put_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_batch_put_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**ActorSegmentsBatchValidationResponse**](ActorSegmentsBatchValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_meta_delete**
+> str actor_segments_meta_delete(collection_name, provider_name, version)
+
+
+
+Deletes the segment collection metas by segmentCollectionName, providerName and version.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+collection_name = 'collection_name_example' # str | 
+provider_name = 'provider_name_example' # str | 
+version = 'version_example' # str | 
+
+try:
+    api_response = api_instance.actor_segments_meta_delete(collection_name, provider_name, version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collection_name** | **str**|  | 
+ **provider_name** | **str**|  | 
+ **version** | **str**|  | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_meta_get**
+> list[UiucSegmentCollectionMeta] actor_segments_meta_get(collection_name=collection_name, provider_name=provider_name, version=version)
+
+
+
+Returns current actor segment collection metas by collectionName, providerName, and version.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+collection_name = 'collection_name_example' # str |  (optional)
+provider_name = 'provider_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+
+try:
+    api_response = api_instance.actor_segments_meta_get(collection_name=collection_name, provider_name=provider_name, version=version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collection_name** | **str**|  | [optional] 
+ **provider_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+
+### Return type
+
+[**list[UiucSegmentCollectionMeta]**](UiucSegmentCollectionMeta.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_meta_post**
+> str actor_segments_meta_post(body)
+
+
+
+Add a new segment collection meta
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to add
+
+try:
+    api_response = api_instance.actor_segments_meta_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UiucSegmentCollectionMeta**](UiucSegmentCollectionMeta.md)| The new segment collection meta to add | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **actor_segments_meta_put**
+> str actor_segments_meta_put(body)
+
+
+
+Updates an actor segment collection meta (after all actors have been added) by providerName, segmentCollectionName and version.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.ActorApi()
+body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to update
+
+try:
+    api_response = api_instance.actor_segments_meta_put(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorApi->actor_segments_meta_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UiucSegmentCollectionMeta**](UiucSegmentCollectionMeta.md)| The new segment collection meta to update | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,12 +1,13 @@
-# BaseMessageEnrichment
+# UiucSegmentCollectionMeta
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**provider_name** | **str** | The team (e.g., UIUC-DMG) who provides the enrichment. | [optional] 
-**enrichment_name** | **str** | The enrichment (e.g., Concern-Stance) name for the enrichment. | [optional] 
+**description** | **str** | Description of the segment. | [optional] 
+**collection_name** | **str** | Name of the segment. | [optional] 
+**provider_name** | **str** | The team (e.g., UIUC-DMG) who provides the segment. | [optional] 
 **version** | **str** | The version within the same (provider, name). | [optional] 
-**enrichment_type** | **str** | For discriminator | 
+**segments** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

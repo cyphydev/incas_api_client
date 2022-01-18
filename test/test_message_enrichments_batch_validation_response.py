@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.response import Response  # noqa: E501
+from uiuc_incas_client.models.message_enrichments_batch_validation_response import MessageEnrichmentsBatchValidationResponse  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestResponse(unittest.TestCase):
-    """Response unit test stubs"""
+class TestMessageEnrichmentsBatchValidationResponse(unittest.TestCase):
+    """MessageEnrichmentsBatchValidationResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testResponse(self):
-        """Test Response"""
+    def testMessageEnrichmentsBatchValidationResponse(self):
+        """Test MessageEnrichmentsBatchValidationResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.response.Response()  # noqa: E501
+        # model = uiuc_incas_client.models.message_enrichments_batch_validation_response.MessageEnrichmentsBatchValidationResponse()  # noqa: E501
         pass
 
 

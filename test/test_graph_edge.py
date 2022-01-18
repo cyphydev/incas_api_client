@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import uiuc_incas_client
-from uiuc_incas_client.models.message_to_message_edge import MessageToMessageEdge  # noqa: E501
+from uiuc_incas_client.models.graph_edge import GraphEdge  # noqa: E501
 from uiuc_incas_client.rest import ApiException
 
 
-class TestMessageToMessageEdge(unittest.TestCase):
-    """MessageToMessageEdge unit test stubs"""
+class TestGraphEdge(unittest.TestCase):
+    """GraphEdge unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestMessageToMessageEdge(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMessageToMessageEdge(self):
-        """Test MessageToMessageEdge"""
+    def testGraphEdge(self):
+        """Test GraphEdge"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = uiuc_incas_client.models.message_to_message_edge.MessageToMessageEdge()  # noqa: E501
+        # model = uiuc_incas_client.models.graph_edge.GraphEdge()  # noqa: E501
         pass
 
 

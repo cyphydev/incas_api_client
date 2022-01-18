@@ -1,10 +1,10 @@
-# EnrichmentsBatchGetBody
+# ActorSegmentsBatchGetBody
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ids** | **list[str]** |  | 
-**enrichment_name** | **str** |  | [optional] 
+**collection_name** | **str** |  | [optional] 
 **provider_name** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 **dev** | **bool** |  | [optional] 
