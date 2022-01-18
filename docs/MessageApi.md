@@ -907,7 +907,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_list_get**
-> list[str] message_list_get(begin, end, media_type)
+> list[MessageIdResponse] message_list_get(begin, end, media_type)
 
 
 
@@ -944,7 +944,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[MessageIdResponse]**](MessageIdResponse.md)
 
 ### Authorization
 

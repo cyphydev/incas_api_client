@@ -1138,7 +1138,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_list_get**
-> list[str] actor_list_get(begin, end, media_type, entity_type=entity_type)
+> list[ActorIdResponse] actor_list_get(begin, end, media_type, entity_type=entity_type)
 
 
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[ActorIdResponse]**](ActorIdResponse.md)
 
 ### Authorization
 

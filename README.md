@@ -471,23 +471,23 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_segments_meta_get**](docs/ActorApi.md#actor_segments_meta_get) | **GET** /actor/segments/meta | 
 *ActorApi* | [**actor_segments_meta_post**](docs/ActorApi.md#actor_segments_meta_post) | **POST** /actor/segments/meta | 
 *ActorApi* | [**actor_segments_meta_put**](docs/ActorApi.md#actor_segments_meta_put) | **PUT** /actor/segments/meta | 
-*GraphApi* | [**actor_actor_graph_get**](docs/GraphApi.md#actor_actor_graph_get) | **GET** /actorActorGraph | 
 *GraphApi* | [**actor_actor_graph_id_delete**](docs/GraphApi.md#actor_actor_graph_id_delete) | **DELETE** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_get**](docs/GraphApi.md#actor_actor_graph_id_get) | **GET** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_neighbor_get**](docs/GraphApi.md#actor_actor_graph_id_neighbor_get) | **GET** /actorActorGraph/{id}/neighbor | 
 *GraphApi* | [**actor_actor_graph_id_put**](docs/GraphApi.md#actor_actor_graph_id_put) | **PUT** /actorActorGraph/{id} | 
+*GraphApi* | [**actor_actor_graph_list_get**](docs/GraphApi.md#actor_actor_graph_list_get) | **GET** /actorActorGraph/list | 
 *GraphApi* | [**actor_actor_graph_post**](docs/GraphApi.md#actor_actor_graph_post) | **POST** /actorActorGraph | 
-*GraphApi* | [**actor_message_graph_get**](docs/GraphApi.md#actor_message_graph_get) | **GET** /actorMessageGraph | 
 *GraphApi* | [**actor_message_graph_id_delete**](docs/GraphApi.md#actor_message_graph_id_delete) | **DELETE** /actorMessageGraph/{id} | 
 *GraphApi* | [**actor_message_graph_id_get**](docs/GraphApi.md#actor_message_graph_id_get) | **GET** /actorMessageGraph/{id} | 
 *GraphApi* | [**actor_message_graph_id_neighbor_get**](docs/GraphApi.md#actor_message_graph_id_neighbor_get) | **GET** /actorMessageGraph/{id}/neighbor | 
 *GraphApi* | [**actor_message_graph_id_put**](docs/GraphApi.md#actor_message_graph_id_put) | **PUT** /actorMessageGraph/{id} | 
+*GraphApi* | [**actor_message_graph_list_get**](docs/GraphApi.md#actor_message_graph_list_get) | **GET** /actorMessageGraph/list | 
 *GraphApi* | [**actor_message_graph_post**](docs/GraphApi.md#actor_message_graph_post) | **POST** /actorMessageGraph | 
-*GraphApi* | [**message_message_graph_get**](docs/GraphApi.md#message_message_graph_get) | **GET** /messageMessageGraph | 
 *GraphApi* | [**message_message_graph_id_delete**](docs/GraphApi.md#message_message_graph_id_delete) | **DELETE** /messageMessageGraph/{id} | 
 *GraphApi* | [**message_message_graph_id_get**](docs/GraphApi.md#message_message_graph_id_get) | **GET** /messageMessageGraph/{id} | 
 *GraphApi* | [**message_message_graph_id_neighbor_get**](docs/GraphApi.md#message_message_graph_id_neighbor_get) | **GET** /messageMessageGraph/{id}/neighbor | 
 *GraphApi* | [**message_message_graph_id_put**](docs/GraphApi.md#message_message_graph_id_put) | **PUT** /messageMessageGraph/{id} | 
+*GraphApi* | [**message_message_graph_list_get**](docs/GraphApi.md#message_message_graph_list_get) | **GET** /messageMessageGraph/list | 
 *GraphApi* | [**message_message_graph_post**](docs/GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
 *MessageApi* | [**message_batch_get**](docs/MessageApi.md#message_batch_get) | **POST** /message/batchGet | 
 *MessageApi* | [**message_count_get**](docs/MessageApi.md#message_count_get) | **GET** /message/count | 
@@ -520,6 +520,7 @@ Class | Method | HTTP request | Description
  - [ActorEnrichmentsBatchDeleteBody](docs/ActorEnrichmentsBatchDeleteBody.md)
  - [ActorEnrichmentsBatchGetBody](docs/ActorEnrichmentsBatchGetBody.md)
  - [ActorEnrichmentsBatchValidationResponse](docs/ActorEnrichmentsBatchValidationResponse.md)
+ - [ActorIdResponse](docs/ActorIdResponse.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorMessageGraphDB](docs/ActorMessageGraphDB.md)
  - [ActorSegmentCollections](docs/ActorSegmentCollections.md)
@@ -553,6 +554,7 @@ Class | Method | HTTP request | Description
  - [MessageEnrichmentsBatchDeleteBody](docs/MessageEnrichmentsBatchDeleteBody.md)
  - [MessageEnrichmentsBatchGetBody](docs/MessageEnrichmentsBatchGetBody.md)
  - [MessageEnrichmentsBatchValidationResponse](docs/MessageEnrichmentsBatchValidationResponse.md)
+ - [MessageIdResponse](docs/MessageIdResponse.md)
  - [MessageMessageGraph](docs/MessageMessageGraph.md)
  - [MessageMessageGraphDB](docs/MessageMessageGraphDB.md)
  - [NumericalActorEnrichment](docs/NumericalActorEnrichment.md)

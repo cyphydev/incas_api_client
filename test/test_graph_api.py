@@ -28,12 +28,6 @@ class TestGraphApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_actor_actor_graph_get(self):
-        """Test case for actor_actor_graph_get
-
-        """
-        pass
-
     def test_actor_actor_graph_id_delete(self):
         """Test case for actor_actor_graph_id_delete
 
@@ -58,14 +52,14 @@ class TestGraphApi(unittest.TestCase):
         """
         pass
 
-    def test_actor_actor_graph_post(self):
-        """Test case for actor_actor_graph_post
+    def test_actor_actor_graph_list_get(self):
+        """Test case for actor_actor_graph_list_get
 
         """
         pass
 
-    def test_actor_message_graph_get(self):
-        """Test case for actor_message_graph_get
+    def test_actor_actor_graph_post(self):
+        """Test case for actor_actor_graph_post
 
         """
         pass
@@ -94,14 +88,14 @@ class TestGraphApi(unittest.TestCase):
         """
         pass
 
-    def test_actor_message_graph_post(self):
-        """Test case for actor_message_graph_post
+    def test_actor_message_graph_list_get(self):
+        """Test case for actor_message_graph_list_get
 
         """
         pass
 
-    def test_message_message_graph_get(self):
-        """Test case for message_message_graph_get
+    def test_actor_message_graph_post(self):
+        """Test case for actor_message_graph_post
 
         """
         pass
@@ -126,6 +120,12 @@ class TestGraphApi(unittest.TestCase):
 
     def test_message_message_graph_id_put(self):
         """Test case for message_message_graph_id_put
+
+        """
+        pass
+
+    def test_message_message_graph_list_get(self):
+        """Test case for message_message_graph_list_get
 
         """
         pass

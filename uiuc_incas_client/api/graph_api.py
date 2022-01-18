@@ -32,125 +32,6 @@ class GraphApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def actor_actor_graph_get(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """actor_actor_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_actor_graph_get(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_actor_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_actor_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-            return data
-
-    def actor_actor_graph_get_with_http_info(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """actor_actor_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_actor_graph_get_with_http_info(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['provider_name', 'graph_name', 'distance_name', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_actor_graph_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'provider_name' is set
-        if ('provider_name' not in params or
-                params['provider_name'] is None):
-            raise ValueError("Missing the required parameter `provider_name` when calling `actor_actor_graph_get`")  # noqa: E501
-        # verify the required parameter 'graph_name' is set
-        if ('graph_name' not in params or
-                params['graph_name'] is None):
-            raise ValueError("Missing the required parameter `graph_name` when calling `actor_actor_graph_get`")  # noqa: E501
-        # verify the required parameter 'distance_name' is set
-        if ('distance_name' not in params or
-                params['distance_name'] is None):
-            raise ValueError("Missing the required parameter `distance_name` when calling `actor_actor_graph_get`")  # noqa: E501
-        # verify the required parameter 'version' is set
-        if ('version' not in params or
-                params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `actor_actor_graph_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'graph_name' in params:
-            query_params.append(('graphName', params['graph_name']))  # noqa: E501
-        if 'distance_name' in params:
-            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actorActorGraph', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def actor_actor_graph_id_delete(self, id, **kwargs):  # noqa: E501
         """actor_actor_graph_id_delete  # noqa: E501
 
@@ -551,6 +432,113 @@ class GraphApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def actor_actor_graph_list_get(self, **kwargs):  # noqa: E501
+        """actor_actor_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_actor_graph_list_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_actor_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_actor_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def actor_actor_graph_list_get_with_http_info(self, **kwargs):  # noqa: E501
+        """actor_actor_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_actor_graph_list_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_name', 'graph_name', 'distance_name', 'version', 'time_stamp']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_actor_graph_list_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'provider_name' in params:
+            query_params.append(('providerName', params['provider_name']))  # noqa: E501
+        if 'graph_name' in params:
+            query_params.append(('graphName', params['graph_name']))  # noqa: E501
+        if 'distance_name' in params:
+            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
+        if 'time_stamp' in params:
+            query_params.append(('timeStamp', params['time_stamp']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actorActorGraph/list', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[str]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def actor_actor_graph_post(self, body, **kwargs):  # noqa: E501
         """actor_actor_graph_post  # noqa: E501
 
@@ -636,125 +624,6 @@ class GraphApi(object):
 
         return self.api_client.call_api(
             '/actorActorGraph', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def actor_message_graph_get(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """actor_message_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_message_graph_get(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-            return data
-
-    def actor_message_graph_get_with_http_info(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """actor_message_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['provider_name', 'graph_name', 'distance_name', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_message_graph_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'provider_name' is set
-        if ('provider_name' not in params or
-                params['provider_name'] is None):
-            raise ValueError("Missing the required parameter `provider_name` when calling `actor_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'graph_name' is set
-        if ('graph_name' not in params or
-                params['graph_name'] is None):
-            raise ValueError("Missing the required parameter `graph_name` when calling `actor_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'distance_name' is set
-        if ('distance_name' not in params or
-                params['distance_name'] is None):
-            raise ValueError("Missing the required parameter `distance_name` when calling `actor_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'version' is set
-        if ('version' not in params or
-                params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `actor_message_graph_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'graph_name' in params:
-            query_params.append(('graphName', params['graph_name']))  # noqa: E501
-        if 'distance_name' in params:
-            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actorMessageGraph', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1169,6 +1038,113 @@ class GraphApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def actor_message_graph_list_get(self, **kwargs):  # noqa: E501
+        """actor_message_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_message_graph_list_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.actor_message_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.actor_message_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def actor_message_graph_list_get_with_http_info(self, **kwargs):  # noqa: E501
+        """actor_message_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.actor_message_graph_list_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_name', 'graph_name', 'distance_name', 'version', 'time_stamp']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method actor_message_graph_list_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'provider_name' in params:
+            query_params.append(('providerName', params['provider_name']))  # noqa: E501
+        if 'graph_name' in params:
+            query_params.append(('graphName', params['graph_name']))  # noqa: E501
+        if 'distance_name' in params:
+            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
+        if 'time_stamp' in params:
+            query_params.append(('timeStamp', params['time_stamp']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/actorMessageGraph/list', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[str]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def actor_message_graph_post(self, body, **kwargs):  # noqa: E501
         """actor_message_graph_post  # noqa: E501
 
@@ -1254,125 +1230,6 @@ class GraphApi(object):
 
         return self.api_client.call_api(
             '/actorMessageGraph', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def message_message_graph_get(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """message_message_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.message_message_graph_get(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.message_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-        else:
-            (data) = self.message_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, **kwargs)  # noqa: E501
-            return data
-
-    def message_message_graph_get_with_http_info(self, provider_name, graph_name, distance_name, version, **kwargs):  # noqa: E501
-        """message_message_graph_get  # noqa: E501
-
-        Gets graph id by providerName, timestamp and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.message_message_graph_get_with_http_info(provider_name, graph_name, distance_name, version, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str provider_name: (required)
-        :param str graph_name: (required)
-        :param str distance_name: (required)
-        :param str version: (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['provider_name', 'graph_name', 'distance_name', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method message_message_graph_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'provider_name' is set
-        if ('provider_name' not in params or
-                params['provider_name'] is None):
-            raise ValueError("Missing the required parameter `provider_name` when calling `message_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'graph_name' is set
-        if ('graph_name' not in params or
-                params['graph_name'] is None):
-            raise ValueError("Missing the required parameter `graph_name` when calling `message_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'distance_name' is set
-        if ('distance_name' not in params or
-                params['distance_name'] is None):
-            raise ValueError("Missing the required parameter `distance_name` when calling `message_message_graph_get`")  # noqa: E501
-        # verify the required parameter 'version' is set
-        if ('version' not in params or
-                params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `message_message_graph_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'provider_name' in params:
-            query_params.append(('providerName', params['provider_name']))  # noqa: E501
-        if 'graph_name' in params:
-            query_params.append(('graphName', params['graph_name']))  # noqa: E501
-        if 'distance_name' in params:
-            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
-        if 'version' in params:
-            query_params.append(('version', params['version']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/messageMessageGraph', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1780,6 +1637,113 @@ class GraphApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def message_message_graph_list_get(self, **kwargs):  # noqa: E501
+        """message_message_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.message_message_graph_list_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.message_message_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.message_message_graph_list_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def message_message_graph_list_get_with_http_info(self, **kwargs):  # noqa: E501
+        """message_message_graph_list_get  # noqa: E501
+
+        Gets graph IDs by providing query keys.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.message_message_graph_list_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provider_name:
+        :param str graph_name:
+        :param str distance_name:
+        :param str version:
+        :param str time_stamp:
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_name', 'graph_name', 'distance_name', 'version', 'time_stamp']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method message_message_graph_list_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'provider_name' in params:
+            query_params.append(('providerName', params['provider_name']))  # noqa: E501
+        if 'graph_name' in params:
+            query_params.append(('graphName', params['graph_name']))  # noqa: E501
+        if 'distance_name' in params:
+            query_params.append(('distanceName', params['distance_name']))  # noqa: E501
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
+        if 'time_stamp' in params:
+            query_params.append(('timeStamp', params['time_stamp']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/plain'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/messageMessageGraph/list', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

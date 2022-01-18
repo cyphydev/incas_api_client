@@ -4,77 +4,24 @@ All URIs are relative to *https://incas.cs.illinois.edu:8443/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actor_actor_graph_get**](GraphApi.md#actor_actor_graph_get) | **GET** /actorActorGraph | 
 [**actor_actor_graph_id_delete**](GraphApi.md#actor_actor_graph_id_delete) | **DELETE** /actorActorGraph/{id} | 
 [**actor_actor_graph_id_get**](GraphApi.md#actor_actor_graph_id_get) | **GET** /actorActorGraph/{id} | 
 [**actor_actor_graph_id_neighbor_get**](GraphApi.md#actor_actor_graph_id_neighbor_get) | **GET** /actorActorGraph/{id}/neighbor | 
 [**actor_actor_graph_id_put**](GraphApi.md#actor_actor_graph_id_put) | **PUT** /actorActorGraph/{id} | 
+[**actor_actor_graph_list_get**](GraphApi.md#actor_actor_graph_list_get) | **GET** /actorActorGraph/list | 
 [**actor_actor_graph_post**](GraphApi.md#actor_actor_graph_post) | **POST** /actorActorGraph | 
-[**actor_message_graph_get**](GraphApi.md#actor_message_graph_get) | **GET** /actorMessageGraph | 
 [**actor_message_graph_id_delete**](GraphApi.md#actor_message_graph_id_delete) | **DELETE** /actorMessageGraph/{id} | 
 [**actor_message_graph_id_get**](GraphApi.md#actor_message_graph_id_get) | **GET** /actorMessageGraph/{id} | 
 [**actor_message_graph_id_neighbor_get**](GraphApi.md#actor_message_graph_id_neighbor_get) | **GET** /actorMessageGraph/{id}/neighbor | 
 [**actor_message_graph_id_put**](GraphApi.md#actor_message_graph_id_put) | **PUT** /actorMessageGraph/{id} | 
+[**actor_message_graph_list_get**](GraphApi.md#actor_message_graph_list_get) | **GET** /actorMessageGraph/list | 
 [**actor_message_graph_post**](GraphApi.md#actor_message_graph_post) | **POST** /actorMessageGraph | 
-[**message_message_graph_get**](GraphApi.md#message_message_graph_get) | **GET** /messageMessageGraph | 
 [**message_message_graph_id_delete**](GraphApi.md#message_message_graph_id_delete) | **DELETE** /messageMessageGraph/{id} | 
 [**message_message_graph_id_get**](GraphApi.md#message_message_graph_id_get) | **GET** /messageMessageGraph/{id} | 
 [**message_message_graph_id_neighbor_get**](GraphApi.md#message_message_graph_id_neighbor_get) | **GET** /messageMessageGraph/{id}/neighbor | 
 [**message_message_graph_id_put**](GraphApi.md#message_message_graph_id_put) | **PUT** /messageMessageGraph/{id} | 
+[**message_message_graph_list_get**](GraphApi.md#message_message_graph_list_get) | **GET** /messageMessageGraph/list | 
 [**message_message_graph_post**](GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
-
-# **actor_actor_graph_get**
-> str actor_actor_graph_get(provider_name, graph_name, distance_name, version)
-
-
-
-Gets graph id by providerName, timestamp and version.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-graph_name = 'graph_name_example' # str | 
-distance_name = 'distance_name_example' # str | 
-version = 'version_example' # str | 
-
-try:
-    api_response = api_instance.actor_actor_graph_get(provider_name, graph_name, distance_name, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_actor_graph_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **graph_name** | **str**|  | 
- **distance_name** | **str**|  | 
- **version** | **str**|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_actor_graph_id_delete**
 > str actor_actor_graph_id_delete(id)
@@ -268,6 +215,61 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **actor_actor_graph_list_get**
+> list[str] actor_actor_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+
+
+
+Gets graph IDs by providing query keys.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.GraphApi()
+provider_name = 'provider_name_example' # str |  (optional)
+graph_name = 'graph_name_example' # str |  (optional)
+distance_name = 'distance_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+time_stamp = 'time_stamp_example' # str |  (optional)
+
+try:
+    api_response = api_instance.actor_actor_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GraphApi->actor_actor_graph_list_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider_name** | **str**|  | [optional] 
+ **graph_name** | **str**|  | [optional] 
+ **distance_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+ **time_stamp** | **str**|  | [optional] 
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **actor_actor_graph_post**
 > str actor_actor_graph_post(body)
 
@@ -311,59 +313,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **actor_message_graph_get**
-> str actor_message_graph_get(provider_name, graph_name, distance_name, version)
-
-
-
-Gets graph id by providerName, timestamp and version.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-graph_name = 'graph_name_example' # str | 
-distance_name = 'distance_name_example' # str | 
-version = 'version_example' # str | 
-
-try:
-    api_response = api_instance.actor_message_graph_get(provider_name, graph_name, distance_name, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->actor_message_graph_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **graph_name** | **str**|  | 
- **distance_name** | **str**|  | 
- **version** | **str**|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -562,6 +511,61 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **actor_message_graph_list_get**
+> list[str] actor_message_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+
+
+
+Gets graph IDs by providing query keys.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.GraphApi()
+provider_name = 'provider_name_example' # str |  (optional)
+graph_name = 'graph_name_example' # str |  (optional)
+distance_name = 'distance_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+time_stamp = 'time_stamp_example' # str |  (optional)
+
+try:
+    api_response = api_instance.actor_message_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GraphApi->actor_message_graph_list_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider_name** | **str**|  | [optional] 
+ **graph_name** | **str**|  | [optional] 
+ **distance_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+ **time_stamp** | **str**|  | [optional] 
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **actor_message_graph_post**
 > str actor_message_graph_post(body)
 
@@ -605,59 +609,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **message_message_graph_get**
-> str message_message_graph_get(provider_name, graph_name, distance_name, version)
-
-
-
-Gets graph id by providerName, timestamp and version.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.GraphApi()
-provider_name = 'provider_name_example' # str | 
-graph_name = 'graph_name_example' # str | 
-distance_name = 'distance_name_example' # str | 
-version = 'version_example' # str | 
-
-try:
-    api_response = api_instance.message_message_graph_get(provider_name, graph_name, distance_name, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GraphApi->message_message_graph_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **provider_name** | **str**|  | 
- **graph_name** | **str**|  | 
- **distance_name** | **str**|  | 
- **version** | **str**|  | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -851,6 +802,61 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_message_graph_list_get**
+> list[str] message_message_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+
+
+
+Gets graph IDs by providing query keys.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.GraphApi()
+provider_name = 'provider_name_example' # str |  (optional)
+graph_name = 'graph_name_example' # str |  (optional)
+distance_name = 'distance_name_example' # str |  (optional)
+version = 'version_example' # str |  (optional)
+time_stamp = 'time_stamp_example' # str |  (optional)
+
+try:
+    api_response = api_instance.message_message_graph_list_get(provider_name=provider_name, graph_name=graph_name, distance_name=distance_name, version=version, time_stamp=time_stamp)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GraphApi->message_message_graph_list_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider_name** | **str**|  | [optional] 
+ **graph_name** | **str**|  | [optional] 
+ **distance_name** | **str**|  | [optional] 
+ **version** | **str**|  | [optional] 
+ **time_stamp** | **str**|  | [optional] 
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
