@@ -283,7 +283,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, dict(str, float)) | The new segment collections to add
+body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
 id = 'id_example' # str | Actor ID
 
 try:
@@ -294,7 +294,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, dict(str, float)) | The segment collections to update
+body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The segment collections to update
 id = 'id_example' # str | Actor ID
 
 try:
@@ -348,7 +348,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
     api_response = api_instance.actor_segments_batch_post(body)
@@ -358,7 +358,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_segments_batch_post_validate(body)
@@ -368,7 +368,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
     api_response = api_instance.actor_segments_batch_put(body)
@@ -378,7 +378,7 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_segments_batch_put_validate(body)
@@ -518,13 +518,15 @@ Class | Method | HTTP request | Description
  - [ActorEnrichment](docs/ActorEnrichment.md)
  - [ActorEnrichmentMeta](docs/ActorEnrichmentMeta.md)
  - [ActorEnrichmentsBatchDeleteBody](docs/ActorEnrichmentsBatchDeleteBody.md)
+ - [ActorEnrichmentsBatchDeleteValidationResponse](docs/ActorEnrichmentsBatchDeleteValidationResponse.md)
  - [ActorEnrichmentsBatchGetBody](docs/ActorEnrichmentsBatchGetBody.md)
  - [ActorEnrichmentsBatchValidationResponse](docs/ActorEnrichmentsBatchValidationResponse.md)
  - [ActorIdResponse](docs/ActorIdResponse.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorMessageGraphDB](docs/ActorMessageGraphDB.md)
- - [ActorSegmentCollections](docs/ActorSegmentCollections.md)
+ - [ActorSegmentCollection](docs/ActorSegmentCollection.md)
  - [ActorSegmentsBatchDeleteBody](docs/ActorSegmentsBatchDeleteBody.md)
+ - [ActorSegmentsBatchDeleteValidationResponse](docs/ActorSegmentsBatchDeleteValidationResponse.md)
  - [ActorSegmentsBatchGetBody](docs/ActorSegmentsBatchGetBody.md)
  - [ActorSegmentsBatchValidationResponse](docs/ActorSegmentsBatchValidationResponse.md)
  - [Annotation](docs/Annotation.md)
@@ -552,6 +554,7 @@ Class | Method | HTTP request | Description
  - [MessageEnrichment](docs/MessageEnrichment.md)
  - [MessageEnrichmentMeta](docs/MessageEnrichmentMeta.md)
  - [MessageEnrichmentsBatchDeleteBody](docs/MessageEnrichmentsBatchDeleteBody.md)
+ - [MessageEnrichmentsBatchDeleteValidationResponse](docs/MessageEnrichmentsBatchDeleteValidationResponse.md)
  - [MessageEnrichmentsBatchGetBody](docs/MessageEnrichmentsBatchGetBody.md)
  - [MessageEnrichmentsBatchValidationResponse](docs/MessageEnrichmentsBatchValidationResponse.md)
  - [MessageIdResponse](docs/MessageIdResponse.md)

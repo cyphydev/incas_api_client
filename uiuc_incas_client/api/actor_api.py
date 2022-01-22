@@ -340,7 +340,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :return: ActorEnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -362,7 +362,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :return: ActorEnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -420,7 +420,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentsBatchValidationResponse',  # noqa: E501
+            response_type='ActorEnrichmentsBatchDeleteValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -926,7 +926,7 @@ class ActorApi(object):
     def actor_enrichments_meta_delete(self, enrichment_name, provider_name, version, **kwargs):  # noqa: E501
         """actor_enrichments_meta_delete  # noqa: E501
 
-        Delete a specific message enrichment meta by providerName, enrichmentName and version.  # noqa: E501
+        Delete a specific actor enrichment meta by providerName, enrichmentName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_enrichments_meta_delete(enrichment_name, provider_name, version, async_req=True)
@@ -950,7 +950,7 @@ class ActorApi(object):
     def actor_enrichments_meta_delete_with_http_info(self, enrichment_name, provider_name, version, **kwargs):  # noqa: E501
         """actor_enrichments_meta_delete  # noqa: E501
 
-        Delete a specific message enrichment meta by providerName, enrichmentName and version.  # noqa: E501
+        Delete a specific actor enrichment meta by providerName, enrichmentName and version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_enrichments_meta_delete_with_http_info(enrichment_name, provider_name, version, async_req=True)
@@ -1564,7 +1564,7 @@ class ActorApi(object):
     def actor_id_enrichments_post(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_post  # noqa: E501
 
-        Submits a new enrichment for specific message.  # noqa: E501
+        Submits a new enrichment for specific actor.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_post(body, id, async_req=True)
@@ -1587,7 +1587,7 @@ class ActorApi(object):
     def actor_id_enrichments_post_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """actor_id_enrichments_post  # noqa: E501
 
-        Submits a new enrichment for specific message.  # noqa: E501
+        Submits a new enrichment for specific actor.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.actor_id_enrichments_post_with_http_info(body, id, async_req=True)
@@ -2040,7 +2040,7 @@ class ActorApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: ActorSegmentCollections
+        :return: list[ActorSegmentCollection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2066,7 +2066,7 @@ class ActorApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: ActorSegmentCollections
+        :return: list[ActorSegmentCollection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2128,7 +2128,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorSegmentCollections',  # noqa: E501
+            response_type='list[ActorSegmentCollection]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2146,7 +2146,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, dict(str, float)) body: The new segment collections to add (required)
+        :param ActorSegmentCollection body: The new segment collections to add (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -2169,7 +2169,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, dict(str, float)) body: The new segment collections to add (required)
+        :param ActorSegmentCollection body: The new segment collections to add (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -2253,7 +2253,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, dict(str, float)) body: The segment collections to update (required)
+        :param ActorSegmentCollection body: The segment collections to update (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -2276,7 +2276,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, dict(str, float)) body: The segment collections to update (required)
+        :param ActorSegmentCollection body: The segment collections to update (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -2575,7 +2575,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorSegmentsBatchValidationResponse
+        :return: ActorSegmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2597,7 +2597,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorSegmentsBatchValidationResponse
+        :return: ActorSegmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2655,7 +2655,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorSegmentsBatchValidationResponse',  # noqa: E501
+            response_type='ActorSegmentsBatchDeleteValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2674,7 +2674,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, ActorSegmentCollections)
+        :return: dict(str, list[ActorSegmentCollection])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2696,7 +2696,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, ActorSegmentCollections)
+        :return: dict(str, list[ActorSegmentCollection])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2754,7 +2754,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='dict(str, ActorSegmentCollections)',  # noqa: E501
+            response_type='dict(str, list[ActorSegmentCollection])',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2772,7 +2772,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: Map of IDs and segment collections (required)
+        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2794,7 +2794,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: Map of IDs and segment collections (required)
+        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2871,7 +2871,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: List of IDs and specifications (required)
+        :param dict(str, ActorSegmentCollection) body: List of IDs and specifications (required)
         :return: ActorSegmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2893,7 +2893,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: List of IDs and specifications (required)
+        :param dict(str, ActorSegmentCollection) body: List of IDs and specifications (required)
         :return: ActorSegmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2970,7 +2970,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: Map of IDs and segment collections (required)
+        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2992,7 +2992,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: Map of IDs and segment collections (required)
+        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3069,7 +3069,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: List of IDs and specifications (required)
+        :param dict(str, ActorSegmentCollection) body: List of IDs and specifications (required)
         :return: ActorSegmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3091,7 +3091,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorSegmentCollections) body: List of IDs and specifications (required)
+        :param dict(str, ActorSegmentCollection) body: List of IDs and specifications (required)
         :return: ActorSegmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.

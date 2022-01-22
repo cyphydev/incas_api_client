@@ -183,7 +183,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_delete_validate**
-> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_delete_validate(body)
+> ActorEnrichmentsBatchDeleteValidationResponse actor_enrichments_batch_delete_validate(body)
 
 
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+[**ActorEnrichmentsBatchDeleteValidationResponse**](ActorEnrichmentsBatchDeleteValidationResponse.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ No authorization required
 
 
 
-Delete a specific message enrichment meta by providerName, enrichmentName and version.
+Delete a specific actor enrichment meta by providerName, enrichmentName and version.
 
 ### Example
 ```python
@@ -773,7 +773,7 @@ No authorization required
 
 
 
-Submits a new enrichment for specific message.
+Submits a new enrichment for specific actor.
 
 ### Example
 ```python
@@ -985,7 +985,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_segments_get**
-> ActorSegmentCollections actor_id_segments_get(id, collection_name=collection_name, provider_name=provider_name, version=version, dev=dev)
+> list[ActorSegmentCollection] actor_id_segments_get(id, collection_name=collection_name, provider_name=provider_name, version=version, dev=dev)
 
 
 
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActorSegmentCollections**](ActorSegmentCollections.md)
+[**list[ActorSegmentCollection]**](ActorSegmentCollection.md)
 
 ### Authorization
 
@@ -1056,7 +1056,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, dict(str, float)) | The new segment collections to add
+body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
 id = 'id_example' # str | Actor ID
 
 try:
@@ -1070,7 +1070,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, dict(str, float))**](dict.md)| The new segment collections to add | 
+ **body** | [**ActorSegmentCollection**](ActorSegmentCollection.md)| The new segment collections to add | 
  **id** | **str**| Actor ID | 
 
 ### Return type
@@ -1105,7 +1105,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, dict(str, float)) | The segment collections to update
+body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The segment collections to update
 id = 'id_example' # str | Actor ID
 
 try:
@@ -1119,7 +1119,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, dict(str, float))**](dict.md)| The segment collections to update | 
+ **body** | [**ActorSegmentCollection**](ActorSegmentCollection.md)| The segment collections to update | 
  **id** | **str**| Actor ID | 
 
 ### Return type
@@ -1238,7 +1238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_segments_batch_delete_validate**
-> ActorSegmentsBatchValidationResponse actor_segments_batch_delete_validate(body)
+> ActorSegmentsBatchDeleteValidationResponse actor_segments_batch_delete_validate(body)
 
 
 
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActorSegmentsBatchValidationResponse**](ActorSegmentsBatchValidationResponse.md)
+[**ActorSegmentsBatchDeleteValidationResponse**](ActorSegmentsBatchDeleteValidationResponse.md)
 
 ### Authorization
 
@@ -1285,7 +1285,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_segments_batch_get**
-> dict(str, ActorSegmentCollections) actor_segments_batch_get(body)
+> dict(str, list[ActorSegmentCollection]) actor_segments_batch_get(body)
 
 
 
@@ -1318,7 +1318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**dict(str, ActorSegmentCollections)**](ActorSegmentCollections.md)
+**dict(str, list[ActorSegmentCollection])**
 
 ### Authorization
 
@@ -1348,7 +1348,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
     api_response = api_instance.actor_segments_batch_post(body)
@@ -1361,7 +1361,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| Map of IDs and segment collections | 
+ **body** | [**dict(str, ActorSegmentCollection)**](dict.md)| Map of IDs and segment collections | 
 
 ### Return type
 
@@ -1395,7 +1395,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_segments_batch_post_validate(body)
@@ -1408,7 +1408,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, ActorSegmentCollection)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 
@@ -1442,7 +1442,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, ActorSegmentCollections) | Map of IDs and segment collections
+body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
     api_response = api_instance.actor_segments_batch_put(body)
@@ -1455,7 +1455,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| Map of IDs and segment collections | 
+ **body** | [**dict(str, ActorSegmentCollection)**](dict.md)| Map of IDs and segment collections | 
 
 ### Return type
 
@@ -1489,7 +1489,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi()
-body = NULL # dict(str, ActorSegmentCollections) | List of IDs and specifications
+body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_segments_batch_put_validate(body)
@@ -1502,7 +1502,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorSegmentCollections)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, ActorSegmentCollection)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 

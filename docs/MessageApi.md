@@ -166,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_delete_validate**
-> MessageEnrichmentsBatchValidationResponse message_enrichments_batch_delete_validate(body)
+> MessageEnrichmentsBatchDeleteValidationResponse message_enrichments_batch_delete_validate(body)
 
 
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageEnrichmentsBatchValidationResponse**](MessageEnrichmentsBatchValidationResponse.md)
+[**MessageEnrichmentsBatchDeleteValidationResponse**](MessageEnrichmentsBatchDeleteValidationResponse.md)
 
 ### Authorization
 
