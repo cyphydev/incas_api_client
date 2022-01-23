@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**segment_collection_post**](SegmentApi.md#segment_collection_post) | **POST** /segmentCollection | 
 
 # **segment_collection_id_delete**
-> str segment_collection_id_delete(id)
+> segment_collection_id_delete(id)
 
 
 
@@ -30,8 +30,7 @@ api_instance = uiuc_incas_client.SegmentApi()
 id = 'id_example' # str | Segment collection ID
 
 try:
-    api_response = api_instance.segment_collection_id_delete(id)
-    pprint(api_response)
+    api_instance.segment_collection_id_delete(id)
 except ApiException as e:
     print("Exception when calling SegmentApi->segment_collection_id_delete: %s\n" % e)
 ```
@@ -44,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 

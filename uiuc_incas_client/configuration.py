@@ -46,7 +46,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "http://incas.cs.illinois.edu:8443/api/v1"
+        self.host = "https://incas.cs.illinois.edu:8443/api/v1"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -229,6 +229,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
+            'ApiKeyAuth':
+                {
+                    'type': 'api_key',
+                    'in': 'query',
+                    'key': 'X-API-KEY',
+                    'value': self.get_api_key_with_prefix('X-API-KEY')
+                },
         }
 
     def to_debug_report(self):

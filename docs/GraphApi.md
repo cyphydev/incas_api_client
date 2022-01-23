@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**message_message_graph_post**](GraphApi.md#message_message_graph_post) | **POST** /messageMessageGraph | 
 
 # **actor_actor_graph_id_delete**
-> str actor_actor_graph_id_delete(id)
+> actor_actor_graph_id_delete(id)
 
 
 
@@ -43,8 +43,7 @@ api_instance = uiuc_incas_client.GraphApi()
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.actor_actor_graph_id_delete(id)
-    pprint(api_response)
+    api_instance.actor_actor_graph_id_delete(id)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_actor_graph_id_delete: %s\n" % e)
 ```
@@ -57,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -318,7 +317,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_message_graph_id_delete**
-> str actor_message_graph_id_delete(id)
+> actor_message_graph_id_delete(id)
 
 
 
@@ -337,8 +336,7 @@ api_instance = uiuc_incas_client.GraphApi()
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.actor_message_graph_id_delete(id)
-    pprint(api_response)
+    api_instance.actor_message_graph_id_delete(id)
 except ApiException as e:
     print("Exception when calling GraphApi->actor_message_graph_id_delete: %s\n" % e)
 ```
@@ -351,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -614,7 +612,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_message_graph_id_delete**
-> str message_message_graph_id_delete(id)
+> message_message_graph_id_delete(id)
 
 
 
@@ -633,8 +631,7 @@ api_instance = uiuc_incas_client.GraphApi()
 id = 'id_example' # str | Graph ID
 
 try:
-    api_response = api_instance.message_message_graph_id_delete(id)
-    pprint(api_response)
+    api_instance.message_message_graph_id_delete(id)
 except ApiException as e:
     print("Exception when calling GraphApi->message_message_graph_id_delete: %s\n" % e)
 ```
@@ -647,7 +644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 

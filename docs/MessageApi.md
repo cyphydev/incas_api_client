@@ -86,8 +86,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 media_type = 'media_type_example' # str | Type of entity to retrieve
 
 try:
@@ -109,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -119,7 +125,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_delete**
-> str message_enrichments_batch_delete(body)
+> message_enrichments_batch_delete(body)
 
 
 
@@ -138,8 +144,7 @@ api_instance = uiuc_incas_client.MessageApi()
 body = uiuc_incas_client.MessageEnrichmentsBatchDeleteBody() # MessageEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_response = api_instance.message_enrichments_batch_delete(body)
-    pprint(api_response)
+    api_instance.message_enrichments_batch_delete(body)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_batch_delete: %s\n" % e)
 ```
@@ -152,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -448,7 +453,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_meta_delete**
-> str message_enrichments_meta_delete(enrichment_name, provider_name, version)
+> message_enrichments_meta_delete(enrichment_name, provider_name, version)
 
 
 
@@ -469,8 +474,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.message_enrichments_meta_delete(enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.message_enrichments_meta_delete(enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_meta_delete: %s\n" % e)
 ```
@@ -485,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -513,8 +517,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
@@ -540,7 +550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -564,8 +574,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to add
 
 try:
@@ -587,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -611,8 +627,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to update
 
 try:
@@ -634,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -644,7 +666,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_delete**
-> str message_id_enrichments_delete(id, enrichment_name, provider_name, version)
+> message_id_enrichments_delete(id, enrichment_name, provider_name, version)
 
 
 
@@ -666,8 +688,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.message_id_enrichments_delete(id, enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.message_id_enrichments_delete(id, enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_delete: %s\n" % e)
 ```
@@ -683,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -921,8 +942,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 begin = 56 # int | Begin
 end = 56 # int | End
 media_type = 'media_type_example' # str | Type of entity to retrieve
@@ -948,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

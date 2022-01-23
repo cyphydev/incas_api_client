@@ -132,7 +132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_delete**
-> str actor_enrichments_batch_delete(body)
+> actor_enrichments_batch_delete(body)
 
 
 
@@ -151,8 +151,7 @@ api_instance = uiuc_incas_client.ActorApi()
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_response = api_instance.actor_enrichments_batch_delete(body)
-    pprint(api_response)
+    api_instance.actor_enrichments_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete: %s\n" % e)
 ```
@@ -165,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -461,7 +460,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_meta_delete**
-> str actor_enrichments_meta_delete(enrichment_name, provider_name, version)
+> actor_enrichments_meta_delete(enrichment_name, provider_name, version)
 
 
 
@@ -482,8 +481,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_delete: %s\n" % e)
 ```
@@ -498,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -657,7 +655,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_enrichments_delete**
-> str actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
+> actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
 
 
 
@@ -679,8 +677,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_delete: %s\n" % e)
 ```
@@ -696,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -928,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_segments_delete**
-> str actor_id_segments_delete(id, collection_name, provider_name, version)
+> actor_id_segments_delete(id, collection_name, provider_name, version)
 
 
 
@@ -950,8 +947,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_delete: %s\n" % e)
 ```
@@ -967,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 
@@ -1187,7 +1183,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_segment_batch_delete**
-> str actor_segment_batch_delete(body)
+> actor_segment_batch_delete(body)
 
 
 
@@ -1206,8 +1202,7 @@ api_instance = uiuc_incas_client.ActorApi()
 body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_response = api_instance.actor_segment_batch_delete(body)
-    pprint(api_response)
+    api_instance.actor_segment_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segment_batch_delete: %s\n" % e)
 ```
@@ -1220,7 +1215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+void (empty response body)
 
 ### Authorization
 

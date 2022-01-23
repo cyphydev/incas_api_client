@@ -208,7 +208,7 @@ class MessageApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/count', 'GET',
@@ -237,7 +237,7 @@ class MessageApi(object):
 
         :param async_req bool
         :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -259,7 +259,7 @@ class MessageApi(object):
 
         :param async_req bool
         :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -317,7 +317,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -932,7 +932,7 @@ class MessageApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -956,7 +956,7 @@ class MessageApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1022,7 +1022,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1111,7 +1111,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/meta', 'GET',
@@ -1210,7 +1210,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/meta', 'POST',
@@ -1309,7 +1309,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/meta', 'PUT',
@@ -1341,7 +1341,7 @@ class MessageApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1366,7 +1366,7 @@ class MessageApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1438,7 +1438,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1979,7 +1979,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/list', 'GET',

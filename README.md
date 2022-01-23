@@ -77,8 +77,7 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_response = api_instance.actor_enrichments_batch_delete(body)
-    pprint(api_response)
+    api_instance.actor_enrichments_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete: %s\n" % e)
 
@@ -149,8 +148,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_delete: %s\n" % e)
 
@@ -194,8 +192,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_delete: %s\n" % e)
 
@@ -262,8 +259,7 @@ provider_name = 'provider_name_example' # str |
 version = 'version_example' # str | 
 
 try:
-    api_response = api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
-    pprint(api_response)
+    api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_delete: %s\n" % e)
 
@@ -321,8 +317,7 @@ api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configurat
 body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
 
 try:
-    api_response = api_instance.actor_segment_batch_delete(body)
-    pprint(api_response)
+    api_instance.actor_segment_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segment_batch_delete: %s\n" % e)
 
@@ -542,7 +537,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## ApiKeyAuth
+
+- **Type**: API key
+- **API key parameter name**: X-API-KEY
+- **Location**: URL query string
 
 
 ## Author

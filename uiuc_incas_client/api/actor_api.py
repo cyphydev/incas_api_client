@@ -241,7 +241,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -263,7 +263,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -321,7 +321,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -936,7 +936,7 @@ class ActorApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -960,7 +960,7 @@ class ActorApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1026,7 +1026,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1345,7 +1345,7 @@ class ActorApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1370,7 +1370,7 @@ class ActorApi(object):
         :param str enrichment_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1442,7 +1442,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1920,7 +1920,7 @@ class ActorApi(object):
         :param str collection_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1945,7 +1945,7 @@ class ActorApi(object):
         :param str collection_name: (required)
         :param str provider_name: (required)
         :param str version: (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2017,7 +2017,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2476,7 +2476,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2498,7 +2498,7 @@ class ActorApi(object):
 
         :param async_req bool
         :param ActorSegmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: str
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2556,7 +2556,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
