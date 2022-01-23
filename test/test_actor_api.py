@@ -208,30 +208,6 @@ class TestActorApi(unittest.TestCase):
         """
         pass
 
-    def test_actor_segments_meta_delete(self):
-        """Test case for actor_segments_meta_delete
-
-        """
-        pass
-
-    def test_actor_segments_meta_get(self):
-        """Test case for actor_segments_meta_get
-
-        """
-        pass
-
-    def test_actor_segments_meta_post(self):
-        """Test case for actor_segments_meta_post
-
-        """
-        pass
-
-    def test_actor_segments_meta_put(self):
-        """Test case for actor_segments_meta_put
-
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

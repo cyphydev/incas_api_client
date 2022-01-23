@@ -385,50 +385,6 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_put_validate: %s\n" % e)
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-collection_name = 'collection_name_example' # str | 
-provider_name = 'provider_name_example' # str | 
-version = 'version_example' # str | 
-
-try:
-    api_response = api_instance.actor_segments_meta_delete(collection_name, provider_name, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_meta_delete: %s\n" % e)
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-collection_name = 'collection_name_example' # str |  (optional)
-provider_name = 'provider_name_example' # str |  (optional)
-version = 'version_example' # str |  (optional)
-
-try:
-    api_response = api_instance.actor_segments_meta_get(collection_name=collection_name, provider_name=provider_name, version=version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_meta_get: %s\n" % e)
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to add
-
-try:
-    api_response = api_instance.actor_segments_meta_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_meta_post: %s\n" % e)
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection meta to update
-
-try:
-    api_response = api_instance.actor_segments_meta_put(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_meta_put: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -467,10 +423,6 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_segments_batch_post_validate**](docs/ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
 *ActorApi* | [**actor_segments_batch_put**](docs/ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
 *ActorApi* | [**actor_segments_batch_put_validate**](docs/ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
-*ActorApi* | [**actor_segments_meta_delete**](docs/ActorApi.md#actor_segments_meta_delete) | **DELETE** /actor/segments/meta | 
-*ActorApi* | [**actor_segments_meta_get**](docs/ActorApi.md#actor_segments_meta_get) | **GET** /actor/segments/meta | 
-*ActorApi* | [**actor_segments_meta_post**](docs/ActorApi.md#actor_segments_meta_post) | **POST** /actor/segments/meta | 
-*ActorApi* | [**actor_segments_meta_put**](docs/ActorApi.md#actor_segments_meta_put) | **PUT** /actor/segments/meta | 
 *GraphApi* | [**actor_actor_graph_id_delete**](docs/GraphApi.md#actor_actor_graph_id_delete) | **DELETE** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_get**](docs/GraphApi.md#actor_actor_graph_id_get) | **GET** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_neighbor_get**](docs/GraphApi.md#actor_actor_graph_id_neighbor_get) | **GET** /actorActorGraph/{id}/neighbor | 
@@ -508,6 +460,11 @@ Class | Method | HTTP request | Description
 *MessageApi* | [**message_id_enrichments_put**](docs/MessageApi.md#message_id_enrichments_put) | **PUT** /message/{id}/enrichments | 
 *MessageApi* | [**message_id_get**](docs/MessageApi.md#message_id_get) | **GET** /message/{id} | 
 *MessageApi* | [**message_list_get**](docs/MessageApi.md#message_list_get) | **GET** /message/list | 
+*SegmentApi* | [**segment_collection_id_delete**](docs/SegmentApi.md#segment_collection_id_delete) | **DELETE** /segmentCollection/{id} | 
+*SegmentApi* | [**segment_collection_id_get**](docs/SegmentApi.md#segment_collection_id_get) | **GET** /segmentCollection/{id} | 
+*SegmentApi* | [**segment_collection_id_put**](docs/SegmentApi.md#segment_collection_id_put) | **PUT** /segmentCollection/{id} | 
+*SegmentApi* | [**segment_collection_list_get**](docs/SegmentApi.md#segment_collection_list_get) | **GET** /segmentCollection/list | 
+*SegmentApi* | [**segment_collection_post**](docs/SegmentApi.md#segment_collection_post) | **POST** /segmentCollection | 
 
 ## Documentation For Models
 

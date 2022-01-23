@@ -18,6 +18,7 @@ from __future__ import absolute_import
 from uiuc_incas_client.api.actor_api import ActorApi
 from uiuc_incas_client.api.graph_api import GraphApi
 from uiuc_incas_client.api.message_api import MessageApi
+from uiuc_incas_client.api.segment_api import SegmentApi
 # import ApiClient
 from uiuc_incas_client.api_client import ApiClient
 from uiuc_incas_client.configuration import Configuration
