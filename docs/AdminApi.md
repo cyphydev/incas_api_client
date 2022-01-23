@@ -30,7 +30,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.AdminApi(uiuc_incas_client.ApiClient(configuration))
-body = [uiuc_incas_client.Actor()] # list[Actor] | Array of actors
+body = [uiuc_incas_client.UiucActor()] # list[UiucActor] | Array of actors
 
 try:
     api_response = api_instance.admin_actor_post(body)
@@ -43,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[Actor]**](Actor.md)| Array of actors | 
+ **body** | [**list[UiucActor]**](UiucActor.md)| Array of actors | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.AdminApi(uiuc_incas_client.ApiClient(configuration))
-body = [uiuc_incas_client.Message()] # list[Message] | Array of messages
+body = [uiuc_incas_client.UiucMessage()] # list[UiucMessage] | Array of messages
 
 try:
     api_response = api_instance.admin_message_post(body)
@@ -96,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[Message]**](Message.md)| Array of messages | 
+ **body** | [**list[UiucMessage]**](UiucMessage.md)| Array of messages | 
 
 ### Return type
 

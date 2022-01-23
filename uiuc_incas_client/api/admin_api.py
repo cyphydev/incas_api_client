@@ -42,7 +42,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Actor] body: Array of actors (required)
+        :param list[UiucActor] body: Array of actors (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,7 +64,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Actor] body: Array of actors (required)
+        :param list[UiucActor] body: Array of actors (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -141,7 +141,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Message] body: Array of messages (required)
+        :param list[UiucMessage] body: Array of messages (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -163,7 +163,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Message] body: Array of messages (required)
+        :param list[UiucMessage] body: Array of messages (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
