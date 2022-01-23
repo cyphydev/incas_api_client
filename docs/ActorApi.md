@@ -50,8 +50,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorBatchGetBody() # ActorBatchGetBody | List of IDs and specifications
 
 try:
@@ -73,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -97,8 +103,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 media_type = 'media_type_example' # str | Type of entity to retrieve
 entity_type = 'entity_type_example' # str | Type of entity to retrieve (optional)
 
@@ -122,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -146,8 +158,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
@@ -168,7 +186,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -192,8 +210,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
@@ -215,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -239,8 +263,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
@@ -262,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -286,8 +316,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
@@ -309,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -333,8 +369,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
 
 try:
@@ -356,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -380,8 +422,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
 
 try:
@@ -403,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -427,8 +475,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
 
 try:
@@ -450,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -474,8 +528,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 enrichment_name = 'enrichment_name_example' # str | 
 provider_name = 'provider_name_example' # str | 
 version = 'version_example' # str | 
@@ -500,7 +560,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -524,8 +584,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
@@ -551,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -575,8 +641,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
 
 try:
@@ -598,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -622,8 +694,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
 
 try:
@@ -645,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -669,8 +747,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 enrichment_name = 'enrichment_name_example' # str | 
 provider_name = 'provider_name_example' # str | 
@@ -697,7 +781,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -721,8 +805,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
@@ -752,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -776,8 +866,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichment to add
 id = 'id_example' # str | Actor ID
 
@@ -801,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -825,8 +921,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichments to update
 id = 'id_example' # str | Actor ID
 
@@ -850,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -874,8 +976,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 with_enrichment = true # bool | Whether to retrieve enrichments (optional)
 with_segment = true # bool | Whether to retrieve segments (optional)
@@ -915,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -939,8 +1047,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 collection_name = 'collection_name_example' # str | 
 provider_name = 'provider_name_example' # str | 
@@ -967,7 +1081,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -991,8 +1105,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
 collection_name = 'collection_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
@@ -1022,7 +1142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1046,8 +1166,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
 id = 'id_example' # str | Actor ID
 
@@ -1071,7 +1197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1095,8 +1221,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The segment collections to update
 id = 'id_example' # str | Actor ID
 
@@ -1120,7 +1252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1144,8 +1276,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 begin = 56 # int | Begin
 end = 56 # int | End
 media_type = 'media_type_example' # str | Type of entity to retrieve
@@ -1173,7 +1311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1197,8 +1335,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
 
 try:
@@ -1219,7 +1363,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1243,8 +1387,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
 
 try:
@@ -1266,7 +1416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1290,8 +1440,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentsBatchGetBody() # ActorSegmentsBatchGetBody | List of IDs and specifications
 
 try:
@@ -1313,7 +1469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1337,8 +1493,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
@@ -1360,7 +1522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1384,8 +1546,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
@@ -1407,7 +1575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1431,8 +1599,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
 
 try:
@@ -1454,7 +1628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -1478,8 +1652,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi()
+api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
@@ -1501,7 +1681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

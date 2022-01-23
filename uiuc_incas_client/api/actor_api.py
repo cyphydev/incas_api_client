@@ -113,7 +113,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/batchGet', 'POST',
@@ -212,7 +212,7 @@ class ActorApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/count', 'GET',
@@ -311,7 +311,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batchDelete', 'POST',
@@ -410,7 +410,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batchDelete/validate', 'POST',
@@ -509,7 +509,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batchGet', 'POST',
@@ -608,7 +608,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batch', 'POST',
@@ -707,7 +707,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batch/validate', 'POST',
@@ -806,7 +806,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batch', 'PUT',
@@ -905,7 +905,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/batch/validate', 'PUT',
@@ -1016,7 +1016,7 @@ class ActorApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/meta', 'DELETE',
@@ -1115,7 +1115,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/meta', 'GET',
@@ -1214,7 +1214,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/meta', 'POST',
@@ -1313,7 +1313,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/enrichments/meta', 'PUT',
@@ -1432,7 +1432,7 @@ class ActorApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/enrichments', 'DELETE',
@@ -1543,7 +1543,7 @@ class ActorApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/enrichments', 'GET',
@@ -1650,7 +1650,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/enrichments', 'POST',
@@ -1757,7 +1757,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/enrichments', 'PUT',
@@ -1888,7 +1888,7 @@ class ActorApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}', 'GET',
@@ -2007,7 +2007,7 @@ class ActorApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/segments', 'DELETE',
@@ -2118,7 +2118,7 @@ class ActorApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/segments', 'GET',
@@ -2225,7 +2225,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/segments', 'POST',
@@ -2332,7 +2332,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/{id}/segments', 'PUT',
@@ -2447,7 +2447,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/list', 'GET',
@@ -2546,7 +2546,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batchDelete', 'POST',
@@ -2645,7 +2645,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batchDelete/validate', 'POST',
@@ -2744,7 +2744,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batchGet', 'POST',
@@ -2843,7 +2843,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batch', 'POST',
@@ -2942,7 +2942,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batch/validate', 'POST',
@@ -3041,7 +3041,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batch', 'PUT',
@@ -3140,7 +3140,7 @@ class ActorApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actor/segments/batch/validate', 'PUT',

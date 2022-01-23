@@ -109,7 +109,7 @@ class SegmentApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/segmentCollection/{id}', 'DELETE',
@@ -204,7 +204,7 @@ class SegmentApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/segmentCollection/{id}', 'GET',
@@ -311,7 +311,7 @@ class SegmentApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/segmentCollection/{id}', 'PUT',
@@ -410,7 +410,7 @@ class SegmentApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/segmentCollection/list', 'GET',
@@ -509,7 +509,7 @@ class SegmentApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/segmentCollection', 'POST',

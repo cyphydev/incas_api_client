@@ -51,6 +51,12 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorBatchGetBody() # ActorBatchGetBody | List of IDs and specifications
@@ -60,6 +66,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_batch_get: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -72,6 +84,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_count_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
@@ -80,6 +98,12 @@ try:
     api_instance.actor_enrichments_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -91,6 +115,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_delete_validate: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
@@ -100,6 +130,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_get: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -111,6 +147,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_post: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
@@ -120,6 +162,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_post_validate: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -131,6 +179,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_put: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
@@ -140,6 +194,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_batch_put_validate: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -151,6 +211,12 @@ try:
     api_instance.actor_enrichments_meta_delete(enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_delete: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -164,6 +230,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
@@ -174,6 +246,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_post: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
@@ -183,6 +261,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_enrichments_meta_put: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -195,6 +279,12 @@ try:
     api_instance.actor_id_enrichments_delete(id, enrichment_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_delete: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -210,6 +300,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichment to add
@@ -221,6 +317,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_post: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichments to update
@@ -231,6 +333,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_enrichments_put: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -251,6 +359,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Actor ID
@@ -262,6 +376,12 @@ try:
     api_instance.actor_id_segments_delete(id, collection_name, provider_name, version)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_delete: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -277,6 +397,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
@@ -288,6 +414,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_post: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The segment collections to update
@@ -298,6 +430,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_put: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -312,6 +450,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_list_get: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentsBatchDeleteBody() # ActorSegmentsBatchDeleteBody | List of IDs and specifications
@@ -320,6 +464,12 @@ try:
     api_instance.actor_segment_batch_delete(body)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segment_batch_delete: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -331,6 +481,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_delete_validate: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.ActorSegmentsBatchGetBody() # ActorSegmentsBatchGetBody | List of IDs and specifications
@@ -340,6 +496,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_get: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -351,6 +513,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_post: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
@@ -361,6 +529,12 @@ try:
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_post_validate: %s\n" % e)
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
@@ -370,6 +544,12 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_segments_batch_put: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
@@ -418,6 +598,8 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_segments_batch_post_validate**](docs/ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
 *ActorApi* | [**actor_segments_batch_put**](docs/ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
 *ActorApi* | [**actor_segments_batch_put_validate**](docs/ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
+*AdminApi* | [**admin_actor_post**](docs/AdminApi.md#admin_actor_post) | **POST** /actor | 
+*AdminApi* | [**admin_message_post**](docs/AdminApi.md#admin_message_post) | **POST** /message | 
 *GraphApi* | [**actor_actor_graph_id_delete**](docs/GraphApi.md#actor_actor_graph_id_delete) | **DELETE** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_get**](docs/GraphApi.md#actor_actor_graph_id_get) | **GET** /actorActorGraph/{id} | 
 *GraphApi* | [**actor_actor_graph_id_neighbor_get**](docs/GraphApi.md#actor_actor_graph_id_neighbor_get) | **GET** /actorActorGraph/{id}/neighbor | 

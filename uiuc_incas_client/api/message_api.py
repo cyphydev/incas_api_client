@@ -113,7 +113,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/batchGet', 'POST',
@@ -307,7 +307,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batchDelete', 'POST',
@@ -406,7 +406,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batchDelete/validate', 'POST',
@@ -505,7 +505,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batchGet', 'POST',
@@ -604,7 +604,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batch', 'POST',
@@ -703,7 +703,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batch/validate', 'POST',
@@ -802,7 +802,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batch', 'PUT',
@@ -901,7 +901,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/batch/validate', 'PUT',
@@ -1012,7 +1012,7 @@ class MessageApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/enrichments/meta', 'DELETE',
@@ -1428,7 +1428,7 @@ class MessageApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/{id}/enrichments', 'DELETE',
@@ -1539,7 +1539,7 @@ class MessageApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/{id}/enrichments', 'GET',
@@ -1646,7 +1646,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/{id}/enrichments', 'POST',
@@ -1753,7 +1753,7 @@ class MessageApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/{id}/enrichments', 'PUT',
@@ -1868,7 +1868,7 @@ class MessageApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/message/{id}', 'GET',

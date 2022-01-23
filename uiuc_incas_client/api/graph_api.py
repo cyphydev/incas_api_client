@@ -109,7 +109,7 @@ class GraphApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph/{id}', 'DELETE',
@@ -204,7 +204,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph/{id}', 'GET',
@@ -307,7 +307,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph/{id}/neighbor', 'GET',
@@ -414,7 +414,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph/{id}', 'PUT',
@@ -521,7 +521,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph/list', 'GET',
@@ -620,7 +620,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorActorGraph', 'POST',
@@ -715,7 +715,7 @@ class GraphApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph/{id}', 'DELETE',
@@ -810,7 +810,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph/{id}', 'GET',
@@ -913,7 +913,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph/{id}/neighbor', 'GET',
@@ -1020,7 +1020,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph/{id}', 'PUT',
@@ -1127,7 +1127,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph/list', 'GET',
@@ -1226,7 +1226,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/actorMessageGraph', 'POST',
@@ -1321,7 +1321,7 @@ class GraphApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph/{id}', 'DELETE',
@@ -1416,7 +1416,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph/{id}', 'GET',
@@ -1519,7 +1519,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph/{id}/neighbor', 'GET',
@@ -1626,7 +1626,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph/{id}', 'PUT',
@@ -1733,7 +1733,7 @@ class GraphApi(object):
             ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph/list', 'GET',
@@ -1832,7 +1832,7 @@ class GraphApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/messageMessageGraph', 'POST',

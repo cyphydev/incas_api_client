@@ -25,8 +25,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.SegmentApi()
+api_instance = uiuc_incas_client.SegmentApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Segment collection ID
 
 try:
@@ -47,7 +53,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -71,8 +77,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.SegmentApi()
+api_instance = uiuc_incas_client.SegmentApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Segment collection ID
 
 try:
@@ -94,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -118,8 +130,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.SegmentApi()
+api_instance = uiuc_incas_client.SegmentApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The segment collection meta
 id = 'id_example' # str | Segment collection ID
 
@@ -143,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -167,8 +185,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.SegmentApi()
+api_instance = uiuc_incas_client.SegmentApi(uiuc_incas_client.ApiClient(configuration))
 collection_name = 'collection_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
@@ -194,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -218,8 +242,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.SegmentApi()
+api_instance = uiuc_incas_client.SegmentApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.UiucSegmentCollectionMeta() # UiucSegmentCollectionMeta | The new segment collection to add
 
 try:
@@ -241,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
