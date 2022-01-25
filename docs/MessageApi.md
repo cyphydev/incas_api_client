@@ -7,9 +7,12 @@ Method | HTTP request | Description
 [**message_batch_get**](MessageApi.md#message_batch_get) | **POST** /message/batchGet | 
 [**message_count_get**](MessageApi.md#message_count_get) | **GET** /message/count | 
 [**message_enrichments_batch_delete**](MessageApi.md#message_enrichments_batch_delete) | **POST** /message/enrichments/batchDelete | 
+[**message_enrichments_batch_delete_validate**](MessageApi.md#message_enrichments_batch_delete_validate) | **POST** /message/enrichments/batchDelete/validate | 
 [**message_enrichments_batch_get**](MessageApi.md#message_enrichments_batch_get) | **POST** /message/enrichments/batchGet | 
 [**message_enrichments_batch_post**](MessageApi.md#message_enrichments_batch_post) | **POST** /message/enrichments/batch | 
+[**message_enrichments_batch_post_validate**](MessageApi.md#message_enrichments_batch_post_validate) | **POST** /message/enrichments/batch/validate | 
 [**message_enrichments_batch_put**](MessageApi.md#message_enrichments_batch_put) | **PUT** /message/enrichments/batch | 
+[**message_enrichments_batch_put_validate**](MessageApi.md#message_enrichments_batch_put_validate) | **PUT** /message/enrichments/batch/validate | 
 [**message_enrichments_meta_delete**](MessageApi.md#message_enrichments_meta_delete) | **DELETE** /message/enrichments/meta | 
 [**message_enrichments_meta_get**](MessageApi.md#message_enrichments_meta_get) | **GET** /message/enrichments/meta | 
 [**message_enrichments_meta_post**](MessageApi.md#message_enrichments_meta_post) | **POST** /message/enrichments/meta | 
@@ -36,8 +39,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageBatchGetBody() # MessageBatchGetBody | List of IDs and specifications
 
 try:
@@ -59,12 +68,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -83,8 +92,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 media_type = 'media_type_example' # str | Type of entity to retrieve
 
 try:
@@ -106,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -130,8 +145,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentsBatchDeleteBody() # MessageEnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
@@ -152,12 +173,65 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_delete_validate**
+> MessageEnrichmentsBatchDeleteValidationResponse message_enrichments_batch_delete_validate(body)
+
+
+
+Validation endpoint for batch enrichment deletion, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
+body = uiuc_incas_client.MessageEnrichmentsBatchDeleteBody() # MessageEnrichmentsBatchDeleteBody | List of IDs and specifications
+
+try:
+    api_response = api_instance.message_enrichments_batch_delete_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_delete_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MessageEnrichmentsBatchDeleteBody**](MessageEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+
+### Return type
+
+[**MessageEnrichmentsBatchDeleteValidationResponse**](MessageEnrichmentsBatchDeleteValidationResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,8 +250,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentsBatchGetBody() # MessageEnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
@@ -199,17 +279,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_post**
-> message_enrichments_batch_post(body)
+> str message_enrichments_batch_post(body)
 
 
 
@@ -223,12 +303,19 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.message_enrichments_batch_post(body)
+    api_response = api_instance.message_enrichments_batch_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_batch_post: %s\n" % e)
 ```
@@ -241,21 +328,74 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_post_validate**
+> MessageEnrichmentsBatchValidationResponse message_enrichments_batch_post_validate(body)
+
+
+
+Validation endpoint for batch enrichment creation, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, MessageEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.message_enrichments_batch_post_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_post_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, MessageEnrichment)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**MessageEnrichmentsBatchValidationResponse**](MessageEnrichmentsBatchValidationResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_put**
-> message_enrichments_batch_put(body)
+> str message_enrichments_batch_put(body)
 
 
 
@@ -269,12 +409,19 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
 
 try:
-    api_instance.message_enrichments_batch_put(body)
+    api_response = api_instance.message_enrichments_batch_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_batch_put: %s\n" % e)
 ```
@@ -287,16 +434,69 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **message_enrichments_batch_put_validate**
+> MessageEnrichmentsBatchValidationResponse message_enrichments_batch_put_validate(body)
+
+
+
+Validation endpoint for batch enrichment update, successful attempt will return a token.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import uiuc_incas_client
+from uiuc_incas_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
+body = NULL # dict(str, MessageEnrichment) | List of IDs and specifications
+
+try:
+    api_response = api_instance.message_enrichments_batch_put_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MessageApi->message_enrichments_batch_put_validate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, MessageEnrichment)**](dict.md)| List of IDs and specifications | 
+
+### Return type
+
+[**MessageEnrichmentsBatchValidationResponse**](MessageEnrichmentsBatchValidationResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -315,8 +515,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 enrichment_name = 'enrichment_name_example' # str | 
 provider_name = 'provider_name_example' # str | 
 version = 'version_example' # str | 
@@ -341,12 +547,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -365,8 +571,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
 version = 'version_example' # str |  (optional)
@@ -392,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -402,7 +614,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_meta_post**
-> message_enrichments_meta_post(body)
+> str message_enrichments_meta_post(body)
 
 
 
@@ -416,12 +628,19 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to add
 
 try:
-    api_instance.message_enrichments_meta_post(body)
+    api_response = api_instance.message_enrichments_meta_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_meta_post: %s\n" % e)
 ```
@@ -434,21 +653,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_meta_put**
-> message_enrichments_meta_put(body)
+> str message_enrichments_meta_put(body)
 
 
 
@@ -462,12 +681,19 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to update
 
 try:
-    api_instance.message_enrichments_meta_put(body)
+    api_response = api_instance.message_enrichments_meta_put(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_enrichments_meta_put: %s\n" % e)
 ```
@@ -480,16 +706,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -508,8 +734,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Message ID
 enrichment_name = 'enrichment_name_example' # str | 
 provider_name = 'provider_name_example' # str | 
@@ -536,12 +768,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -560,8 +792,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Message ID
 enrichment_name = 'enrichment_name_example' # str |  (optional)
 provider_name = 'provider_name_example' # str |  (optional)
@@ -591,17 +829,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_post**
-> message_id_enrichments_post(body, id)
+> str message_id_enrichments_post(body, id)
 
 
 
@@ -615,13 +853,20 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichment to add
 id = 'id_example' # str | Message ID
 
 try:
-    api_instance.message_id_enrichments_post(body, id)
+    api_response = api_instance.message_id_enrichments_post(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_post: %s\n" % e)
 ```
@@ -635,21 +880,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_put**
-> message_id_enrichments_put(body, id)
+> str message_id_enrichments_put(body, id)
 
 
 
@@ -663,13 +908,20 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichments to update
 id = 'id_example' # str | Message ID
 
 try:
-    api_instance.message_id_enrichments_put(body, id)
+    api_response = api_instance.message_id_enrichments_put(body, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessageApi->message_id_enrichments_put: %s\n" % e)
 ```
@@ -683,16 +935,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -711,8 +963,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 id = 'id_example' # str | Message ID
 with_enrichment = true # bool | Whether to retrieve enrichments (optional)
 enrichment_name = 'enrichment_name_example' # str |  (optional)
@@ -744,17 +1002,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_list_get**
-> list[str] message_list_get(begin, end, media_type)
+> list[MessageIdResponse] message_list_get(begin, end, media_type)
 
 
 
@@ -768,8 +1026,14 @@ import uiuc_incas_client
 from uiuc_incas_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = uiuc_incas_client.Configuration()
+configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = uiuc_incas_client.MessageApi()
+api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
 begin = 56 # int | Begin
 end = 56 # int | End
 media_type = 'media_type_example' # str | Type of entity to retrieve
@@ -791,11 +1055,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[str]**
+[**list[MessageIdResponse]**](MessageIdResponse.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

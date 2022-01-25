@@ -4,5 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from uiuc_incas_client.api.actor_api import ActorApi
+from uiuc_incas_client.api.admin_api import AdminApi
 from uiuc_incas_client.api.graph_api import GraphApi
 from uiuc_incas_client.api.message_api import MessageApi
+from uiuc_incas_client.api.segment_api import SegmentApi
