@@ -58,6 +58,12 @@ class TestSegmentApi(unittest.TestCase):
         """
         pass
 
+    def test_segment_collection_validate_post(self):
+        """Test case for segment_collection_validate_post
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

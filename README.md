@@ -642,6 +642,7 @@ Class | Method | HTTP request | Description
 *SegmentApi* | [**segment_collection_id_put**](docs/SegmentApi.md#segment_collection_id_put) | **PUT** /segmentCollection/{id} | 
 *SegmentApi* | [**segment_collection_list_get**](docs/SegmentApi.md#segment_collection_list_get) | **GET** /segmentCollection/list | 
 *SegmentApi* | [**segment_collection_post**](docs/SegmentApi.md#segment_collection_post) | **POST** /segmentCollection | 
+*SegmentApi* | [**segment_collection_validate_post**](docs/SegmentApi.md#segment_collection_validate_post) | **POST** /segmentCollection/validate | 
 
 ## Documentation For Models
 
