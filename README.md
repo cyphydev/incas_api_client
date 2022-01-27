@@ -724,7 +724,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: API key
 - **API key parameter name**: X-API-KEY
-- **Location**: URL query string
+- **Location**: HTTP header
 
 
 ## Author
