@@ -232,7 +232,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
             'ApiKeyAuth':
                 {
                     'type': 'api_key',
-                    'in': 'query',
+                    'in': 'header',
                     'key': 'X-API-KEY',
                     'value': self.get_api_key_with_prefix('X-API-KEY')
                 },
