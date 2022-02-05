@@ -40,6 +40,12 @@ class TestSegmentApi(unittest.TestCase):
         """
         pass
 
+    def test_segment_collection_id_partial_put(self):
+        """Test case for segment_collection_id_partial_put
+
+        """
+        pass
+
     def test_segment_collection_id_put(self):
         """Test case for segment_collection_id_put
 

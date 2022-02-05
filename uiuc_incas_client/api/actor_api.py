@@ -240,7 +240,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -262,7 +262,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -339,8 +339,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchDeleteValidationResponse
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -361,8 +361,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchDeleteValidationResponse
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -420,7 +420,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentsBatchDeleteValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchDeleteValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -438,8 +438,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, list[ActorEnrichment])
+        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :return: dict(str, list[Enrichment])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -460,8 +460,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, list[ActorEnrichment])
+        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :return: dict(str, list[Enrichment])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -519,7 +519,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='dict(str, list[ActorEnrichment])',  # noqa: E501
+            response_type='dict(str, list[Enrichment])',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -537,7 +537,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -559,7 +559,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -636,8 +636,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -658,8 +658,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -717,7 +717,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentsBatchValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -735,7 +735,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -757,7 +757,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -834,8 +834,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -856,8 +856,8 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, ActorEnrichment) body: List of IDs and specifications (required)
-        :return: ActorEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -915,7 +915,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActorEnrichmentsBatchValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1047,7 +1047,7 @@ class ActorApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
-        :return: list[ActorEnrichmentMeta]
+        :return: list[EnrichmentMeta]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1071,7 +1071,7 @@ class ActorApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
-        :return: list[ActorEnrichmentMeta]
+        :return: list[EnrichmentMeta]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1125,7 +1125,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ActorEnrichmentMeta]',  # noqa: E501
+            response_type='list[EnrichmentMeta]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1143,7 +1143,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentMeta body: The new enrichment meta to add (required)
+        :param EnrichmentMeta body: The new enrichment meta to add (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1165,7 +1165,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentMeta body: The new enrichment meta to add (required)
+        :param EnrichmentMeta body: The new enrichment meta to add (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1242,7 +1242,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentMeta body: The new enrichment meta to update (required)
+        :param EnrichmentMeta body: The new enrichment meta to update (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1264,7 +1264,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichmentMeta body: The new enrichment meta to update (required)
+        :param EnrichmentMeta body: The new enrichment meta to update (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1465,7 +1465,7 @@ class ActorApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: list[ActorEnrichment]
+        :return: list[Enrichment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1491,7 +1491,7 @@ class ActorApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: list[ActorEnrichment]
+        :return: list[Enrichment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1553,7 +1553,7 @@ class ActorApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ActorEnrichment]',  # noqa: E501
+            response_type='list[Enrichment]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1571,7 +1571,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichment body: The new enrichment to add (required)
+        :param Enrichment body: The new enrichment to add (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1594,7 +1594,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichment body: The new enrichment to add (required)
+        :param Enrichment body: The new enrichment to add (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1678,7 +1678,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichment body: The new enrichments to update (required)
+        :param Enrichment body: The new enrichments to update (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1701,7 +1701,7 @@ class ActorApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ActorEnrichment body: The new enrichments to update (required)
+        :param Enrichment body: The new enrichments to update (required)
         :param str id: Actor ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -2129,113 +2129,6 @@ class ActorApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[ActorSegmentCollection]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def actor_id_segments_post(self, body, id, **kwargs):  # noqa: E501
-        """actor_id_segments_post  # noqa: E501
-
-        Add a new segment collection for the specific actor  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_id_segments_post(body, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ActorSegmentCollection body: The new segment collections to add (required)
-        :param str id: Actor ID (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_id_segments_post_with_http_info(body, id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_id_segments_post_with_http_info(body, id, **kwargs)  # noqa: E501
-            return data
-
-    def actor_id_segments_post_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """actor_id_segments_post  # noqa: E501
-
-        Add a new segment collection for the specific actor  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_id_segments_post_with_http_info(body, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ActorSegmentCollection body: The new segment collections to add (required)
-        :param str id: Actor ID (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_id_segments_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `actor_id_segments_post`")  # noqa: E501
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `actor_id_segments_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKeyAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actor/{id}/segments', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2755,105 +2648,6 @@ class ActorApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='dict(str, list[ActorSegmentCollection])',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def actor_segments_batch_post(self, body, **kwargs):  # noqa: E501
-        """actor_segments_batch_post  # noqa: E501
-
-        Submits a segment collection for each actor ID.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_segments_batch_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.actor_segments_batch_post_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.actor_segments_batch_post_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def actor_segments_batch_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """actor_segments_batch_post  # noqa: E501
-
-        Submits a segment collection for each actor ID.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.actor_segments_batch_post_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param dict(str, ActorSegmentCollection) body: Map of IDs and segment collections (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method actor_segments_batch_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `actor_segments_batch_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKeyAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/actor/segments/batch', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

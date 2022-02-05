@@ -236,7 +236,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -258,7 +258,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -335,8 +335,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchDeleteValidationResponse
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -357,8 +357,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchDeleteValidationResponse
+        :param EnrichmentsBatchDeleteBody body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchDeleteValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -416,7 +416,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MessageEnrichmentsBatchDeleteValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchDeleteValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -434,8 +434,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, list[MessageEnrichment])
+        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :return: dict(str, list[Enrichment])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -456,8 +456,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentsBatchGetBody body: List of IDs and specifications (required)
-        :return: dict(str, list[MessageEnrichment])
+        :param EnrichmentsBatchGetBody body: List of IDs and specifications (required)
+        :return: dict(str, list[Enrichment])
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -515,7 +515,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='dict(str, list[MessageEnrichment])',  # noqa: E501
+            response_type='dict(str, list[Enrichment])',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -533,7 +533,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -555,7 +555,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -632,8 +632,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -654,8 +654,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -713,7 +713,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MessageEnrichmentsBatchValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -731,7 +731,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -753,7 +753,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: Map of IDs and enrichments (required)
+        :param dict(str, Enrichment) body: Map of IDs and enrichments (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -830,8 +830,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -852,8 +852,8 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, MessageEnrichment) body: List of IDs and specifications (required)
-        :return: MessageEnrichmentsBatchValidationResponse
+        :param dict(str, Enrichment) body: List of IDs and specifications (required)
+        :return: EnrichmentsBatchValidationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -911,7 +911,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MessageEnrichmentsBatchValidationResponse',  # noqa: E501
+            response_type='EnrichmentsBatchValidationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1043,7 +1043,7 @@ class MessageApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
-        :return: list[MessageEnrichmentMeta]
+        :return: list[EnrichmentMeta]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1067,7 +1067,7 @@ class MessageApi(object):
         :param str enrichment_name:
         :param str provider_name:
         :param str version:
-        :return: list[MessageEnrichmentMeta]
+        :return: list[EnrichmentMeta]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1121,7 +1121,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[MessageEnrichmentMeta]',  # noqa: E501
+            response_type='list[EnrichmentMeta]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1139,7 +1139,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentMeta body: The new enrichment meta to add (required)
+        :param EnrichmentMeta body: The new enrichment meta to add (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1161,7 +1161,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentMeta body: The new enrichment meta to add (required)
+        :param EnrichmentMeta body: The new enrichment meta to add (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1238,7 +1238,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentMeta body: The new enrichment meta to update (required)
+        :param EnrichmentMeta body: The new enrichment meta to update (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1260,7 +1260,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichmentMeta body: The new enrichment meta to update (required)
+        :param EnrichmentMeta body: The new enrichment meta to update (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1461,7 +1461,7 @@ class MessageApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: list[MessageEnrichment]
+        :return: list[Enrichment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1487,7 +1487,7 @@ class MessageApi(object):
         :param str provider_name:
         :param str version:
         :param bool dev:
-        :return: list[MessageEnrichment]
+        :return: list[Enrichment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1549,7 +1549,7 @@ class MessageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[MessageEnrichment]',  # noqa: E501
+            response_type='list[Enrichment]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1567,7 +1567,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichment body: The new enrichment to add (required)
+        :param Enrichment body: The new enrichment to add (required)
         :param str id: Message ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1590,7 +1590,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichment body: The new enrichment to add (required)
+        :param Enrichment body: The new enrichment to add (required)
         :param str id: Message ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1674,7 +1674,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichment body: The new enrichments to update (required)
+        :param Enrichment body: The new enrichments to update (required)
         :param str id: Message ID (required)
         :return: str
                  If the method is called asynchronously,
@@ -1697,7 +1697,7 @@ class MessageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param MessageEnrichment body: The new enrichments to update (required)
+        :param Enrichment body: The new enrichments to update (required)
         :param str id: Message ID (required)
         :return: str
                  If the method is called asynchronously,

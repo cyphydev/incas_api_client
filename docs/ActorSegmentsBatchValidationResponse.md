@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ok** | [**dict(str, ActorSegmentCollection)**](ActorSegmentCollection.md) |  | [optional] 
 **id_invalid** | [**dict(str, ActorSegmentCollection)**](ActorSegmentCollection.md) |  | [optional] 
 **value_invalid** | [**dict(str, ActorSegmentCollection)**](ActorSegmentCollection.md) |  | [optional] 
 **value_not_found** | [**dict(str, ActorSegmentCollection)**](ActorSegmentCollection.md) |  | [optional] 

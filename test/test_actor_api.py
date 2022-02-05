@@ -148,12 +148,6 @@ class TestActorApi(unittest.TestCase):
         """
         pass
 
-    def test_actor_id_segments_post(self):
-        """Test case for actor_id_segments_post
-
-        """
-        pass
-
     def test_actor_id_segments_put(self):
         """Test case for actor_id_segments_put
 
@@ -180,12 +174,6 @@ class TestActorApi(unittest.TestCase):
 
     def test_actor_segments_batch_get(self):
         """Test case for actor_segments_batch_get
-
-        """
-        pass
-
-    def test_actor_segments_batch_post(self):
-        """Test case for actor_segments_batch_post
 
         """
         pass
