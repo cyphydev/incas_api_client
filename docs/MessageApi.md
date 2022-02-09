@@ -153,7 +153,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichmentsBatchDeleteBody() # MessageEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_instance.message_enrichments_batch_delete(body)
@@ -165,7 +165,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichmentsBatchDeleteBody**](MessageEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchDeleteBody**](EnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_delete_validate**
-> MessageEnrichmentsBatchDeleteValidationResponse message_enrichments_batch_delete_validate(body)
+> EnrichmentsBatchDeleteValidationResponse message_enrichments_batch_delete_validate(body)
 
 
 
@@ -205,7 +205,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichmentsBatchDeleteBody() # MessageEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_response = api_instance.message_enrichments_batch_delete_validate(body)
@@ -218,11 +218,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichmentsBatchDeleteBody**](MessageEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchDeleteBody**](EnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**MessageEnrichmentsBatchDeleteValidationResponse**](MessageEnrichmentsBatchDeleteValidationResponse.md)
+[**EnrichmentsBatchDeleteValidationResponse**](EnrichmentsBatchDeleteValidationResponse.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_get**
-> dict(str, list[MessageEnrichment]) message_enrichments_batch_get(body)
+> dict(str, list[Enrichment]) message_enrichments_batch_get(body)
 
 
 
@@ -258,7 +258,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichmentsBatchGetBody() # MessageEnrichmentsBatchGetBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchGetBody() # EnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
     api_response = api_instance.message_enrichments_batch_get(body)
@@ -271,11 +271,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichmentsBatchGetBody**](MessageEnrichmentsBatchGetBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchGetBody**](EnrichmentsBatchGetBody.md)| List of IDs and specifications | 
 
 ### Return type
 
-**dict(str, list[MessageEnrichment])**
+**dict(str, list[Enrichment])**
 
 ### Authorization
 
@@ -311,7 +311,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.message_enrichments_batch_post(body)
@@ -324,7 +324,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, MessageEnrichment)**](dict.md)| Map of IDs and enrichments | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| Map of IDs and enrichments | 
 
 ### Return type
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_post_validate**
-> MessageEnrichmentsBatchValidationResponse message_enrichments_batch_post_validate(body)
+> EnrichmentsBatchValidationResponse message_enrichments_batch_post_validate(body)
 
 
 
@@ -364,7 +364,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, MessageEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.message_enrichments_batch_post_validate(body)
@@ -377,11 +377,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, MessageEnrichment)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**MessageEnrichmentsBatchValidationResponse**](MessageEnrichmentsBatchValidationResponse.md)
+[**EnrichmentsBatchValidationResponse**](EnrichmentsBatchValidationResponse.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, MessageEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.message_enrichments_batch_put(body)
@@ -430,7 +430,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, MessageEnrichment)**](dict.md)| Map of IDs and enrichments | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| Map of IDs and enrichments | 
 
 ### Return type
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_batch_put_validate**
-> MessageEnrichmentsBatchValidationResponse message_enrichments_batch_put_validate(body)
+> EnrichmentsBatchValidationResponse message_enrichments_batch_put_validate(body)
 
 
 
@@ -470,7 +470,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, MessageEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.message_enrichments_batch_put_validate(body)
@@ -483,11 +483,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, MessageEnrichment)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**MessageEnrichmentsBatchValidationResponse**](MessageEnrichmentsBatchValidationResponse.md)
+[**EnrichmentsBatchValidationResponse**](EnrichmentsBatchValidationResponse.md)
 
 ### Authorization
 
@@ -557,7 +557,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_enrichments_meta_get**
-> list[MessageEnrichmentMeta] message_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+> list[EnrichmentMeta] message_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
 
 
 
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[MessageEnrichmentMeta]**](MessageEnrichmentMeta.md)
+[**list[EnrichmentMeta]**](EnrichmentMeta.md)
 
 ### Authorization
 
@@ -636,7 +636,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to add
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to add
 
 try:
     api_response = api_instance.message_enrichments_meta_post(body)
@@ -649,7 +649,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)| The new enrichment meta to add | 
+ **body** | [**EnrichmentMeta**](EnrichmentMeta.md)| The new enrichment meta to add | 
 
 ### Return type
 
@@ -689,7 +689,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichmentMeta() # MessageEnrichmentMeta | The new enrichment meta to update
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to update
 
 try:
     api_response = api_instance.message_enrichments_meta_put(body)
@@ -702,7 +702,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichmentMeta**](MessageEnrichmentMeta.md)| The new enrichment meta to update | 
+ **body** | [**EnrichmentMeta**](EnrichmentMeta.md)| The new enrichment meta to update | 
 
 ### Return type
 
@@ -778,7 +778,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **message_id_enrichments_get**
-> list[MessageEnrichment] message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
+> list[Enrichment] message_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
 
 
 
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[MessageEnrichment]**](MessageEnrichment.md)
+[**list[Enrichment]**](Enrichment.md)
 
 ### Authorization
 
@@ -861,7 +861,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichment to add
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichment to add
 id = 'id_example' # str | Message ID
 
 try:
@@ -875,7 +875,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichment**](MessageEnrichment.md)| The new enrichment to add | 
+ **body** | [**Enrichment**](Enrichment.md)| The new enrichment to add | 
  **id** | **str**| Message ID | 
 
 ### Return type
@@ -916,7 +916,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.MessageApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.MessageEnrichment() # MessageEnrichment | The new enrichments to update
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichments to update
 id = 'id_example' # str | Message ID
 
 try:
@@ -930,7 +930,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageEnrichment**](MessageEnrichment.md)| The new enrichments to update | 
+ **body** | [**Enrichment**](Enrichment.md)| The new enrichments to update | 
  **id** | **str**| Message ID | 
 
 ### Return type

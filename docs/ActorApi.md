@@ -24,13 +24,11 @@ Method | HTTP request | Description
 [**actor_id_get**](ActorApi.md#actor_id_get) | **GET** /actor/{id} | 
 [**actor_id_segments_delete**](ActorApi.md#actor_id_segments_delete) | **DELETE** /actor/{id}/segments | 
 [**actor_id_segments_get**](ActorApi.md#actor_id_segments_get) | **GET** /actor/{id}/segments | 
-[**actor_id_segments_post**](ActorApi.md#actor_id_segments_post) | **POST** /actor/{id}/segments | 
 [**actor_id_segments_put**](ActorApi.md#actor_id_segments_put) | **PUT** /actor/{id}/segments | 
 [**actor_list_get**](ActorApi.md#actor_list_get) | **GET** /actor/list | 
 [**actor_segment_batch_delete**](ActorApi.md#actor_segment_batch_delete) | **POST** /actor/segments/batchDelete | 
 [**actor_segments_batch_delete_validate**](ActorApi.md#actor_segments_batch_delete_validate) | **POST** /actor/segments/batchDelete/validate | 
 [**actor_segments_batch_get**](ActorApi.md#actor_segments_batch_get) | **POST** /actor/segments/batchGet | 
-[**actor_segments_batch_post**](ActorApi.md#actor_segments_batch_post) | **POST** /actor/segments/batch | 
 [**actor_segments_batch_post_validate**](ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
 [**actor_segments_batch_put**](ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
 [**actor_segments_batch_put_validate**](ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
@@ -166,7 +164,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_instance.actor_enrichments_batch_delete(body)
@@ -178,7 +176,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichmentsBatchDeleteBody**](ActorEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchDeleteBody**](EnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
 
 ### Return type
 
@@ -196,7 +194,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_delete_validate**
-> ActorEnrichmentsBatchDeleteValidationResponse actor_enrichments_batch_delete_validate(body)
+> EnrichmentsBatchDeleteValidationResponse actor_enrichments_batch_delete_validate(body)
 
 
 
@@ -218,7 +216,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_delete_validate(body)
@@ -231,11 +229,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichmentsBatchDeleteBody**](ActorEnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchDeleteBody**](EnrichmentsBatchDeleteBody.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**ActorEnrichmentsBatchDeleteValidationResponse**](ActorEnrichmentsBatchDeleteValidationResponse.md)
+[**EnrichmentsBatchDeleteValidationResponse**](EnrichmentsBatchDeleteValidationResponse.md)
 
 ### Authorization
 
@@ -249,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_get**
-> dict(str, list[ActorEnrichment]) actor_enrichments_batch_get(body)
+> dict(str, list[Enrichment]) actor_enrichments_batch_get(body)
 
 
 
@@ -271,7 +269,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchGetBody() # EnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_get(body)
@@ -284,11 +282,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichmentsBatchGetBody**](ActorEnrichmentsBatchGetBody.md)| List of IDs and specifications | 
+ **body** | [**EnrichmentsBatchGetBody**](EnrichmentsBatchGetBody.md)| List of IDs and specifications | 
 
 ### Return type
 
-**dict(str, list[ActorEnrichment])**
+**dict(str, list[Enrichment])**
 
 ### Authorization
 
@@ -324,7 +322,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.actor_enrichments_batch_post(body)
@@ -337,7 +335,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorEnrichment)**](dict.md)| Map of IDs and enrichments | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| Map of IDs and enrichments | 
 
 ### Return type
 
@@ -355,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_post_validate**
-> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_post_validate(body)
+> EnrichmentsBatchValidationResponse actor_enrichments_batch_post_validate(body)
 
 
 
@@ -377,7 +375,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_post_validate(body)
@@ -390,11 +388,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorEnrichment)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+[**EnrichmentsBatchValidationResponse**](EnrichmentsBatchValidationResponse.md)
 
 ### Authorization
 
@@ -430,7 +428,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.actor_enrichments_batch_put(body)
@@ -443,7 +441,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorEnrichment)**](dict.md)| Map of IDs and enrichments | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| Map of IDs and enrichments | 
 
 ### Return type
 
@@ -461,7 +459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_batch_put_validate**
-> ActorEnrichmentsBatchValidationResponse actor_enrichments_batch_put_validate(body)
+> EnrichmentsBatchValidationResponse actor_enrichments_batch_put_validate(body)
 
 
 
@@ -483,7 +481,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_put_validate(body)
@@ -496,11 +494,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorEnrichment)**](dict.md)| List of IDs and specifications | 
+ **body** | [**dict(str, Enrichment)**](dict.md)| List of IDs and specifications | 
 
 ### Return type
 
-[**ActorEnrichmentsBatchValidationResponse**](ActorEnrichmentsBatchValidationResponse.md)
+[**EnrichmentsBatchValidationResponse**](EnrichmentsBatchValidationResponse.md)
 
 ### Authorization
 
@@ -570,7 +568,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_enrichments_meta_get**
-> list[ActorEnrichmentMeta] actor_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
+> list[EnrichmentMeta] actor_enrichments_meta_get(enrichment_name=enrichment_name, provider_name=provider_name, version=version)
 
 
 
@@ -613,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ActorEnrichmentMeta]**](ActorEnrichmentMeta.md)
+[**list[EnrichmentMeta]**](EnrichmentMeta.md)
 
 ### Authorization
 
@@ -649,7 +647,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to add
 
 try:
     api_response = api_instance.actor_enrichments_meta_post(body)
@@ -662,7 +660,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichmentMeta**](ActorEnrichmentMeta.md)| The new enrichment meta to add | 
+ **body** | [**EnrichmentMeta**](EnrichmentMeta.md)| The new enrichment meta to add | 
 
 ### Return type
 
@@ -702,7 +700,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to update
 
 try:
     api_response = api_instance.actor_enrichments_meta_put(body)
@@ -715,7 +713,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichmentMeta**](ActorEnrichmentMeta.md)| The new enrichment meta to update | 
+ **body** | [**EnrichmentMeta**](EnrichmentMeta.md)| The new enrichment meta to update | 
 
 ### Return type
 
@@ -791,7 +789,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **actor_id_enrichments_get**
-> list[ActorEnrichment] actor_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
+> list[Enrichment] actor_id_enrichments_get(id, enrichment_name=enrichment_name, provider_name=provider_name, version=version, dev=dev)
 
 
 
@@ -838,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ActorEnrichment]**](ActorEnrichment.md)
+[**list[Enrichment]**](Enrichment.md)
 
 ### Authorization
 
@@ -874,7 +872,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichment to add
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichment to add
 id = 'id_example' # str | Actor ID
 
 try:
@@ -888,7 +886,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichment**](ActorEnrichment.md)| The new enrichment to add | 
+ **body** | [**Enrichment**](Enrichment.md)| The new enrichment to add | 
  **id** | **str**| Actor ID | 
 
 ### Return type
@@ -929,7 +927,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichments to update
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichments to update
 id = 'id_example' # str | Actor ID
 
 try:
@@ -943,7 +941,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActorEnrichment**](ActorEnrichment.md)| The new enrichments to update | 
+ **body** | [**Enrichment**](Enrichment.md)| The new enrichments to update | 
  **id** | **str**| Actor ID | 
 
 ### Return type
@@ -1148,61 +1146,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **actor_id_segments_post**
-> str actor_id_segments_post(body, id)
-
-
-
-Add a new segment collection for the specific actor
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = uiuc_incas_client.Configuration()
-configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
-id = 'id_example' # str | Actor ID
-
-try:
-    api_response = api_instance.actor_id_segments_post(body, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_id_segments_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ActorSegmentCollection**](ActorSegmentCollection.md)| The new segment collections to add | 
- **id** | **str**| Actor ID | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1475,59 +1418,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json, text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **actor_segments_batch_post**
-> str actor_segments_batch_post(body)
-
-
-
-Submits a segment collection for each actor ID.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import uiuc_incas_client
-from uiuc_incas_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = uiuc_incas_client.Configuration()
-configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
-
-try:
-    api_response = api_instance.actor_segments_batch_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_batch_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, ActorSegmentCollection)**](dict.md)| Map of IDs and segment collections | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

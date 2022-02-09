@@ -92,7 +92,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_instance.actor_enrichments_batch_delete(body)
@@ -107,7 +107,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchDeleteBody() # ActorEnrichmentsBatchDeleteBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchDeleteBody() # EnrichmentsBatchDeleteBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_delete_validate(body)
@@ -123,7 +123,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentsBatchGetBody() # ActorEnrichmentsBatchGetBody | List of IDs and specifications
+body = uiuc_incas_client.EnrichmentsBatchGetBody() # EnrichmentsBatchGetBody | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_get(body)
@@ -139,7 +139,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.actor_enrichments_batch_post(body)
@@ -155,7 +155,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_post_validate(body)
@@ -171,7 +171,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | Map of IDs and enrichments
+body = NULL # dict(str, Enrichment) | Map of IDs and enrichments
 
 try:
     api_response = api_instance.actor_enrichments_batch_put(body)
@@ -187,7 +187,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorEnrichment) | List of IDs and specifications
+body = NULL # dict(str, Enrichment) | List of IDs and specifications
 
 try:
     api_response = api_instance.actor_enrichments_batch_put_validate(body)
@@ -238,7 +238,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to add
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to add
 
 try:
     api_response = api_instance.actor_enrichments_meta_post(body)
@@ -254,7 +254,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichmentMeta() # ActorEnrichmentMeta | The new enrichment meta to update
+body = uiuc_incas_client.EnrichmentMeta() # EnrichmentMeta | The new enrichment meta to update
 
 try:
     api_response = api_instance.actor_enrichments_meta_put(body)
@@ -308,7 +308,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichment to add
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichment to add
 id = 'id_example' # str | Actor ID
 
 try:
@@ -325,7 +325,7 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorEnrichment() # ActorEnrichment | The new enrichments to update
+body = uiuc_incas_client.Enrichment() # Enrichment | The new enrichments to update
 id = 'id_example' # str | Actor ID
 
 try:
@@ -396,23 +396,6 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorApi->actor_id_segments_get: %s\n" % e)
-
-# Configure API key authorization: ApiKeyAuth
-configuration = uiuc_incas_client.Configuration()
-configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = uiuc_incas_client.ActorSegmentCollection() # ActorSegmentCollection | The new segment collections to add
-id = 'id_example' # str | Actor ID
-
-try:
-    api_response = api_instance.actor_id_segments_post(body, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_id_segments_post: %s\n" % e)
 
 # Configure API key authorization: ApiKeyAuth
 configuration = uiuc_incas_client.Configuration()
@@ -505,22 +488,6 @@ configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
-body = NULL # dict(str, ActorSegmentCollection) | Map of IDs and segment collections
-
-try:
-    api_response = api_instance.actor_segments_batch_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ActorApi->actor_segments_batch_post: %s\n" % e)
-
-# Configure API key authorization: ApiKeyAuth
-configuration = uiuc_incas_client.Configuration()
-configuration.api_key['X-API-KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['X-API-KEY'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = uiuc_incas_client.ActorApi(uiuc_incas_client.ApiClient(configuration))
 body = NULL # dict(str, ActorSegmentCollection) | List of IDs and specifications
 
 try:
@@ -588,13 +555,11 @@ Class | Method | HTTP request | Description
 *ActorApi* | [**actor_id_get**](docs/ActorApi.md#actor_id_get) | **GET** /actor/{id} | 
 *ActorApi* | [**actor_id_segments_delete**](docs/ActorApi.md#actor_id_segments_delete) | **DELETE** /actor/{id}/segments | 
 *ActorApi* | [**actor_id_segments_get**](docs/ActorApi.md#actor_id_segments_get) | **GET** /actor/{id}/segments | 
-*ActorApi* | [**actor_id_segments_post**](docs/ActorApi.md#actor_id_segments_post) | **POST** /actor/{id}/segments | 
 *ActorApi* | [**actor_id_segments_put**](docs/ActorApi.md#actor_id_segments_put) | **PUT** /actor/{id}/segments | 
 *ActorApi* | [**actor_list_get**](docs/ActorApi.md#actor_list_get) | **GET** /actor/list | 
 *ActorApi* | [**actor_segment_batch_delete**](docs/ActorApi.md#actor_segment_batch_delete) | **POST** /actor/segments/batchDelete | 
 *ActorApi* | [**actor_segments_batch_delete_validate**](docs/ActorApi.md#actor_segments_batch_delete_validate) | **POST** /actor/segments/batchDelete/validate | 
 *ActorApi* | [**actor_segments_batch_get**](docs/ActorApi.md#actor_segments_batch_get) | **POST** /actor/segments/batchGet | 
-*ActorApi* | [**actor_segments_batch_post**](docs/ActorApi.md#actor_segments_batch_post) | **POST** /actor/segments/batch | 
 *ActorApi* | [**actor_segments_batch_post_validate**](docs/ActorApi.md#actor_segments_batch_post_validate) | **POST** /actor/segments/batch/validate | 
 *ActorApi* | [**actor_segments_batch_put**](docs/ActorApi.md#actor_segments_batch_put) | **PUT** /actor/segments/batch | 
 *ActorApi* | [**actor_segments_batch_put_validate**](docs/ActorApi.md#actor_segments_batch_put_validate) | **PUT** /actor/segments/batch/validate | 
@@ -639,9 +604,11 @@ Class | Method | HTTP request | Description
 *MessageApi* | [**message_list_get**](docs/MessageApi.md#message_list_get) | **GET** /message/list | 
 *SegmentApi* | [**segment_collection_id_delete**](docs/SegmentApi.md#segment_collection_id_delete) | **DELETE** /segmentCollection/{id} | 
 *SegmentApi* | [**segment_collection_id_get**](docs/SegmentApi.md#segment_collection_id_get) | **GET** /segmentCollection/{id} | 
+*SegmentApi* | [**segment_collection_id_partial_put**](docs/SegmentApi.md#segment_collection_id_partial_put) | **PUT** /segmentCollection/{id}/partial | 
 *SegmentApi* | [**segment_collection_id_put**](docs/SegmentApi.md#segment_collection_id_put) | **PUT** /segmentCollection/{id} | 
 *SegmentApi* | [**segment_collection_list_get**](docs/SegmentApi.md#segment_collection_list_get) | **GET** /segmentCollection/list | 
 *SegmentApi* | [**segment_collection_post**](docs/SegmentApi.md#segment_collection_post) | **POST** /segmentCollection | 
+*SegmentApi* | [**segment_collection_validate_post**](docs/SegmentApi.md#segment_collection_validate_post) | **POST** /segmentCollection/validate | 
 
 ## Documentation For Models
 
@@ -649,12 +616,6 @@ Class | Method | HTTP request | Description
  - [ActorActorGraph](docs/ActorActorGraph.md)
  - [ActorActorGraphDB](docs/ActorActorGraphDB.md)
  - [ActorBatchGetBody](docs/ActorBatchGetBody.md)
- - [ActorEnrichment](docs/ActorEnrichment.md)
- - [ActorEnrichmentMeta](docs/ActorEnrichmentMeta.md)
- - [ActorEnrichmentsBatchDeleteBody](docs/ActorEnrichmentsBatchDeleteBody.md)
- - [ActorEnrichmentsBatchDeleteValidationResponse](docs/ActorEnrichmentsBatchDeleteValidationResponse.md)
- - [ActorEnrichmentsBatchGetBody](docs/ActorEnrichmentsBatchGetBody.md)
- - [ActorEnrichmentsBatchValidationResponse](docs/ActorEnrichmentsBatchValidationResponse.md)
  - [ActorIdResponse](docs/ActorIdResponse.md)
  - [ActorMessageGraph](docs/ActorMessageGraph.md)
  - [ActorMessageGraphDB](docs/ActorMessageGraphDB.md)
@@ -664,58 +625,45 @@ Class | Method | HTTP request | Description
  - [ActorSegmentsBatchGetBody](docs/ActorSegmentsBatchGetBody.md)
  - [ActorSegmentsBatchValidationResponse](docs/ActorSegmentsBatchValidationResponse.md)
  - [Annotation](docs/Annotation.md)
- - [ArrayActorEnrichment](docs/ArrayActorEnrichment.md)
- - [ArrayActorEnrichmentMeta](docs/ArrayActorEnrichmentMeta.md)
- - [ArrayMessageEnrichment](docs/ArrayMessageEnrichment.md)
- - [ArrayMessageEnrichmentMeta](docs/ArrayMessageEnrichmentMeta.md)
- - [BaseActorEnrichment](docs/BaseActorEnrichment.md)
- - [BaseActorEnrichmentMeta](docs/BaseActorEnrichmentMeta.md)
+ - [ArrayEnrichment](docs/ArrayEnrichment.md)
+ - [ArrayEnrichmentMeta](docs/ArrayEnrichmentMeta.md)
+ - [BaseEnrichment](docs/BaseEnrichment.md)
+ - [BaseEnrichmentMeta](docs/BaseEnrichmentMeta.md)
  - [BaseGraph](docs/BaseGraph.md)
- - [BaseMessageEnrichment](docs/BaseMessageEnrichment.md)
- - [BaseMessageEnrichmentMeta](docs/BaseMessageEnrichmentMeta.md)
- - [CategoryActorEnrichment](docs/CategoryActorEnrichment.md)
- - [CategoryActorEnrichmentMeta](docs/CategoryActorEnrichmentMeta.md)
- - [CategoryMessageEnrichment](docs/CategoryMessageEnrichment.md)
- - [CategoryMessageEnrichmentMeta](docs/CategoryMessageEnrichmentMeta.md)
+ - [CategoryEnrichment](docs/CategoryEnrichment.md)
+ - [CategoryEnrichmentMeta](docs/CategoryEnrichmentMeta.md)
+ - [Enrichment](docs/Enrichment.md)
+ - [EnrichmentMeta](docs/EnrichmentMeta.md)
+ - [EnrichmentsBatchDeleteBody](docs/EnrichmentsBatchDeleteBody.md)
+ - [EnrichmentsBatchDeleteValidationResponse](docs/EnrichmentsBatchDeleteValidationResponse.md)
+ - [EnrichmentsBatchGetBody](docs/EnrichmentsBatchGetBody.md)
+ - [EnrichmentsBatchValidationResponse](docs/EnrichmentsBatchValidationResponse.md)
  - [ExtraAttribute](docs/ExtraAttribute.md)
- - [ExtraAttributes](docs/ExtraAttributes.md)
  - [GeoLocation](docs/GeoLocation.md)
  - [GraphEdge](docs/GraphEdge.md)
  - [Links](docs/Links.md)
  - [MediaResource](docs/MediaResource.md)
  - [Message](docs/Message.md)
  - [MessageBatchGetBody](docs/MessageBatchGetBody.md)
- - [MessageEnrichment](docs/MessageEnrichment.md)
- - [MessageEnrichmentMeta](docs/MessageEnrichmentMeta.md)
- - [MessageEnrichmentsBatchDeleteBody](docs/MessageEnrichmentsBatchDeleteBody.md)
- - [MessageEnrichmentsBatchDeleteValidationResponse](docs/MessageEnrichmentsBatchDeleteValidationResponse.md)
- - [MessageEnrichmentsBatchGetBody](docs/MessageEnrichmentsBatchGetBody.md)
- - [MessageEnrichmentsBatchValidationResponse](docs/MessageEnrichmentsBatchValidationResponse.md)
  - [MessageIdResponse](docs/MessageIdResponse.md)
  - [MessageMessageGraph](docs/MessageMessageGraph.md)
  - [MessageMessageGraphDB](docs/MessageMessageGraphDB.md)
- - [NumericalActorEnrichment](docs/NumericalActorEnrichment.md)
- - [NumericalActorEnrichmentMeta](docs/NumericalActorEnrichmentMeta.md)
- - [NumericalMessageEnrichment](docs/NumericalMessageEnrichment.md)
- - [NumericalMessageEnrichmentMeta](docs/NumericalMessageEnrichmentMeta.md)
+ - [NumericalEnrichment](docs/NumericalEnrichment.md)
+ - [NumericalEnrichmentMeta](docs/NumericalEnrichmentMeta.md)
  - [Offset](docs/Offset.md)
- - [OneOfActorEnrichment](docs/OneOfActorEnrichment.md)
- - [OneOfActorEnrichmentMeta](docs/OneOfActorEnrichmentMeta.md)
+ - [OneOfEnrichment](docs/OneOfEnrichment.md)
+ - [OneOfEnrichmentMeta](docs/OneOfEnrichmentMeta.md)
  - [OneOfMediaTypeAttributes](docs/OneOfMediaTypeAttributes.md)
- - [OneOfMessageEnrichment](docs/OneOfMessageEnrichment.md)
- - [OneOfMessageEnrichmentMeta](docs/OneOfMessageEnrichmentMeta.md)
  - [RedditData](docs/RedditData.md)
- - [TextActorEnrichment](docs/TextActorEnrichment.md)
- - [TextActorEnrichmentMeta](docs/TextActorEnrichmentMeta.md)
- - [TextMessageEnrichment](docs/TextMessageEnrichment.md)
- - [TextMessageEnrichmentMeta](docs/TextMessageEnrichmentMeta.md)
+ - [TextEnrichment](docs/TextEnrichment.md)
+ - [TextEnrichmentMeta](docs/TextEnrichmentMeta.md)
  - [TwitterData](docs/TwitterData.md)
  - [UiucActor](docs/UiucActor.md)
  - [UiucActorDB](docs/UiucActorDB.md)
  - [UiucMessage](docs/UiucMessage.md)
  - [UiucMessageDB](docs/UiucMessageDB.md)
+ - [UiucSegment](docs/UiucSegment.md)
  - [UiucSegmentCollection](docs/UiucSegmentCollection.md)
- - [UiucSegmentCollectionMeta](docs/UiucSegmentCollectionMeta.md)
 
 ## Documentation For Authorization
 
