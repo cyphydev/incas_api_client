@@ -1,6 +1,6 @@
 # uiuc_incas_client.MessageApi
 
-All URIs are relative to *https://incas.cs.illinois.edu:8443/api/v1*
+All URIs are relative to */api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
