@@ -542,6 +542,8 @@ class ActorApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
+        if len(body) > 20000:
+            raise Exception("Request body size can not exceed 40000 items")
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
             return self.actor_enrichments_batch_post_with_http_info(body, **kwargs)  # noqa: E501

@@ -17,6 +17,7 @@ from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+from math import ceil
 
 # python 2 and python 3 compatibility library
 import six
@@ -166,6 +167,36 @@ class ApiClient(object):
         else:
             return (return_data, response_data.status,
                     response_data.getheaders())
+
+    def split_dict_for_batches(self, body, batch_size):
+        """
+        Splits the dict into smaller chunks of specified size.
+        :param body: dict to be split
+        :param batch_size: chunk size
+        :return: list of dict
+        """
+        dsize = len(body)
+        dkeys = list(body.keys())
+        batches = [
+            {k: body[k] for k in kbatch} 
+                for kbatch in [dkeys[(i * batch_size):min(dsize, (i + 1) * batch_size)] 
+            for i in range(ceil(dsize / batch_size))]
+        ]
+        return batches
+
+    def split_list_for_batches(self, body, batch_size):
+        """
+        Splits the list into smaller chunks of specified size.
+        :param body: list to be split
+        :param batch_size: chunk size
+        :return: list of list
+        """
+        lsize = len(body)
+        batches = [
+            body[(i * batch_size):min(lsize, (i + 1) * batch_size)] 
+            for i in range(ceil(lsize / batch_size))
+        ]
+        return batches
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
